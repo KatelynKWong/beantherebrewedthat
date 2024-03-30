@@ -102,7 +102,7 @@
   in:fly={{ y: -300, duration: 1000 }}
   out:fly={{ y: -300, duration: 1000 }}
 >
-  <tspan x="25%" dy="0%">Hey there! </tspan>
+  <tspan x="25%" dy="0%">Hey there!! </tspan>
   <tspan x="25%" dy="1.8em">Welcome to my blog where I share my adventures as a study</tspan>
   <tspan x="25%" dy="1.8em">abroad student in Japan. I'll mainly be focusing about</tspan>
   <tspan x="25%" dy="1.8em"> student life, diving into Japan's coffee scene, and sharing</tspan>
