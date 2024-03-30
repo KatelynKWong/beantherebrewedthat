@@ -22,15 +22,15 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
+          BASE_PATH: '/'
         run: |
           npm run build
 
       - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
-          # this should match the `pages` option in your adapter-static options
-          path: 'build/'
+          name: built-site
+          path: public
 
   deploy:
     needs: build_site
@@ -45,6 +45,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: built-site
+          path: public
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v2
+        with:
+          branch: gh-pages
+          folder: public
