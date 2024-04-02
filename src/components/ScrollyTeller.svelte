@@ -9,6 +9,10 @@
   import Graph from "./Graph.svelte";
   import * as d3 from 'd3'; // Import D3 library
 
+  import BrownCake from './assets/brown-cake.jpg';
+  import TokyoStreet from './assets/Tokyo-street.jpeg';
+
+
   let count, index, offset=0, progress;
   let width, height;
 
@@ -64,7 +68,7 @@
                 top: 45vh; 
                 left: 69%;
                 font-size: 20px">
-                Hitotsubashi University study abroad experience</span>
+                Hitotsubashi University study abroad experience.</span>
     <span style="position: fixed; 
                 top: 85vh; 
                 font-size: 35px;
@@ -74,10 +78,15 @@
               top: 90vh; 
               left: 69%;
               font-size: 20px">
-              Food discoveries, favorite recipes, and more</span>              
+              Food discoveries, favorite recipes, and more.</span>              
     
   </div>
-  <div class="scrolling-rectangle1"></div>
+  <!-- <div class="scrolling-rectangle1"></div> -->
+  <img
+    src="TokyoStreet" 
+    alt="Tokyo Street"
+    class="tokyo-street"
+  />
   <div class="scrolling-rectangle2"></div>
 
 <Scroller
@@ -193,6 +202,15 @@
     font-weight: 300;
     font-size: 35px;
     transition: bottom 0.3s
+  }
+
+  .tokyo-street {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 33%;
+    height: 60vh;
+    z-index: 994;
   }
 
   .scrolling-rectangle1 {
