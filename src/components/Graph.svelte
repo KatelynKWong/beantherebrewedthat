@@ -3,8 +3,8 @@
   import { crossfade } from 'svelte/transition';
   import { tweened } from "svelte/motion";
   import coffeePlant from './assets/coffee-g5e25637ad_1920.webp';
+  import GreyLatte from './assets/grey-latte.png';
   import tsunamiImage from './assets/tsunami.jpg';
-  import cloudImage from './assets/clouds.png';
   export let index, width, height;
 
   // Define the intro block
@@ -32,17 +32,20 @@
   const tweenedRectOpacity = tweened(0)
   tweenedRectOpacity.set(0)
   const tweenedStory3Opacity = tweened(0);
+  const tweenedAboutImageOpacity = tweened(0)
 
 
   $: { // background story animations
     if (index === 2) {
       tweenedRectOpacity.set(0)
+      tweenedAboutImageOpacity.set(0)
       tweenedAboutMeOpacity.set(1)
       tweenedHeaderOpacity.set(0)
       tweenedCoffeeHeaderY.set(height*4/5)
    }
     if (index === 3) {
       tweenedAboutMeOpacity.set(0)
+      tweenedAboutImageOpacity.set(0)
       tweenedRectOpacity.set(.5)
       tweenedAuthorOpacity.set(0)
       tweenedHeaderOpacity.set(1)
@@ -51,12 +54,13 @@
     }
     if (index === 4) {
       tweenedHeaderOpacity.set(1)
-      tweenedCoffeeHeaderY.set(height*1/5)
+      tweenedAboutImageOpacity.set(1)
+     tweenedCoffeeHeaderY.set(height*1/5)
       tweenedAuthorOpacity.set(1)
       tweenedAuthorY.set(height*2/5)
       tweenedbackgroundIntroOpacity.set(1)
       introImageOpacity.set(0)
-      tweenedRectOpacity.set(1)
+      tweenedRectOpacity.set(.2)
     }
     if (index === 5) {
       tweenedHeaderOpacity.set(0)
@@ -69,12 +73,20 @@
 
 </script>
 
-<svg class="graph" width="100%" height="100%" y="0" >
+<svg class="graph" width="100%" height="100%" y="0" style="z-index: 1000;">
   <!-- Title image layer with fly transition -->
   <image
     x="0" y="0" width="100%" height="100%"
     xlink:href={coffeePlant}
     opacity={$tweenedTitleImageOpacity}
+    in:fly={{ opacity: 1, duration: 1000 }}
+    out:fly={{ opacity: 0, duration: 1000 }}
+    preserveAspectRatio="xMidYMid slice"
+  />
+  <image
+    x="0" y="0" width="100%" height="100%"
+    xlink:href={GreyLatte}
+    opacity={$tweenedAboutImageOpacity}
     in:fly={{ opacity: 1, duration: 1000 }}
     out:fly={{ opacity: 0, duration: 1000 }}
     preserveAspectRatio="xMidYMid slice"
