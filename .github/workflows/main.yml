@@ -22,7 +22,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/'
+          BASE_PATH: 'https://katelynkwong.github.io/beantherebrewedthat/'
         run: |
           npm run build
 
