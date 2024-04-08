@@ -18,10 +18,13 @@ const config = {
 		paths: {
 			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
 		},
-		routes: [
-            { src: '/coffee', dest: './src/routes/coffee/+page.svelte' },
-            // Add more routes for other subpages here
-        ],
+		// routes: [
+        //     { src: '/coffee', dest: './src/routes/coffee/+page.svelte' },
+		// 	{ src: '/food', dest:  './src/routes/food/+page.svelte' }
+		// 	// { src: '/coffee', dest: './src/components/Coffee/CoffeeMain.svelte' },
+		// 	// { src: '/food', dest:  './src/routes/Food/FoodMain.svelte' }
+        //     // Add more routes for other subpages here
+        // ],
 
 	}
 };

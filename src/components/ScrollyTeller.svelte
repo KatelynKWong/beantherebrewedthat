@@ -37,10 +37,10 @@
   $: greyRectOpacity.set(index > 2 ? .8 : 0); // Adjusted condition to set opacity
 
 </script>
-
+<!-- 
 <Router>
   <Route path="/coffee" component={CoffeeMain} />
-</Router>
+</Router> -->
 
 <main>
   <div class="grey-rectangle" style={`opacity: ${$greyRectOpacity};`} transition:fade></div>
@@ -50,6 +50,7 @@
   </div>
   <div class="title">
     <a href="/coffee">Coffee Subpage</a>
+    <a href="/food">Food Subpage</a>
     <!-- <a href="test.html">Coffee</a> -->
     <!-- <a on:click={() => navigate('/coffee')}>Coffee Subpage</a> -->
     <h1>Bean There, Brewed That</h1>
