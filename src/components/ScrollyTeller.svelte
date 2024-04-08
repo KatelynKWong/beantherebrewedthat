@@ -1,5 +1,5 @@
 <script>
-  import { Link, Router, Route } from "svelte-routing";
+  import { Link, Router, Route, navigate } from "svelte-routing";
 
   import Scroller from "@sveltejs/svelte-scroller";
   import { tweened } from 'svelte/motion';
@@ -13,6 +13,7 @@
   import Croissant from './assets/croissant.png';
 
   import CoffeeMain from "./Coffee/CoffeeMain.svelte";
+  // import CoffeeMain from "../routes/CoffeeMain.svelte";
   
   let count, index, offset=0, progress;
   let width, height;
@@ -37,9 +38,9 @@
 
 </script>
 
-<!-- <Router>
-  <Route path="/coffee-main" component={CoffeeMain} />
-</Router> -->
+<Router>
+  <Route path="/coffee" component={CoffeeMain} />
+</Router>
 
 <main>
   <div class="grey-rectangle" style={`opacity: ${$greyRectOpacity};`} transition:fade></div>
@@ -48,11 +49,9 @@
     <h1>Bean There, Brewed That</h1>
   </div>
   <div class="title">
-    <svelte:component this={CoffeeMain} />
-    <!-- <router-link to="/CoffeePage/+page.svelte">Go to Sub Page</router-link> -->
-    <!-- <a href="Coffee/CoffeeMain.svelte">Page 2</a> -->
-    <!-- <a href="Coffee/CoffeeMain.svelte">Coffee Subpage Home</a> -->
-    <!-- <a href="/coffee-main">Coffee Subpage</a> -->
+    <a href="/coffee">Coffee Subpage</a>
+    <!-- <a href="test.html">Coffee</a> -->
+    <!-- <a on:click={() => navigate('/coffee')}>Coffee Subpage</a> -->
     <h1>Bean There, Brewed That</h1>
     
   </div>

@@ -17,7 +17,12 @@ const config = {
 		}),
 		paths: {
 			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
-		}
+		},
+		routes: [
+            { src: '/coffee', dest: './src/routes/coffee/+page.svelte' },
+            // Add more routes for other subpages here
+        ],
+
 	}
 };
 

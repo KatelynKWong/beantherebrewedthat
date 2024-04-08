@@ -13,7 +13,7 @@
 
 
 <main>
- <text>Welcome to my coffee subpage</text>
+ <p>Welcome to my coffee subpage</p>
 </main>
 
 
