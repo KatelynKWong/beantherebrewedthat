@@ -37,9 +37,9 @@
 
 </script>
 
-<Router>
+<!-- <Router>
   <Route path="/coffee-main" component={CoffeeMain} />
-</Router>
+</Router> -->
 
 <main>
   <div class="grey-rectangle" style={`opacity: ${$greyRectOpacity};`} transition:fade></div>
@@ -52,7 +52,7 @@
     <!-- <router-link to="/CoffeePage/+page.svelte">Go to Sub Page</router-link> -->
     <!-- <a href="Coffee/CoffeeMain.svelte">Page 2</a> -->
     <!-- <a href="Coffee/CoffeeMain.svelte">Coffee Subpage Home</a> -->
-    <a href="/coffee-main">Coffee Subpage</a>
+    <!-- <a href="/coffee-main">Coffee Subpage</a> -->
     <h1>Bean There, Brewed That</h1>
     
   </div>
