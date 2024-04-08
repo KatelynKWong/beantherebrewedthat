@@ -48,7 +48,13 @@
     <h1>Bean There, Brewed That</h1>
   </div>
   <div class="title">
+    <svelte:component this={CoffeeMain} />
+    <!-- <router-link to="/CoffeePage/+page.svelte">Go to Sub Page</router-link> -->
+    <!-- <a href="Coffee/CoffeeMain.svelte">Page 2</a> -->
+    <!-- <a href="Coffee/CoffeeMain.svelte">Coffee Subpage Home</a> -->
+    <a href="/coffee-main">Coffee Subpage</a>
     <h1>Bean There, Brewed That</h1>
+    
   </div>
   <div class="subtitle">
     <h1>A blog documenting the coffee and food journey of a study abroad student.</h1>
@@ -150,11 +156,7 @@
     <progress value={offset || 0} />
   </div>
 
-  <svelte:component this={CoffeeMain} />
-  <!-- <router-link to="/CoffeePage/+page.svelte">Go to Sub Page</router-link> -->
-  <!-- <a href="Coffee/CoffeeMain.svelte">Page 2</a> -->
-  <!-- <a href="Coffee/CoffeeMain.svelte">Coffee Subpage Home</a> -->
-  <a href="/coffee-main">Coffee Subpage</a>
+
 
 </main>
 
