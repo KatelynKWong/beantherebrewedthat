@@ -49,8 +49,11 @@
     <h1>Bean There, Brewed That</h1>
   </div>
   <div class="title">
-    <a href="/coffee">Coffee Subpage</a>
-    <a href="/food">Food Subpage</a>
+    <!-- <a href="coffee">Coffee Subpage</a>
+    <a href="food">Food Subpage</a> -->
+    <a href={`coffee`}>Coffee Subpage</a>
+    <a href={`food`}>Food Subpage</a>
+
     <!-- <a href="test.html">Coffee</a> -->
     <!-- <a on:click={() => navigate('/coffee')}>Coffee Subpage</a> -->
     <h1>Bean There, Brewed That</h1>
