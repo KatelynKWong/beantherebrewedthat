@@ -13,7 +13,6 @@
   import Croissant from './assets/croissant.png';
 
   import CoffeeMain from "./Coffee/CoffeeMain.svelte";
-  // import CoffeeMain from "../routes/CoffeeMain.svelte";
   
   let count, index, offset=0, progress;
   let width, height;
@@ -37,23 +36,16 @@
   $: greyRectOpacity.set(index > 2 ? .8 : 0); // Adjusted condition to set opacity
 
 </script>
-<!-- 
-<Router>
-  <Route path="/coffee" component={CoffeeMain} />
-</Router> -->
 
 <main>
-  <div class="grey-rectangle" style={`opacity: ${$greyRectOpacity};`} transition:fade></div>
+  <div class="grey-rectangle" style={`opacity: ${$greyRectOpacity};`}></div>
 
-  <div class="header" style={`opacity: ${$headerOpacity};`} transition:fade>
+  <div class="header" style={`opacity: ${$headerOpacity};`}>
     <h1>Bean There, Brewed That</h1>
   </div>
   <div class="title">
-    <!-- <a href="coffee">Coffee Subpage</a>
-    <a href="food">Food Subpage</a> -->
     <a href={`coffee`}>Coffee Subpage</a>
-    <a href={`food`}>Food Subpage</a>
-
+    <a href={`food`}>Food Subpage</a> 
     <!-- <a href="test.html">Coffee</a> -->
     <!-- <a on:click={() => navigate('/coffee')}>Coffee Subpage</a> -->
     <h1>Bean There, Brewed That</h1>
@@ -64,7 +56,7 @@
   </div>
 
   <div class="subSection"
-      style={`opacity: ${$subSectionOpacity};`} transition:fade>
+      style={`opacity: ${$subSectionOpacity};`}>
     <span style="position: fixed; 
                 top: 39vh; 
                 font-size: 35px;
@@ -92,27 +84,27 @@
   src="{Polaroid}" 
   alt="Polaroid Photo"
   class="polaroid"
-  style={`opacity: ${$image1Opacity};`} transition:fade
+  style={`opacity: ${$image1Opacity};`} 
 />
  <img 
   src="{CherryTree}" 
   alt="Cherry Tree"
   class="polaroid"
-  style={`opacity: ${$image2Opacity};`} transition:fade
+  style={`opacity: ${$image2Opacity};`}
 />
 
   <img
   src="{Croissant}" 
   alt="Croissant"
   class="savory-stories"
-  style={`opacity: ${$image2Opacity};`} transition:fade
+  style={`opacity: ${$image2Opacity};`} 
 />
 
   <img
     src="{MelonPan}" 
     alt="Melon Pan"
     class="savory-stories"
-    style={`opacity: ${$image1Opacity};`} transition:fade
+    style={`opacity: ${$image1Opacity};`} 
   />
   
 
@@ -259,17 +251,6 @@
     padding: 1em;
     margin: 0 0 2em 0;
   }
-
-  .load-text {
-      position: fixed;
-      top: 50%;
-      left: 33%;
-      transform: translate(-33%, -50%);
-      z-index: 1; /* Ensure the text appears behind the Scrollyteller */
-      color: rgb(23, 23, 23); /* Adjust the text color as needed */
-      font-size: 20px; /* Adjust the font size as needed */
-      opacity: 0.7; /* Adjust the opacity as needed */
-    }
   .grey-rectangle {
     position: fixed;
     top: 0;
