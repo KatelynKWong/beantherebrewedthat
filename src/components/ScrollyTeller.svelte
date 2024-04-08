@@ -1,11 +1,9 @@
 <script>
+  import { Link, Router, Route } from "svelte-routing";
+
   import Scroller from "@sveltejs/svelte-scroller";
   import { tweened } from 'svelte/motion';
   import { cubicOut } from 'svelte/easing';
-  import EarthquakeMap from "./EarthquakeMap.svelte";
-  import StaticMap from "./StaticMap.svelte";
-  import FaultMap from "./FaultMap.svelte";
-  import { geoMercator } from "d3-geo";
   import Graph from "./Graph.svelte";
   import * as d3 from 'd3'; // Import D3 library
 
@@ -14,28 +12,11 @@
   import MelonPan from './assets/melon-pan.jpg';
   import Croissant from './assets/croissant.png';
 
+  import CoffeeMain from "./Coffee/CoffeeMain.svelte";
+  
   let count, index, offset=0, progress;
   let width, height;
 
-  let geoJsonToFit = {
-    type: "FeatureCollection",
-    features: [
-      {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [1, 0],
-        },
-      },
-      {
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [0, 1],
-        },
-      },
-    ],
-  };
   const progressBarOpacity = tweened(0, { duration: 400, easing: cubicOut });
   $: progressBarOpacity.set(index >= 1 ? 1 : 0); // Adjusted condition to set opacity
 
@@ -56,6 +37,9 @@
 
 </script>
 
+<Router>
+  <Route path="/coffee-main" component={CoffeeMain} />
+</Router>
 
 <main>
   <div class="grey-rectangle" style={`opacity: ${$greyRectOpacity};`} transition:fade></div>
@@ -94,7 +78,6 @@
               Food discoveries, favorite recipes, and more.</span>              
     
   </div>
-  <!-- <div class="scrolling-rectangle1"></div> -->
  
   <img
   src="{Polaroid}" 
@@ -102,15 +85,7 @@
   class="polaroid"
   style={`opacity: ${$image1Opacity};`} transition:fade
 />
- 
-  <!-- <img
-    src="{TokyoStreet}" 
-    alt="Tokyo Street"
-    class="tokyo-street"
-    style={`opacity: ${$image2Opacity};`} transition:fade
-  /> -->
-
-  <img
+ <img 
   src="{CherryTree}" 
   alt="Cherry Tree"
   class="polaroid"
@@ -124,9 +99,6 @@
   style={`opacity: ${$image2Opacity};`} transition:fade
 />
 
-
-
-  <!-- <div class="scrolling-rectangle2"></div> -->
   <img
     src="{MelonPan}" 
     alt="Melon Pan"
@@ -134,15 +106,9 @@
     style={`opacity: ${$image1Opacity};`} transition:fade
   />
   
-  <!-- <img
-    src="{BrownCake}" 
-    alt="Brown Cake"
-    class="brown-cake"
-    style={`opacity: ${$image2Opacity};`} transition:fade
-  /> -->
 
-<div class="load-text"
-  >Please wait until the website fully loads before scrolling...</div>
+<!-- <div class="load-text"
+  >Please wait until the website fully loads before scrolling...</div> -->
 
 <Scroller
   top={0.0}
@@ -161,13 +127,7 @@
       bind:clientWidth={width}
       bind:clientHeight={height}
     >
-    <EarthquakeMap bind:geoJsonToFit {index}/>
-    <FaultMap bind:geoJsonToFit {index}/>
     <Graph {index} {width} {height} />
-
-
-
-
   </div>
 
   <div class="foreground" slot="foreground">
@@ -179,43 +139,25 @@
     <section></section>
     <section></section>
     <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
   </div>
   
 </Scroller>
 
-
-<!-- Please wait while the blog loads... -->
-  <h1>Earthquake Interactive</h1>
-  <StaticMap bind:geoJsonToFit/>
-  <div>
-  <h1>Demo Video</h1>
-    <iframe class="video"
-      title="YouTube Video"
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/0DTqqdwqN4g"
-      frameborder="0"
-      allowfullscreen
-      style="position: relative; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 999;"
-    ></iframe>
-</div>
 <div 
     class="progress-bars"
     style={`opacity: ${$progressBarOpacity}; visibility: ${index >= 1 ? 'visible' : 'hidden'}`}
   >
     <progress value={offset || 0} />
   </div>
+
+  <svelte:component this={CoffeeMain} />
+  <!-- <router-link to="/CoffeePage/+page.svelte">Go to Sub Page</router-link> -->
+  <!-- <a href="Coffee/CoffeeMain.svelte">Page 2</a> -->
+  <!-- <a href="Coffee/CoffeeMain.svelte">Coffee Subpage Home</a> -->
+  <a href="/coffee-main">Coffee Subpage</a>
+
 </main>
+
 
 
 <style>
@@ -272,15 +214,6 @@
     object-fit: cover;
   }
 
-  .tokyo-street {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 33%;
-    height: 60vh;
-    z-index: 994;
-    object-fit: cover;
-  }
   .savory-stories {
     position: fixed;
     top: 55vh;
@@ -289,36 +222,6 @@
     height: 50vh;
     z-index: 994;
     object-fit: cover;
-  }
-  .brown-cake {
-    position: fixed;
-    top: 55vh;
-    right: 0;
-    width: 33%;
-    height: 50vh;
-    z-index: 994;
-    object-fit: cover;
-  }
-
-  .scrolling-rectangle1 {
-    position: fixed;
-    top: 0vh;
-    right: 0;
-    width: 33%;
-    height: 60vh;
-    background-color: rgb(97, 130, 88);
-    z-index: 994; /* Ensure the rectangle stays on top of other content */
-    padding: 1px 0
-  }
-  .scrolling-rectangle2 {
-    position: fixed;
-    top: 55vh;
-    right: 0;
-    width: 33%;
-    height: 50vh;
-    background-color: rgb(205, 196, 143);
-    z-index: 994; /* Ensure the rectangle stays on top of other content */
-    padding: 1px 0
   }
 
   .background {
@@ -356,14 +259,6 @@
     margin: 0 0 2em 0;
   }
 
-  .video {
-    width: 70%; /* Fixed width for standard YouTube embed */
-    height: 70vh; /* Fixed height for standard YouTube embed */
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
   .load-text {
       position: fixed;
       top: 50%;
