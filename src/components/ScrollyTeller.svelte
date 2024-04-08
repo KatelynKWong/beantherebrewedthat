@@ -144,7 +144,6 @@
     <section></section>
     <section></section>
     <section></section>
-    <section></section>
   </div>
   
 </Scroller>
@@ -155,9 +154,6 @@
   >
     <progress value={offset || 0} />
   </div>
-
-
-
 </main>
 
 
