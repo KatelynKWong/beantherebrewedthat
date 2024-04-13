@@ -81,11 +81,11 @@
   </div>
  
   <img
-  src="{Polaroid}" 
-  alt="Polaroid Photo"
-  class="polaroid"
-  style={`opacity: ${$image1Opacity};`} 
-/>
+    src="{Polaroid}" 
+    alt="Polaroid Photo"
+    class="polaroid"
+    style={`opacity: ${$image1Opacity};`} 
+  />
  <img 
   src="{CherryTree}" 
   alt="Cherry Tree"
