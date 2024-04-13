@@ -38,61 +38,42 @@
 </script>
 
 <main>
-  <div class="grey-rectangle" style={`opacity: ${$greyRectOpacity};`}></div>
-
+  <a href={index < 3 ? null : 'tokyo'}>
+    <div class="grey-rectangle1" style={`opacity: ${$greyRectOpacity};`}></div>
+  </a>  
+  <a href={index < 3 ? null : 'food'}>
+    <div class="grey-rectangle2" style={`opacity: ${$greyRectOpacity};`}></div>
+</a>
   <div class="header" style={`opacity: ${$headerOpacity};`}>
     <h1>Bean There, Brewed That</h1>
   </div>
   <div class="title">
-    <a href={`coffee`}>Coffee Subpage</a>
-    <a href={`food`}>Food Subpage</a> 
-    <!-- <a href="test.html">Coffee</a> -->
-    <!-- <a on:click={() => navigate('/coffee')}>Coffee Subpage</a> -->
+    <!-- <a href={`coffee`}>Coffee Subpage</a>
+    <a href={`food`}>Food Subpage</a>  -->
     <h1>Bean There, Brewed That</h1>
     <h4>A blog documenting the coffee and food journey of a study abroad student.</h4>
   </div>
-  <div class="subSection1"
-    style={`opacity: ${$subSectionOpacity};`}>
+
+  <a href={index < 3 ? null : 'tokyo'}>
+    <div class="subSection1" style={`opacity: ${$subSectionOpacity};`}>
       <h1 style="font-weight: 300;">Tokyo Tales</h1>
       <h4 style="font-weight: 300;">Hitotsubashi University study abroad experience.</h4>
-  </div>
-
-  <div class="subSection2"
-  style={`opacity: ${$subSectionOpacity};`}>
-    <h1 style="font-weight: 300;">Savory Stories</h1>
-    <h4 style="font-weight: 300;">Food discoveries, favorite recipes, and more.</h4>
-  </div>
-  <!-- <div class="subSection1"
-      style={`opacity: ${$subSectionOpacity};`}>
-    <span style="position: fixed; 
-                top: 39vh; 
-                font-size: 2.6vw;
-                left: 69%;"
-                >Tokyo Tales</span>
-    <span style="position: fixed; 
-                top: 45vh; 
-                left: 69%;
-                font-size: 1.4vw">
-                Hitotsubashi University study abroad experience.</span>
-    <span style="position: fixed; 
-                top: 85vh; 
-                font-size: 2.6vw;
-                left: 69%;"
-                >Savory Stories</span>
-    <span style="position: fixed; 
-              top: 90vh; 
-              left: 69%;
-              font-size: 1.4vw">
-              Food discoveries, favorite recipes, and more.</span>              
-    
-  </div> -->
+    </div>
+  </a>
+  
+  <a href={index < 3 ? null : 'food'}>
+    <div class="subSection2" style={`opacity: ${$subSectionOpacity};`}>
+      <h1 style="font-weight: 300;">Savory Stories</h1>
+      <h4 style="font-weight: 300;">Food discoveries, favorite recipes, and more.</h4>
+    </div>
+  </a>
+    <img
+      src="{Polaroid}" 
+      alt="Polaroid Photo"
+      class="polaroid"
+      style={`opacity: ${$image1Opacity};`} 
+    />
  
-  <img
-    src="{Polaroid}" 
-    alt="Polaroid Photo"
-    class="polaroid"
-    style={`opacity: ${$image1Opacity};`} 
-  />
  <img 
   src="{CherryTree}" 
   alt="Cherry Tree"
@@ -117,6 +98,8 @@
 
 <!-- <div class="load-text"
   >Please wait until the website fully loads before scrolling...</div> -->
+
+  <a href={index < 3 ? null : 'coffee'}>
 
 <Scroller
   top={0.0}
@@ -149,7 +132,7 @@
   </div>
   
 </Scroller>
-
+</a>
 <div 
     class="progress-bars"
     style={`opacity: ${$progressBarOpacity}; visibility: ${index >= 1 ? 'visible' : 'hidden'}`}
@@ -184,11 +167,11 @@
     transition: bottom 0.3s; /* Add smooth transition effect */
   }
   .title h1 {
-    margin-bottom: 6px; /* Adjust the margin-bottom as needed */
+    margin-bottom: 8px; /* Adjust the margin-bottom as needed */
   }
 
 .title h4 {
-  margin-top: 6px; /* Adjust the margin-top as needed */
+  margin-top: 8px; /* Adjust the margin-top as needed */
 }
 
   .subSection1 {
@@ -276,9 +259,18 @@
     padding: 1em;
     margin: 0 0 2em 0;
   }
-  .grey-rectangle {
+  .grey-rectangle1 {
     position: fixed;
     top: 0;
+    right: 0;
+    width: 33%; /* Adjust the width as needed */
+    height: 55%; /* Adjust the height as needed */
+    background-color: rgba(128, 128, 128, 0.5); /* Grey color with 50% opacity */
+    z-index: 997; /* Ensure the rectangle appears on top of other elements */
+  }
+  .grey-rectangle2 {
+    position: fixed;
+    top: 55vh;
     right: 0;
     width: 33%; /* Adjust the width as needed */
     height: 100%; /* Adjust the height as needed */

@@ -57,7 +57,7 @@
       tweenedAboutImageOpacity.set(1)
      tweenedCoffeeHeaderY.set(height*1/5)
       tweenedAuthorOpacity.set(1)
-      tweenedAuthorY.set(height*2/5)
+      tweenedAuthorY.set(height*3/8)
       tweenedbackgroundIntroOpacity.set(1)
       introImageOpacity.set(0)
       tweenedRectOpacity.set(.2)
@@ -149,10 +149,10 @@
   </text>
 
   <rect 
-  width="40vw" 
-  height="34vw" 
-  x="20%" 
-  y="calc(35% - 4vw)" 
+  width="46vw" 
+  height="40vw" 
+  x="15%" 
+  y="calc(33% - 4vw)" 
   rx="20" 
   ry="20" 
   fill="white" 
@@ -160,31 +160,30 @@
 />
 
 <text class = "author"
-  x="5%"
   y={$tweenedAuthorY}
   text-anchor="left"
-  font-size="1.4vw"
+  font-size="1.7vw"
   opacity={$tweenedAuthorOpacity}
   in:fly={{ y: -300, duration: 1000 }}
   out:fly={{ y: -300, duration: 1000 }}
 >
-  <tspan x="25%" dy="-5%" font-size="80%">Katelyn is currently a college student from UCSD studying economics</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">abroad at Hitotsubashi University in Kunitachi, Tokyo. Though</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">her current major is mathematics and economics, her passion lies in</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">data science and analysis. She is seeking to explore any interdiscplinary</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">field in the intersection between data science, math, and econ.</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">One of Katelyn's favorite things to do in her free time is experiment</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">with making espresso from coffee beans. Ever since she was gifted an</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">espresso maker, she has devoted much of her time into developing the</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">perfect espresso prep methods with her machine. In doing so, she hopes</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">to familiarize herself with the art of making coffee to ultimately</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">achieve her future goal of opening up a hybrid coffee shop/internet cafe</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">that focuses on traditional coffee while offering computer services</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">to customers. </tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">In addition to making coffee, Katelyn also enjoys playing music with </tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">friends and creating watercolor art pieces. If you are interested in </tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">checking out more of her art, coffee, and study abroad experiences,</tspan>
-  <tspan x="25%" dy="1.5em" font-size="80%">please visit @twicks and @crusteacats on Instagram. Thank you!</tspan>
+  <tspan x="20%" dy="-5%" font-size="80%">Katelyn is currently a college student from UCSD studying economics</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">abroad at Hitotsubashi University in Kunitachi, Tokyo. Though</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">her current major is mathematics and economics, her passion lies in</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">data science and analysis. She is seeking to explore any interdiscplinary</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">field in the intersection between data science, math, and econ.</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">One of Katelyn's favorite things to do in her free time is experiment</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">with making espresso from coffee beans. Ever since she was gifted an</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">espresso maker, she has devoted much of her time into developing the</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">perfect espresso prep methods with her machine. In doing so, she hopes</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">to familiarize herself with the art of making coffee to ultimately</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">achieve her future goal of opening up a hybrid coffee shop/internet cafe</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">that focuses on traditional coffee while offering computer services</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">to customers. </tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">In addition to making coffee, Katelyn also enjoys playing music with </tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">friends and creating watercolor art pieces. If you are interested in </tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">checking out more of her art, coffee, and study abroad experiences,</tspan>
+  <tspan x="20%" dy="1.5em" font-size="80%">please visit @twicks and @crusteacats on Instagram. Thank you!</tspan>
 </text>
 
 <!-- Katelyn is currently a college student from UCSD
