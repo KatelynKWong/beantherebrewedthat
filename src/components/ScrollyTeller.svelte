@@ -33,7 +33,7 @@
   const greyRectOpacity = tweened(0, { duration: 400, easing: cubicOut });
   $: greyRectOpacity.set(index > 2 ? .8 : 0); // Adjusted condition to set opacity
 
-function refreshCoffeePageTwice() {
+function refreshCoffeePage() {
     // Navigate to the coffee page
     navigate('coffee');
 
@@ -41,11 +41,6 @@ function refreshCoffeePageTwice() {
     setTimeout(() => {
         // First refresh
         window.location.reload();
-
-        // Second refresh after another 1 second
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
     }, 1000);
 }
 
@@ -66,7 +61,7 @@ function refreshCoffeePageTwice() {
     <h4>A blog documenting the coffee and food journey of a study abroad student.</h4>
   </div>
 
-    <a href={index < 3 ? null : 'coffee'} on:click|preventDefault={refreshCoffeePageTwice}>
+    <a href={index < 3 ? null : 'coffee'} on:click={refreshCoffeePage}>
     <div class="subSection" style={`opacity: ${$subSectionOpacity};`}>
       <h1 style="font-weight: 300;">Caffeine Chronicles</h1>
       <h4 style="font-weight: 300;">A coffee making and tasting journal.</h4>

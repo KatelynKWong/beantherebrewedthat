@@ -33,11 +33,6 @@
     // Call adjustIntroPosition after the page is fully loaded
     window.onload = adjustIntroPosition;
 
-    // Refresh the page when it is opened
-    // if (!refreshed) {
-    //   window.location.reload();
-    //   refreshed = true; // Set the flag to indicate that the page has been refreshed
-    // }
   });
   function handleScroll() {
     // If scrolling down and scrolled more than 200 pixels, hide the intro text
