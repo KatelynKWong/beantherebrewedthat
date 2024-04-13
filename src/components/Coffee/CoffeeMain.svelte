@@ -25,9 +25,20 @@
   let introBottom = 0;
 
   onMount(() => {
+    
     window.addEventListener('scroll', handleScroll);
-  });
+    window.addEventListener('resize', adjustIntroPosition);
+    adjustIntroPosition(); // Call the function initially to set the intro position
 
+    // Call adjustIntroPosition after the page is fully loaded
+    window.onload = adjustIntroPosition;
+
+    // Refresh the page when it is opened
+    // if (!refreshed) {
+    //   window.location.reload();
+    //   refreshed = true; // Set the flag to indicate that the page has been refreshed
+    // }
+  });
   function handleScroll() {
     // If scrolling down and scrolled more than 200 pixels, hide the intro text
     if (window.scrollY > 750) {
@@ -37,13 +48,8 @@
     }
   }
 
-
-  onMount(() => {
-    window.addEventListener('resize', adjustIntroPosition);
-    adjustIntroPosition(); // Call the function initially to set the intro position
-  });
-
   function adjustIntroPosition() {
+    
     const coffeeMainPic = document.querySelector('.coffee_main');
     const intro = document.querySelector('.intro');
 
@@ -55,6 +61,7 @@
       introBottom = Math.max(0, window.innerHeight - coffeeMainPicRect.bottom);
     }
   }
+  
 </script>
 
 <main>
@@ -67,8 +74,9 @@
     <p>Caffeine Chronicles:</p>
     <p>The Tasting</p>
   </div>
-  <div class="intro" style="bottom: {introBottom + 20}px;">
-    <p>Welcome to my coffee journey! Here, I document my experiences at cafes
+  <!-- <div class="intro" style="bottom: {introBottom + 20}px;"> -->
+    <div class="intro" style="bottom: {introBottom + 20}px;">
+      <p>Welcome to my coffee journey! Here, I document my experiences at cafes
       worldwide. Consider this page a collection of cafe recommendations, though
       remember that taste is subjective, so my opinions are just that - opinions.</p>
   </div>
@@ -250,14 +258,6 @@
   background-color: rgba(76, 49, 24, 0.64);
 }
 
-
-  .intro.top {
-  top: 60vh; /* Adjust the top position as needed */
-}
-
-.intro.bottom {
-  bottom: 5vh; /* Adjust the bottom position as needed */
-}
   .coffee_main {
     width: 100%; /* Set the width to 100% of its container */
     height: 100%; /* Let the height adjust proportionally to maintain aspect ratio */
