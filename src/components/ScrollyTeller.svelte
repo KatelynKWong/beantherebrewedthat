@@ -11,8 +11,6 @@
   import Polaroid from './assets/polaroid.png';
   import MelonPan from './assets/melon-pan.jpg';
   import Croissant from './assets/croissant.png';
-
-  import CoffeeMain from "./Coffee/CoffeeMain.svelte";
   
   let count, index, offset=0, progress;
   let width, height;
@@ -24,7 +22,7 @@
   $: headerOpacity.set(index > 1 ? 1 : 0); // Adjusted condition to set opacity
 
   const subSectionOpacity = tweened(0, { duration: 400, easing: cubicOut });
-  $: subSectionOpacity.set(index > 2 ? 1 : 0); // Adjusted condition to set opacity
+  $: subSectionOpacity.set(index === 3 ? 1 : 0); // Adjusted condition to set opacity
 
   const image1Opacity = tweened(0, { duration: 400, easing: cubicOut });
   $: image1Opacity.set(index < 4 ? 1 : 0); // Adjusted condition to set opacity
@@ -34,6 +32,8 @@
 
   const greyRectOpacity = tweened(0, { duration: 400, easing: cubicOut });
   $: greyRectOpacity.set(index > 2 ? .8 : 0); // Adjusted condition to set opacity
+
+const caffeineTextY = tweened(0);
 
 </script>
 
@@ -48,11 +48,17 @@
     <h1>Bean There, Brewed That</h1>
   </div>
   <div class="title">
-    <!-- <a href={`coffee`}>Coffee Subpage</a>
-    <a href={`food`}>Food Subpage</a>  -->
     <h1>Bean There, Brewed That</h1>
     <h4>A blog documenting the coffee and food journey of a study abroad student.</h4>
   </div>
+
+  <a href={index < 3 ? null : 'coffee'}>
+    <div class="subSection" style={`opacity: ${$subSectionOpacity};`}>
+      <h1 style="font-weight: 300;">Caffeine Chronicles</h1>
+      <h4 style="font-weight: 300;">A coffee making and tasting journal.</h4>
+    </div>
+  </a>
+  
 
   <a href={index < 3 ? null : 'tokyo'}>
     <div class="subSection1" style={`opacity: ${$subSectionOpacity};`}>
@@ -118,7 +124,7 @@
       bind:clientWidth={width}
       bind:clientHeight={height}
     >
-    <Graph {index} {width} {height} />
+    <Graph {index} {width} {height}/>
   </div>
 
   <div class="foreground" slot="foreground">
@@ -173,7 +179,22 @@
 .title h4 {
   margin-top: 8px; /* Adjust the margin-top as needed */
 }
-
+.subSection {
+    position: fixed;
+    color: white;
+    z-index: 999;
+    font-size: 1.5vw;
+    bottom: 15%;
+    right: 36%;
+    text-align: right; /* Align text to the right */
+    transition: bottom 0.3s;
+}
+  .subSection h1 {
+    margin-bottom: 3px; /* Adjust the margin-bottom as needed */
+  }
+  .subSection h4 {
+    margin-top: 6px; /* Adjust the margin-top as needed */
+  }
   .subSection1 {
     position: fixed;
     color: white;
@@ -204,6 +225,11 @@
   }
   .subSection2 h4 {
     margin-top: 6px; /* Adjust the margin-top as needed */
+  }
+  .subSection:hover,
+  .subSection1:hover,
+  .subSection2:hover {
+    color: black;
   }
   .polaroid {
     position: fixed;
