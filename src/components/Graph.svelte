@@ -96,35 +96,35 @@
   {#if index > 0}
   <!-- intro text -->
   <rect 
-  width="555" 
-  height="305" 
-  x="20%" 
-  y="35%" 
-  rx="20" 
-  ry="20" 
-  fill="white" 
-  opacity={$tweenedAboutMeOpacity *3/4}
-/>
+    width="40vw" 
+    height="22vw" 
+    x="20%" 
+    y="calc(40% - 4vw)"
+    rx="20" 
+    ry="20" 
+    fill="white" 
+    opacity={$tweenedAboutMeOpacity *3/4}
+  />
+  <text class="aboutme"
+    x="5%"
+    y="40%"
+    font-size="1.4vw"
+    text-anchor="left"
+    opacity={$tweenedAboutMeOpacity}
+    in:fly={{ y: -300, duration: 1000 }}
+    out:fly={{ y: -300, duration: 1000 }}
+  >
+    <tspan x="25%" dy="0%">Hey there!! </tspan>
+    <tspan x="25%" dy="1.8em">Welcome to my blog where I share my adventures as a study</tspan>
+    <tspan x="25%" dy="1.8em">abroad student in Japan. I'll mainly be focusing about</tspan>
+    <tspan x="25%" dy="1.8em"> student life, diving into Japan's coffee scene, and sharing</tspan>
+    <tspan x="25%" dy="1.8em">delicious food and drink experiences. If you want to learn</tspan>
+    <tspan x="25%" dy="1.8em">more, just click on the sections below to explore each topic.</tspan>
+    <tspan x="25%" dy="1.8em">Let's enjoy discovering more about Japan together! </tspan>
+  </text>
 
-<text class = "aboutme"
-  x="5%"
-  y="40%"
-  text-anchor="left"
-  opacity={$tweenedAboutMeOpacity}
-  in:fly={{ y: -300, duration: 1000 }}
-  out:fly={{ y: -300, duration: 1000 }}
->
-  <tspan x="25%" dy="0%">Hey there!! </tspan>
-  <tspan x="25%" dy="1.8em">Welcome to my blog where I share my adventures as a study</tspan>
-  <tspan x="25%" dy="1.8em">abroad student in Japan. I'll mainly be focusing about</tspan>
-  <tspan x="25%" dy="1.8em"> student life, diving into Japan's coffee scene, and sharing</tspan>
-  <tspan x="25%" dy="1.8em">delicious food and drink experiences. If you want to learn</tspan>
-  <tspan x="25%" dy="1.8em">more, just click on the sections below to explore each topic.</tspan>
-  <tspan x="25%" dy="1.8em">Let's enjoy discovering more about Japan together! </tspan>
-</text>
 
-
-    <rect class="grey-rectangle"
+  <rect class="grey-rectangle"
     width="100%"  
     height="100%" 
     x="0"
@@ -144,15 +144,15 @@
     in:fly={{ y: -300, duration: 1000 }}
     out:fly={{ y: -300, duration: 1000 }}
   >
-    <tspan x="97%" dy="-0.6em" font-size="35">Caffeine Chronicles</tspan>
-    <tspan x="97%" dy="1.8em" font-size="20">A coffee making and tasting journal.</tspan>
+    <tspan x="97%" dy="-0.6em" font-size="3vw">Caffeine Chronicles</tspan>
+    <tspan x="97%" dy="1.8em" font-size="1.5vw">A coffee making and tasting journal.</tspan>
   </text>
 
   <rect 
-  width="580" 
-  height="470" 
-  x="15%" 
-  y="30%" 
+  width="40vw" 
+  height="34vw" 
+  x="20%" 
+  y="calc(35% - 4vw)" 
   rx="20" 
   ry="20" 
   fill="white" 
@@ -163,6 +163,7 @@
   x="5%"
   y={$tweenedAuthorY}
   text-anchor="left"
+  font-size="1.4vw"
   opacity={$tweenedAuthorOpacity}
   in:fly={{ y: -300, duration: 1000 }}
   out:fly={{ y: -300, duration: 1000 }}

@@ -49,36 +49,43 @@
     <!-- <a href="test.html">Coffee</a> -->
     <!-- <a on:click={() => navigate('/coffee')}>Coffee Subpage</a> -->
     <h1>Bean There, Brewed That</h1>
-    
+    <h4>A blog documenting the coffee and food journey of a study abroad student.</h4>
   </div>
-  <div class="subtitle">
-    <h1>A blog documenting the coffee and food journey of a study abroad student.</h1>
+  <div class="subSection1"
+    style={`opacity: ${$subSectionOpacity};`}>
+      <h1 style="font-weight: 300;">Tokyo Tales</h1>
+      <h4 style="font-weight: 300;">Hitotsubashi University study abroad experience.</h4>
   </div>
 
-  <div class="subSection"
+  <div class="subSection2"
+  style={`opacity: ${$subSectionOpacity};`}>
+    <h1 style="font-weight: 300;">Savory Stories</h1>
+    <h4 style="font-weight: 300;">Food discoveries, favorite recipes, and more.</h4>
+  </div>
+  <!-- <div class="subSection1"
       style={`opacity: ${$subSectionOpacity};`}>
     <span style="position: fixed; 
                 top: 39vh; 
-                font-size: 35px;
+                font-size: 2.6vw;
                 left: 69%;"
                 >Tokyo Tales</span>
     <span style="position: fixed; 
                 top: 45vh; 
                 left: 69%;
-                font-size: 20px">
+                font-size: 1.4vw">
                 Hitotsubashi University study abroad experience.</span>
     <span style="position: fixed; 
                 top: 85vh; 
-                font-size: 35px;
+                font-size: 2.6vw;
                 left: 69%;"
                 >Savory Stories</span>
     <span style="position: fixed; 
               top: 90vh; 
               left: 69%;
-              font-size: 20px">
+              font-size: 1.4vw">
               Food discoveries, favorite recipes, and more.</span>              
     
-  </div>
+  </div> -->
  
   <img
     src="{Polaroid}" 
@@ -165,38 +172,56 @@
     padding: 1px 0; /* Add padding for better appearance */
   }
   .title {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: 500;
     position: absolute;
     color: white;
-    top: 60vh; /* Adjusted position to ensure visibility */
+    top: 60%; /* Adjusted position to ensure visibility */
     left: 4%;
     width: 100%;
     padding: 10px;
     z-index: 999; /* Ensure the title stays above other content */
     transition: bottom 0.3s; /* Add smooth transition effect */
   }
-  .subtitle {
-    font-size: 10px;
-    font-weight: 500;
-    position: absolute;
-    color: white;
-    top: 70vh; /* Adjusted position to ensure visibility */
-    left: 4%;
-    width: 100%;
-    padding: 10px;
-    z-index: 999; /* Ensure the title stays above other content */
-    transition: bottom 0.3s; /* Add smooth transition effect */
+  .title h1 {
+    margin-bottom: 6px; /* Adjust the margin-bottom as needed */
   }
-  .subSection {
+
+.title h4 {
+  margin-top: 6px; /* Adjust the margin-top as needed */
+}
+
+  .subSection1 {
     position: fixed;
     color: white;
     z-index: 999;
-    font-weight: 300;
-    font-size: 35px;
+    font-size: 1.4vw;
+    bottom: 50%;
+    left: 69%;
     transition: bottom 0.3s
   }
+  .subSection1 h1 {
+    margin-bottom: 3px; /* Adjust the margin-bottom as needed */
+  }
+  .subSection1 h4 {
+    margin-top: 6px; /* Adjust the margin-top as needed */
+  }
 
+  .subSection2 {
+    position: fixed;
+    color: white;
+    z-index: 999;
+    font-size: 1.4vw;
+    bottom: 5%;
+    left: 69%;
+    transition: bottom 0.3s
+  }
+  .subSection2 h1 {
+    margin-bottom: 3px; /* Adjust the margin-bottom as needed */
+  }
+  .subSection2 h4 {
+    margin-top: 6px; /* Adjust the margin-top as needed */
+  }
   .polaroid {
     position: fixed;
     top: 0;

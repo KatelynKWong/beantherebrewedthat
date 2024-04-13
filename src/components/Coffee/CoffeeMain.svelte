@@ -30,7 +30,7 @@
 
   function handleScroll() {
     // If scrolling down and scrolled more than 200 pixels, hide the intro text
-    if (window.scrollY > 200) {
+    if (window.scrollY > 750) {
       showBanner = false;
     } else {
       showBanner = true;
@@ -68,11 +68,9 @@
     <p>The Tasting</p>
   </div>
   <div class="intro" style="bottom: {introBottom + 20}px;">
-    <p>Welcome to where I share my coffee journey! This is 
-    where I share the various experiences I have had at cafes all over the world.
-    Feel free to treat this page as a page of cafe recommendations. Keep in mind
-    that taste is very subjective so these recommendations and reviews are merely
-    my opinion.</p>
+    <p>Welcome to my coffee journey! Here, I document my experiences at cafes
+      worldwide. Consider this page a collection of cafe recommendations, though
+      remember that taste is subjective, so my opinions are just that - opinions.</p>
   </div>
   <div class="header" style="opacity: {showBanner ? 1 : 0}">
     <h1>Bean There, Brewed That</h1>
