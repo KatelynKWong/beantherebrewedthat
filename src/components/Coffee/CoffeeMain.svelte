@@ -16,6 +16,9 @@
   import Anthrop from './assets/Anthrop.png';
   import Excelsior from './assets/Excelsior.png';
   import Shirohige from './assets/Shirohige.png';
+  import Zebra from './assets/Zebra.png';
+  import No from './assets/CafeNo.png';
+  import CafeShop from './assets/cafeshop.png';
 
   let count, index, offset=0, progress;
   let width, height;
@@ -134,6 +137,27 @@
     <div class="column">
       <img 
         src="{Excelsior}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Zebra}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{No}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{CafeShop}" 
         alt="Coffee Art"
         class="coffee_main"
       />
