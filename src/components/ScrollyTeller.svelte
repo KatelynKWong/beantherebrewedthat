@@ -12,7 +12,7 @@
   import * as d3 from 'd3'; // Import D3 library
   import { Link, Router, Route, navigate } from "svelte-routing";
 
-  import CoffeeMain from "./Coffee/CoffeeMain.svelte";
+  import CoffeeTaste from "./Coffee/CoffeeTaste.svelte";
   
   let count, index, offset=0, progress;
   let width, height;
