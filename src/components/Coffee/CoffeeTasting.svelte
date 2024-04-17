@@ -19,7 +19,7 @@
   import Zebra from './assets/Zebra.png';
   import No from './assets/CafeNo.png';
   import CafeShop from './assets/cafeshop.png';
-  // import CafeSucre from './assets/cafesucre.png';
+  import CafeSucre from './assets/CafeSucre.png';
 
   let count, index, offset=0, progress;
   let width, height;
@@ -164,13 +164,13 @@
         class="coffee_main"
       />
     </div>
-    <!-- <div class="column">
+    <div class="column">
       <img 
         src="{CafeSucre}" 
         alt="Coffee Art"
         class="coffee_main"
       />
-    </div> -->
+    </div>
   </div>
 
   <Scroller
