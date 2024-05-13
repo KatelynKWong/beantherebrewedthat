@@ -95,7 +95,7 @@
   <!-- intro text -->
   <rect 
     width="40vw" 
-    height="22vw" 
+    height="24vw" 
     x="20%" 
     y="calc(40% - 4vw)"
     rx="20" 
@@ -119,6 +119,7 @@
     <tspan x="25%" dy="1.8em">delicious food and drink experiences. If you want to learn</tspan>
     <tspan x="25%" dy="1.8em">more, just click on the sections below to explore each topic.</tspan>
     <tspan x="25%" dy="1.8em">Let's enjoy discovering more about Japan together! </tspan>
+    <tspan x="25%" dy="1.8em" fill="red">Please scroll to see more. </tspan>
   </text>
 
   <rect class="grey-rectangle"
