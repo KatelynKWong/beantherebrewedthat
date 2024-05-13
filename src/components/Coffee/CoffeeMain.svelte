@@ -88,10 +88,9 @@
 }
 
 .coffee_main {
-  height: 100vh;
+  height: 85vh;
   width: 50vw;
   object-fit: cover;
-  left: 0%;
 }
 
 .image-container {
@@ -103,13 +102,14 @@
 
 .text-overlay {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   text-align: center;
   border-radius: 10px;
+  font-size: 1.5vw;
 }
 
 .text-overlay h2,

@@ -20,6 +20,16 @@
   import No from './assets/CafeNo.png';
   import CafeShop from './assets/cafeshop.png';
   import CafeSucre from './assets/CafeSucre.png';
+  import Tullys from './assets/Tullys.png';
+  import Hakujuji from './assets/Hakujuji.png';
+  import Midflow1 from './assets/Midflow.png';
+  import Midflow2 from './assets/Midflow2.png';
+  import Lambre from './assets/Lambre.png';
+  import Starbucks from './assets/Starbucks.png';
+  import Moon from './assets/MoonCafe.png';
+  import Coucou from './assets/coucou.png';
+  import Coucou1 from './assets/coucou2.png';
+  import Kielo from './assets/Kielo.png';
 
   let count, index, offset=0, progress;
   let width, height;
@@ -167,6 +177,69 @@
     <div class="column">
       <img 
         src="{CafeSucre}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Tullys}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Hakujuji}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Midflow1}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Midflow2}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Lambre}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Starbucks}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Moon}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Coucou1}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Kielo}" 
         alt="Coffee Art"
         class="coffee_main"
       />
