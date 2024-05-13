@@ -27,8 +27,8 @@
   import Lambre from './assets/Lambre.png';
   import Starbucks from './assets/Starbucks.png';
   import Moon from './assets/MoonCafe.png';
-  import Coucou from './assets/coucou.png';
-  import Coucou1 from './assets/coucou2.png';
+  import Coucou from './assets/Coucou.png';
+  import Coucou1 from './assets/Coucou2.png';
   import Kielo from './assets/Kielo.png';
 
   let count, index, offset=0, progress;
