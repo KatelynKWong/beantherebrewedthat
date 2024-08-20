@@ -273,7 +273,7 @@
         class="coffee_main"
       />
     </div>
-    <div class="column">
+    <!-- <div class="column">
       <img 
         src="{Gingerstar}" 
         alt="Coffee Art"
@@ -412,7 +412,7 @@
         alt="Coffee Art"
         class="coffee_main"
       />
-    </div>
+    </div> -->
   </div>
 
   <Scroller
