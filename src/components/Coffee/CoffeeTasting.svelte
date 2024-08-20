@@ -273,7 +273,7 @@
         class="coffee_main"
       />
     </div>
-    <!-- <div class="column">
+    <div class="column">
       <img 
         src="{Gingerstar}" 
         alt="Coffee Art"
@@ -322,6 +322,7 @@
         class="coffee_main"
       />
     </div>
+    <!-- 
     <div class="column">
       <img 
         src="{Kukka}" 
