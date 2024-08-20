@@ -31,6 +31,28 @@
   import Coucou1 from './assets/Coucou2.png';
   import Kielo from './assets/Kielo.png';
 
+  import Kiki from './assets/Kiki.png';
+  import Gingerstar from './assets/Gingerstar.png';
+  import MusashinoBunko from './assets/MusashinoBunko.png';
+  import Kugutsusou from './assets/Kugutsusou.png';
+  import Chops from './assets/Chops.png';
+  import GrainRoaster from './assets/GrainRoaster.png';
+  import SatenTeahouse from './assets/SatenTeahouse.png';
+  import NozyCoffee from './assets/NozyCoffee.png';
+  import Kukka from './assets/Kukka.png';
+  import FlatWhiteFactory from './assets/FlatWhiteFactory.png';
+  import Ord from './assets/Ord.png';
+  import MoronCafe from './assets/MoronCafe.png';
+  import Rojinasabo from './assets/Rojinasabo.png';
+  import BlueBottle from './assets/BlueBottle.png';
+  import GrainRoaster1 from './assets/GrainRoaster1.png';
+  import PapCoffee from './assets/PapCoffee.png';
+  import TetronCoffee from './assets/TetronCoffee.png';
+  import StarbucksRoastery from './assets/StarbucksRoastery.png';
+  import CafeAppassionato from './assets/CafeAppassionato.png';
+  import DeanDeluca from './assets/DeanDeluca.png';
+  import Voyager from './assets/Voyager.png';
+
   let count, index, offset=0, progress;
   let width, height;
   let showBanner = true;
@@ -240,6 +262,153 @@
     <div class="column">
       <img 
         src="{Kielo}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Kiki}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Gingerstar}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{MusashinoBunko}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Kugutsusou}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Chops}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{GrainRoaster}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{SatenTeahouse}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{NozyCoffee}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Kukka}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{FlatWhiteFactory}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Ord}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{MoronCafe}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Rojinasabo}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{BlueBottle}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{GrainRoaster1}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{PapCoffee}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{TetronCoffee}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{StarbucksRoastery}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{CafeAppassionato}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{DeanDeluca}" 
+        alt="Coffee Art"
+        class="coffee_main"
+      />
+    </div>
+    <div class="column">
+      <img 
+        src="{Voyager}" 
         alt="Coffee Art"
         class="coffee_main"
       />

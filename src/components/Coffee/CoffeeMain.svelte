@@ -41,7 +41,7 @@
         />
         <div class="text-overlay">
           <h2 style="color: white;">The Making:</h2>
-          <p style="color: white;">A journal featuring my coffee making journey</p>
+          <p style="color: white;">A coffee making journal</p>
         </div>
       </div>
     </a>
