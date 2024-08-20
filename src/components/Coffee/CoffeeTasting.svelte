@@ -322,7 +322,6 @@
         class="coffee_main"
       />
     </div>
-    <!-- 
     <div class="column">
       <img 
         src="{Kukka}" 
@@ -365,6 +364,7 @@
         class="coffee_main"
       />
     </div>
+    <!-- 
     <div class="column">
       <img 
         src="{GrainRoaster1}" 
