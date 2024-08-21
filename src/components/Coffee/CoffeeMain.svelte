@@ -8,7 +8,7 @@
 
 <main>
   <div class="header">
-    <a href="" class="home-link">
+    <a href="/" class="home-link">
       <h1 style="color: white">Bean There, Brewed That</h1>
     </a>
   </div>
