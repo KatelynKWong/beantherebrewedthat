@@ -3,6 +3,7 @@
   import { tweened } from 'svelte/motion';
   import { cubicOut } from 'svelte/easing';
   import { onMount, afterUpdate } from 'svelte';
+  import { base } from '$app/paths';
   import * as d3 from 'd3'; // Import D3 library
 
   import CoffeeMainPic from './assets/CoffeeMainPic.jpeg';
@@ -160,7 +161,7 @@
 
 <!-- Fix! -->
   <div class="header" style="opacity: {showBanner ? 1 : 0}">
-    <a href="" class="home-link">
+    <a href="{base}/" class="home-link">
       <h1 style="color: white">Bean There, Brewed That</h1>
     </a>
   </div>
