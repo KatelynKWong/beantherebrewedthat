@@ -6,6 +6,8 @@
   import { base } from '$app/paths';
   import * as d3 from 'd3'; // Import D3 library
 
+  import ModalReviews from './ModalReviews.svelte';
+
   import CoffeeMainPic from './assets/CoffeeMainPic.jpeg';
   import CoffeeIcon from './assets/CoffeeIcon.png';
   import DoubleTall from './assets/DoubleTall.png';
@@ -58,6 +60,9 @@
   let width, height;
   let showBanner = true;
   let selectedSortOption = 'latest';
+  let selectedImage = null;
+  let isModalOpen = false;
+
 
   let images = [
   { src: CoffeeIcon, date: '2024-03-29', rating: 7.0, country: 'Japan' },
@@ -117,6 +122,7 @@
     showBanner = window.scrollY <= 750;
   }
 
+  
   function adjustIntroPosition() {
     const coffeeMainPic = document.querySelector('.coffee_main');
     const intro = document.querySelector('.intro');
@@ -126,6 +132,17 @@
       const introBottomOffset = window.innerHeight - coffeeMainPicRect.bottom;
       intro.style.bottom = `${Math.max(0, introBottomOffset)}px`;
     }
+  }
+
+  function openModal(image) {
+    console.log('Opening modal with image:', image);
+    selectedImage = image;
+    isModalOpen = true;
+  }
+
+  function closeModal() {
+    isModalOpen = false;
+    selectedImage = null;
   }
 
   $: sortedImages = [...images].sort((a, b) => {
@@ -159,12 +176,18 @@
       is subjective, so my opinions are just that - opinions.</p>
   </div>
 
-<!-- Fix! -->
   <div class="header" style="opacity: {showBanner ? 1 : 0}">
     <a href="{base}/" class="home-link">
       <h1 style="color: white">Bean There, Brewed That</h1>
     </a>
   </div>
+
+  <ModalReviews
+    image={selectedImage}
+    isOpen={isModalOpen}
+    onClose={closeModal}
+  />
+
 
   <select bind:value={selectedSortOption}>
     <option value="latest">Latest</option>
@@ -175,322 +198,12 @@
 
   <div class="row">
     {#each sortedImages as image (image.src)}
-      <div class="column">
+      <div class="column" on:click={() => openModal(image)}>
         <img src={image.src} alt="Coffee Art" class="coffee_main" />
       </div>
     {/each}
   </div>
-  
-  <!-- <div class="row">
-    <div class="column">
-      <img 
-        src="{CoffeeIcon}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{DoubleTall}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{CafeReissue}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>  
-    <div class="column">
-      <img 
-        src="{CoffeeTaiga}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{CoffeeTaiga1}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Bridge}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{CafeRyusenkei}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Shirohige}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Anthrop}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Excelsior}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Zebra}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{No}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{CafeShop}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{CafeSucre}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Tullys}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Hakujuji}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Midflow1}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Midflow2}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Lambre}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Starbucks}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Moon}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Coucou1}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Kielo}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Kiki}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Gingerstar}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{MusashinoBunko}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Kugutsusou}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Chops}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{GrainRoaster}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{SatenTeahouse}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{NozyCoffee}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Kukka}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{FlatWhiteFactory}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Ord}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{MoronCafe}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Rojinasabo}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{BlueBottle}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{GrainRoaster1}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{PapCoffee}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{TetronCoffee}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{StarbucksRoastery}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{CafeAppassionato}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{DeanDeluca}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div>
-    <div class="column">
-      <img 
-        src="{Voyager}" 
-        alt="Coffee Art"
-        class="coffee_main"
-      />
-    </div> 
-  </div> -->
+
 
   <Scroller
     top={0.0}
@@ -655,4 +368,11 @@
     margin: 0 0 2em 0;
   }
 
+  .column {
+    pointer-events: auto;
+    z-index: 1;
+    cursor: pointer; /* Make sure the cursor indicates clickable elements */
+    position: relative; /* Ensure the positioning allows for click interactions */
+
+  }
 </style>
