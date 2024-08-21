@@ -16,7 +16,9 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+			// base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+			base: process.env.BASE_PATH || '/beantherebrewedthat'
+
 		},
 		// routes: [
         //     // { src: 'coffee', dest: './src/routes/coffee/+page.svelte' },
