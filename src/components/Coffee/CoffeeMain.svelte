@@ -3,12 +3,13 @@
   // src/components/Coffee/CoffeeTasting.svelte
   import PortaFilter from './assets/PortaFilter.jpeg';
   import CafeTable from './assets/CafeTable.jpeg';
+  import { base } from '$app/paths';
 
 </script>
 
 <main>
   <div class="header">
-    <a href="/" class="home-link">
+    <a href="{base}/" class="home-link">
       <h1 style="color: white">Bean There, Brewed That</h1>
     </a>
   </div>
