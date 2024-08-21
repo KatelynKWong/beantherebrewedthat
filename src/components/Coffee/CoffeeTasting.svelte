@@ -160,7 +160,7 @@
 
 <!-- Fix! -->
   <div class="header" style="opacity: {showBanner ? 1 : 0}">
-    <a href="/" class="home-link">
+    <a href="" class="home-link">
       <h1 style="color: white">Bean There, Brewed That</h1>
     </a>
   </div>
