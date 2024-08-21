@@ -56,6 +56,55 @@
   let count, index, offset=0, progress;
   let width, height;
   let showBanner = true;
+  let selectedSortOption = 'latest';
+
+  let images = [
+  { src: CoffeeIcon, date: '2024-03-29', rating: 7.0, country: 'Japan' },
+  { src: DoubleTall, date: '2024-03-30', rating: 7.0, country: 'Japan' },
+  { src: CafeReissue, date: '2024-03-31', rating: 7.0, country: 'Japan' },
+  { src: CoffeeTaiga, date: '2024-04-02', rating: 8.5, country: 'Japan' },
+  { src: CoffeeTaiga1, date: '2024-04-03', rating: 8.0, country: 'Japan' },
+  { src: Bridge, date: '2024-04-05', rating: 7.5, country: 'Japan' },
+  { src: CafeRyusenkei, date: '2024-04-10', rating: 6.0, country: 'Japan' },
+  { src: Anthrop, date: '2024-04-10', rating: 7.0, country: 'Japan' },
+  { src: Excelsior, date: '2024-04-12', rating: 7.5, country: 'Japan' },
+  { src: Shirohige, date: '2024-04-10', rating: 8.0, country: 'Japan' },
+  { src: Zebra, date: '2024-04-14', rating: 7.5, country: 'Japan' },
+  { src: No, date: '2024-04-14', rating: 7.0, country: 'Japan' },
+  { src: CafeShop, date: '2024-04-15', rating: 6.0, country: 'Japan' },
+  { src: CafeSucre, date: '2024-04-17', rating: 7.5, country: 'Japan' },
+  { src: Tullys, date: '2024-04-18', rating: 7.0, country: 'Japan' },
+  { src: Hakujuji, date: '2024-04-22', rating: 5.0, country: 'Japan' },
+  { src: Midflow1, date: '2024-04-26', rating: 9.0, country: 'Japan' },
+  { src: Midflow2, date: '2024-04-30', rating: 7.0, country: 'Japan' },
+  { src: Lambre, date: '2024-04-27', rating: 6.5, country: 'Japan' },
+  { src: Starbucks, date: '2024-04-29', rating: 7.0, country: 'Japan' },
+  { src: Moon, date: '2024-05-05', rating: 6.0, country: 'Japan' },
+  { src: Coucou1, date: '2024-05-06', rating: 7.5, country: 'Japan' },
+  { src: Kielo, date: '2024-05-12', rating: 9.0, country: 'Japan' },
+  { src: Kiki, date: '2024-05-14', rating: 4.5, country: 'Japan' },
+  { src: Gingerstar, date: '2024-05-17', rating: 5.0, country: 'Japan' },
+  { src: MusashinoBunko, date: '2024-05-19', rating: 7.0, country: 'Japan' },
+  { src: Kugutsusou, date: '2024-05-19', rating: 6.0, country: 'Japan' },
+  { src: Chops, date: '2024-05-26', rating: 9.0, country: 'Japan' },
+  { src: GrainRoaster, date: '2024-05-28', rating: 8.0, country: 'Japan' },
+  { src: SatenTeahouse, date: '2024-06-01', rating: 6.0, country: 'Japan' },
+  { src: NozyCoffee, date: '2024-06-02', rating: 10.0, country: 'Japan' },
+  { src: Kukka, date: '2024-06-08', rating: 6.0, country: 'Japan' },
+  { src: FlatWhiteFactory, date: '2024-06-08', rating: 8.0, country: 'Japan' },
+  { src: Ord, date: '2024-06-10', rating: 9.0, country: 'Japan' },
+  { src: MoronCafe, date: '2024-06-14', rating: 7.0, country: 'Japan' },
+  { src: Rojinasabo, date: '2024-06-20', rating: 3.0, country: 'Japan' },
+  { src: BlueBottle, date: '2024-06-28', rating: 7.5, country: 'Japan' },
+  { src: GrainRoaster1, date: '2024-07-04', rating: 7.0, country: 'Japan' },
+  { src: PapCoffee, date: '2024-07-05', rating: 6.0, country: 'Japan' },
+  { src: TetronCoffee, date: '2024-07-12', rating: 7.5, country: 'Japan' },
+  { src: StarbucksRoastery, date: '2024-07-16', rating: 7.0, country: 'Japan' },
+  { src: CafeAppassionato, date: '2024-07-25', rating: 6.5, country: 'Japan' },
+  { src: DeanDeluca, date: '2024-08-03', rating: 5.5, country: 'Japan' },
+  { src: Voyager, date: '2024-08-14', rating: 7.5, country: 'USA' },
+  // Add more images here
+];
 
   onMount(() => {
     window.addEventListener('scroll', handleScroll);
@@ -77,6 +126,19 @@
       intro.style.bottom = `${Math.max(0, introBottomOffset)}px`;
     }
   }
+
+  $: sortedImages = [...images].sort((a, b) => {
+    if (selectedSortOption === "latest") {
+      return new Date(b.date) - new Date(a.date);
+    } else if (selectedSortOption === "earliest") {
+      return new Date(a.date) - new Date(b.date)
+    } else if (selectedSortOption === "rating") {
+      return b.rating - a.rating;
+    } else if (selectedSortOption === "country") {
+      return a.country.localeCompare(b.country);
+    }
+  });
+
 </script>
 
 <main>
@@ -98,13 +160,27 @@
 
 <!-- Fix! -->
   <div class="header" style="opacity: {showBanner ? 1 : 0}">
-    <a href="" class="home-link">
+    <a href="/" class="home-link">
       <h1 style="color: white">Bean There, Brewed That</h1>
     </a>
   </div>
 
+  <select bind:value={selectedSortOption}>
+    <option value="latest">Latest</option>
+    <option value="earliest">Earliest</option>
+    <option value="rating">Rating</option>
+    <option value="country">Country</option>
+  </select>
 
   <div class="row">
+    {#each sortedImages as image (image.src)}
+      <div class="column">
+        <img src={image.src} alt="Coffee Art" class="coffee_main" />
+      </div>
+    {/each}
+  </div>
+  
+  <!-- <div class="row">
     <div class="column">
       <img 
         src="{CoffeeIcon}" 
@@ -412,8 +488,8 @@
         alt="Coffee Art"
         class="coffee_main"
       />
-    </div>
-  </div>
+    </div> 
+  </div> -->
 
   <Scroller
     top={0.0}
