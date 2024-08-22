@@ -1,4 +1,6 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+
   export let image = {};
   export let isOpen = false;
   export let onClose = () => {};
@@ -6,66 +8,99 @@
   function close() {
     onClose();
   }
+  
+    // Function to format the date
+    function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  }
 </script>
 
 {#if isOpen}
   <div class="modal-overlay" on:click={close}>
     <div class="modal-content" on:click|stopPropagation>
       <span class="close" on:click={close}>&times;</span>
-      <img src={image.src} alt="Selected Coffee Art" class="modal-image" />
+        <!-- <img src={image.src} alt="Selected Coffee Art" class="modal-image" /> -->
+      
+        <div class="modal-image-container">
+          {#each image.gallery as photo}
+            <img src={photo} alt="Selected Coffee Art" class="modal-image" />
+          {/each}
+        </div>
       <div class="modal-details">
-        <p>Date: {image.date}</p>
-        <p>Rating: {image.rating}</p>
-        <p>Country: {image.country}</p>
+        <p>{formatDate(image.date)}</p>
+        <p>Rating: {image.rating+'/10'}</p>
+        <p>{image.review}</p>
+        <p>Location: {image.country}</p>
       </div>
     </div>
   </div>
 {/if}
-
 <style>
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    overflow: auto; /* Prevents scrolling of the overlay */
-  }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-  .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    max-width: 100vw; /* Adjust width to 90% of viewport width */
-    max-height: 100vh; /* Adjust height to 90% of viewport height */
-    overflow: hidden; /* Hide overflow from content */
-    display: flex;
-    flex-direction: column;
-  }
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  box-sizing: border-box;
+}
 
-  .modal-image {
-    max-width: 100%;
-    max-height: 60vh; /* Constrain the image to a portion of the viewport height */
-    object-fit: contain; /* Ensure image scales correctly */
-    margin-bottom: 20px;
-  }
+.modal-image-container {
+  display: flex;
+  flex-wrap: nowrap; /* Ensure images are in a single row */
+  gap: 10px;
+  justify-content: center; /* Center images horizontally */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  margin-bottom: 20px;
+  max-width: calc(100% - 20px); /* Ensure it fits within the modal */
+}
 
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1010; /* Ensure close button is on top of other elements */
-  }
+.modal-image {
+  width: 35vw; /* Set the width to at least 35% of the viewport width */
+  height: auto; /* Adjust height automatically to maintain aspect ratio */
+  max-width: 100%; /* Ensure images do not exceed the container width */
+  max-height: 70vh; /* Constrain the height to a portion of the viewport height */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+  border-radius: 8px; /* Optional: round the corners */
+}
 
-  .modal-details {
-    overflow: auto; /* Allow scrolling for details if necessary */
-  }
+.modal-details {
+  position: relative; /* Allow positioning adjustments */
+  max-width: calc(100% - 40px); /* Less than image container width */
+  margin-left: 10px; /* Align to the left with some margin */
+  padding: 10px;
+  color: black;
+  background: white;
+  box-sizing: border-box;
+  overflow-wrap: break-word; /* Ensure text wraps within the container */
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1010;
+}
+
 </style>

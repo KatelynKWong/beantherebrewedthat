@@ -65,50 +65,137 @@
 
 
   let images = [
-  { src: CoffeeIcon, date: '2024-03-29', rating: 7.0, country: 'Japan' },
-  { src: DoubleTall, date: '2024-03-30', rating: 7.0, country: 'Japan' },
-  { src: CafeReissue, date: '2024-03-31', rating: 7.0, country: 'Japan' },
-  { src: CoffeeTaiga, date: '2024-04-02', rating: 8.5, country: 'Japan' },
-  { src: CoffeeTaiga1, date: '2024-04-03', rating: 8.0, country: 'Japan' },
-  { src: Bridge, date: '2024-04-05', rating: 7.5, country: 'Japan' },
-  { src: CafeRyusenkei, date: '2024-04-10', rating: 6.0, country: 'Japan' },
-  { src: Anthrop, date: '2024-04-10', rating: 7.0, country: 'Japan' },
-  { src: Excelsior, date: '2024-04-12', rating: 7.5, country: 'Japan' },
-  { src: Shirohige, date: '2024-04-10', rating: 8.0, country: 'Japan' },
-  { src: Zebra, date: '2024-04-14', rating: 7.5, country: 'Japan' },
-  { src: No, date: '2024-04-14', rating: 7.0, country: 'Japan' },
-  { src: CafeShop, date: '2024-04-15', rating: 6.0, country: 'Japan' },
-  { src: CafeSucre, date: '2024-04-17', rating: 7.5, country: 'Japan' },
-  { src: Tullys, date: '2024-04-18', rating: 7.0, country: 'Japan' },
-  { src: Hakujuji, date: '2024-04-22', rating: 5.0, country: 'Japan' },
-  { src: Midflow1, date: '2024-04-26', rating: 9.0, country: 'Japan' },
-  { src: Midflow2, date: '2024-04-30', rating: 7.0, country: 'Japan' },
-  { src: Lambre, date: '2024-04-27', rating: 6.5, country: 'Japan' },
-  { src: Starbucks, date: '2024-04-29', rating: 7.0, country: 'Japan' },
-  { src: Moon, date: '2024-05-05', rating: 6.0, country: 'Japan' },
-  { src: Coucou1, date: '2024-05-06', rating: 7.5, country: 'Japan' },
-  { src: Kielo, date: '2024-05-12', rating: 9.0, country: 'Japan' },
-  { src: Kiki, date: '2024-05-14', rating: 4.5, country: 'Japan' },
-  { src: Gingerstar, date: '2024-05-17', rating: 5.0, country: 'Japan' },
-  { src: MusashinoBunko, date: '2024-05-19', rating: 7.0, country: 'Japan' },
-  { src: Kugutsusou, date: '2024-05-19', rating: 6.0, country: 'Japan' },
-  { src: Chops, date: '2024-05-26', rating: 9.0, country: 'Japan' },
-  { src: GrainRoaster, date: '2024-05-28', rating: 8.0, country: 'Japan' },
-  { src: SatenTeahouse, date: '2024-06-01', rating: 6.0, country: 'Japan' },
-  { src: NozyCoffee, date: '2024-06-02', rating: 10.0, country: 'Japan' },
-  { src: Kukka, date: '2024-06-08', rating: 6.0, country: 'Japan' },
-  { src: FlatWhiteFactory, date: '2024-06-08', rating: 8.0, country: 'Japan' },
-  { src: Ord, date: '2024-06-10', rating: 9.0, country: 'Japan' },
-  { src: MoronCafe, date: '2024-06-14', rating: 7.0, country: 'Japan' },
-  { src: Rojinasabo, date: '2024-06-20', rating: 3.0, country: 'Japan' },
-  { src: BlueBottle, date: '2024-06-28', rating: 7.5, country: 'Japan' },
-  { src: GrainRoaster1, date: '2024-07-04', rating: 7.0, country: 'Japan' },
-  { src: PapCoffee, date: '2024-07-05', rating: 6.0, country: 'Japan' },
-  { src: TetronCoffee, date: '2024-07-12', rating: 7.5, country: 'Japan' },
-  { src: StarbucksRoastery, date: '2024-07-16', rating: 7.0, country: 'Japan' },
-  { src: CafeAppassionato, date: '2024-07-25', rating: 6.5, country: 'Japan' },
-  { src: DeanDeluca, date: '2024-08-03', rating: 5.5, country: 'Japan' },
-  { src: Voyager, date: '2024-08-14', rating: 7.5, country: 'USA' },
+  { src: CoffeeIcon, date: '2024-03-29', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall], 
+                    review:'The latte has a slightly diluted flavor with a bit too much milk, making it mild and not overly bitter or sour. However, the latte art is beautifully done, adding to the overall experience. The coffee is made with beans from Honduras, which give it a smooth and balanced taste.'},
+  { src: DoubleTall, date: '2024-03-30', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'Coffee is slightly strong and could use more milk.'
+   },
+  { src: CafeReissue, date: '2024-03-31', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte is very sweet, with the milk overpowering the coffee’s flavor. However, the cute design adds a nice touch.'
+   },
+  { src: CoffeeTaiga, date: '2024-04-02', rating: 8.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte has the perfect amount of milk, striking a nice balance between smoothness and flavor. It’s slightly bitter without being sour, making it a satisfying cup. Medium dark roast.'
+   },
+  { src: CoffeeTaiga1, date: '2024-04-03', rating: 8.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The Ethiopian drip was amazing with a rich and slightly bitter profile. It had just the right touch of citrus, adding a refreshing layer to the flavor. A great cup for those who enjoy a bright yet balanced coffee.'
+   },
+  { src: Bridge, date: '2024-04-05', rating: 7.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte came with a complimentary small pastry, which was a delightful bonus. The latte itself featured beautiful art and had a stronger coffee flavor. It was slightly sour and less bitter than usual, but still enjoyable. The staff were incredibly friendly, making the experience even more pleasant.'
+   },
+  { src: CafeRyusenkei, date: '2024-04-10', rating: 6.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The cafe, set up in a trailer, served a drip coffee latte that was quite strong in flavor. It had the boldness of a coffee au lait but was not as rich as a traditional latte. The taste leaned more towards sour rather than bitter. Overall, a unique and flavorful experience in a cozy setting.'
+   },
+  { src: Anthrop, date: '2024-04-10', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte was slightly sweetened, but the milk was very thin, making the coffee taste more watery. However, the black sesame pudding was amazing and a highlight of the visit.'
+   },
+  { src: Excelsior, date: '2024-04-12', rating: 7.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The coffee had a creamy medium flavor, thanks to the thicker cream, but the serving size was disappointingly small.'
+   },
+  { src: Shirohige, date: '2024-04-10', rating: 8.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'A charming café with an excellent latte that strikes a perfect balance—neither bitter nor sour, yet strong and rich in flavor. The Totoro matcha cream puff was a delicious treat that complemented the coffee beautifully.'
+   },
+  { src: Zebra, date: '2024-04-14', rating: 7.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The cappuccino was robust and well-balanced, featuring a rich, strong coffee flavor. It was topped with a generous layer of frothy foam and a sprinkle of cocoa powder, adding an interesting touch to each sip.'
+   },
+  { src: No, date: '2024-04-14', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The cappuccino was on the milder side, with a creamier texture due to the increased milk. The accompanying cheesecake was delicious, but the banana bread was a bit too dense for my taste.'
+   },
+  { src: CafeShop, date: '2024-04-15', rating: 6.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The coffee was topped with whipped cream and matcha powder, making the drink a little too sweet. The coffee flavor was mild and the texture was less thick, resulting in a lighter, sweeter beverage.'
+   },
+  { src: CafeSucre, date: '2024-04-17', rating: 7.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The café au lait was served in a large bowl, featuring a strong coffee flavor balanced by a good amount of milk. It had a slight bitterness that was not overwhelming. The blueberry muffin was pleasantly not too sweet and very enjoyable.'
+   },
+  { src: Tullys, date: '2024-04-18', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte had thick cream and a generous amount of foam. It was mildly bitter as well.'
+   },
+  { src: Hakujuji, date: '2024-04-22', rating: 5.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The coffee was very watered down with no latte art and lacked creaminess. The flavor was weak and not strong.'
+   },
+  { src: Midflow1, date: '2024-04-26', rating: 9.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte had a strong coffee taste and rich, fatty milk. It was slightly bitter, with the perfect amount of bitterness and no hint of sourness.'
+   },
+  { src: Midflow2, date: '2024-04-30', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall], 
+                    review: 'The drip coffee was quite acidic.'
+   },
+  { src: Lambre, date: '2024-04-27', rating: 6.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The café au lait had too much milk and not enough coffee, but the addition of nutmeg was quite nice.'
+   },
+  { src: Starbucks, date: '2024-04-29', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte was a little bitter, but not overwhelmingly so, and had no sourness. The milk-to-coffee ratio was good, though the coffee could be a bit stronger.'
+   },
+  { src: Moon, date: '2024-05-05', rating: 6.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The milk coffee was a bit light and watery, with a weak coffee flavor.'
+   },
+  { src: Coucou1, date: '2024-05-06', rating: 7.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte had a noticeable bitterness, but the coffee-to-milk ratio and liquid texture were well balanced.'
+   },
+  { src: Kielo, date: '2024-05-12', rating: 9.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte was strong but not overly bitter, with minimal acidity. It was light yet full-bodied, featuring a good balance of milk to espresso and decorated with pretty latte art.'
+    },
+  { src: Kiki, date: '2024-05-14', rating: 4.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The café au lait had a strong coffee flavor but was both bitter and sour, with a noticeable metallic aftertaste. Shop definitely more known for its sandwiches than drinks.'
+    },
+  { src: Gingerstar, date: '2024-05-17', rating: 5.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The milk coffee was quite bitter with minimal milk and a thin consistency. It came with syrup, sugar, and a sugar cube, which were necessary to balance out the bitterness.'
+    },
+  { src: MusashinoBunko, date: '2024-05-19', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The black coffee, made with Sumibiyaki roasted beans, was well-balanced, not too bitter or sour. It had a delicious flavor.'
+    },
+  { src: Kugutsusou, date: '2024-05-19', rating: 6.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The soft black coffee was quite bitter, but the bread pudding made it more enjoyable and balanced out the bitterness.'
+    },
+  { src: Chops, date: '2024-05-26', rating: 9.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte had a great balance between espresso and milk, with neither bitterness nor sourness. The flavor was well-balanced, though a slightly stronger coffee taste would have been ideal. The sesame banana muffin, however, was exceptional—really delicious!'
+    },
+  { src: GrainRoaster, date: '2024-05-28', rating: 8.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte was more bitter, though the coffee flavor itself was not very strong. The coffee shop\'s big, spacious, and modern design makes it a perfect place for studying.'
+    },
+  { src: SatenTeahouse, date: '2024-06-01', rating: 6.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],  
+                    review: 'The café latte was very sour and strong.'
+  },
+  { src: NozyCoffee, date: '2024-06-02', rating: 10.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The Brazil café latte had a rich chocolate and cashew flavor, was very creamy, slightly bitter, and not sour at all.'
+    },
+  { src: Kukka, date: '2024-06-08', rating: 6.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The strong café latte was more bitter, with plenty of foam on top, and had no sourness.'
+    },
+  { src: FlatWhiteFactory, date: '2024-06-08', rating: 8.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The flat white was more bubbly with a pleasant, well-balanced coffee flavor. The coffee wasn’t too strong, but the bean flavor was still excellent. The service was great.'
+    },
+  { src: Ord, date: '2024-06-10', rating: 9.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The Costa Rica blend offered a very mild coffee flavor, with none of the bitterness, sourness, or fruitiness typically expected from a light roast. The milk had a rich, fatty flavor, creating a well-balanced cup.'
+    },
+  { src: MoronCafe, date: '2024-06-14', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The café latte has a slightly bitter edge but maintains an overall good taste.'
+    },
+  { src: Rojinasabo, date: '2024-06-20', rating: 3.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The latte was very watery, lacking in richness and depth. Foods are delicious, but coffee drinks are subpar.'
+    },
+  { src: BlueBottle, date: '2024-06-28', rating: 7.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The dark blend espresso latte was on the more bitter side, with no sourness, offering a full-tasting experience. It was perfect for a rainy day. Service also amazing, felt well cared for.'
+    },
+  { src: GrainRoaster1, date: '2024-07-04', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The caffe latte was a bit bitter and stronger compared to last time.'
+    },
+  { src: PapCoffee, date: '2024-07-05', rating: 6.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The café latte was a bit bitter and quite milky.'
+    },
+  { src: TetronCoffee, date: '2024-07-12', rating: 7.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The café latte had a slightly sour initial taste but left a flavorful, bitter aftertaste.'
+    },
+  { src: StarbucksRoastery, date: '2024-07-16', rating: 7.0, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'This is the first time I\'ve tried an oat milk latte. It was more bitter overall, with the foam being particularly bitter, but it had a good balance between milk and espresso.'
+    },
+  { src: CafeAppassionato, date: '2024-07-25', rating: 6.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The café latte was bitter and strong, with a less creamy texture.'
+    },
+  { src: DeanDeluca, date: '2024-08-03', rating: 5.5, country: 'Japan', gallery: [CoffeeIcon, DoubleTall],
+                    review: 'The café latte had a full coffee flavor, though the coffee itself wasn\'t very strong. The milk was good, and while the latte was served in a paper cup despite ordering for here, the drink had a nice balance with a bit of bitterness and no sourness. The latte art was also underwhelming.'
+    },
+  { src: Voyager, date: '2024-08-14', rating: 7.5, country: 'USA', gallery: [CoffeeIcon],
+                    review: 'The ube latte was a bit sweet and slightly overpowering, which muted the coffee flavor, but it was very aesthetic and still delicious. It’s a great spot for studying, but not that spacious.'
+    },
   // Add more images here
 ];
 
@@ -136,8 +223,10 @@
 
   function openModal(image) {
     console.log('Opening modal with image:', image);
+    console.log('image 2:', image.gallery[0])
     selectedImage = image;
     isModalOpen = true;
+    
   }
 
   function closeModal() {
