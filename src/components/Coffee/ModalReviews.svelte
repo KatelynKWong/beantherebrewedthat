@@ -19,9 +19,7 @@
 {#if isOpen}
   <div class="modal-overlay" on:click={close}>
     <div class="modal-content" on:click|stopPropagation>
-      <span class="close" on:click={close}>&times;</span>
-        <!-- <img src={image.src} alt="Selected Coffee Art" class="modal-image" /> -->
-      
+      <span class="close" on:click={close}>&times;</span>      
         <div class="modal-image-container">
           {#each image.gallery as photo}
             <img src={photo} alt="Selected Coffee Art" class="modal-image" />
@@ -31,7 +29,7 @@
         <p>{formatDate(image.date)}</p>
         <p>Rating: {image.rating+'/10'}</p>
         <p>{image.review}</p>
-        <p>Location: {image.name}</p>
+        <p>Cafe: {image.name}</p>
       </div>
     </div>
   </div>
