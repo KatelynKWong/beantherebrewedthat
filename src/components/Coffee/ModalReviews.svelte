@@ -31,7 +31,7 @@
         <p>{formatDate(image.date)}</p>
         <p>Rating: {image.rating+'/10'}</p>
         <p>{image.review}</p>
-        <p>Location: {image.country}</p>
+        <p>Location: {image.name}</p>
       </div>
     </div>
   </div>
