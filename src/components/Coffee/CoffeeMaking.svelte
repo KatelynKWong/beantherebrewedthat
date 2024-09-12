@@ -73,7 +73,7 @@
         <div class="row">
           {#each images as image (image.src)}
             <div class="column">
-                <img src={image.src} alt="Coffee Art" class="coffee_main" />
+                <img src={image.src} alt="Coffee Art" class="summary_images" />
             </div>
           {/each}
           {#if images.length % 2 !== 0}
@@ -87,7 +87,7 @@
       <!-- Second image container with single images -->
         <div class="image-container">
           <img src="{PortaFilter}" alt="Coffee Art" class="title_image" />
-          <img src="{CafeTable}" alt="Coffee Art" class="coffee_main" />
+          <img src="{CafeTable}" alt="Coffee Art" class="subtitle_image" />
           <div class="text-overlay">
             <h2 style="color: white;">Welcome</h2>
             <p style="color: white;">to my journal documenting my coffee making journal!</p>
@@ -173,7 +173,7 @@
       margin: 0 10px;
     }
   
-    .coffee_main {
+    .summary_images {
       width: 100%; /* Ensure all images take full width of their container */
       height: 300px; /* Fixed height for uniform size */
       object-fit: cover; /* Ensures the images cover the space and maintain aspect ratio */
@@ -185,6 +185,12 @@
       object-fit: cover;
     }
   
+    .subtitle_image {
+      height: auto;
+      width: 50vw;
+      object-fit: cover;
+    }
+
     .image-container {
       position: relative;
       width: 50vw;
