@@ -106,10 +106,10 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 20px;
   text-align: center;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   font-size: 1.5vw;
 }
 
