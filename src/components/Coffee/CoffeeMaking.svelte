@@ -125,7 +125,7 @@
 
     .column {
         flex: 1 0 25%; /* Control the size and behavior of each column */
-        padding: 1px;
+        padding: 0px;
         box-sizing: border-box;
     }
 
