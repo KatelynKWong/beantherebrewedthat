@@ -135,7 +135,7 @@
 
   <rect 
     width="52vw" 
-    height="35vw" 
+    height="40vw" 
     x="10%" 
     y="calc(30% - 4vw)" 
     rx="20" 
@@ -153,13 +153,16 @@
     out:fly={{ y: -300, duration: 1000 }}
   >
 
-    <tspan x="50%" dy="-5%" font-size="80%">Katelyn is currently a college student from UCSD studying economics abroad </tspan>
-    <tspan x="50%" dy="1.5em" font-size="80%"> at Hitotsubashi University in Kunitachi, Tokyo. Though her current major is</tspan>
-    <tspan x="50%" dy="1.5em" font-size="80%"> mathematics and economics, her passion lies in data science and analysis. She  </tspan>
-    <tspan x="50%" dy="1.5em" font-size="80%">is seeking to explore any interdiscplinary field in the intersection between data</tspan>
-    <tspan x="50%" dy="1.5em" font-size="80%">science, math, and econ. One of Katelyn's favorite things to do in her free time is</tspan>
-    <tspan x="50%" dy="1.5em" font-size="80%">experiment with making espresso from coffee beans. Ever since she was gifted </tspan>
-    <tspan x="50%" dy="1.5em" font-size="80%">an espresso maker, she has devoted much of her time into developing the perfect </tspan>
+    <tspan x="50%" dy="-6%" font-size="80%">Katelyn is currently an undergraduate mathematics, economics, and data science student </tspan>
+    <tspan x="50%" dy="1.5em" font-size="80%">from UCSD that studied economics abroad at Hitotsubashi University in Kunitachi, Tokyo.</tspan>
+    <tspan x="50%" dy="1.5em" font-size="80%">Because her passion lies in data science and analysis. She is currently seeking </tspan>
+    <tspan x="50%" dy="1.5em" font-size="80%">to explore interdiscplinary fields in the intersection between data science, math, </tspan>
+    <tspan x="50%" dy="1.5em" font-size="80%">and econ. She is currently researching electricity markets to identify optimal </tspan>
+    <tspan x="50%" dy="1.5em" font-size="80%">pricing strategies that promote the adoption of renewable energy while ensuring </tspan>
+    <tspan x="50%" dy="1.5em" font-size="80%">affordability and equity for consumers from diverse financial backgrounds. </tspan>
+    <tspan x="50%" dy="1.5em" font-size="80%">One of Katelyn's favorite things to do in her free time is expriment with making </tspan>
+    <tspan x="50%" dy="1.5em" font-size="80%">espressos from coffee beans. Ever since she was gifted an espresso maker from a </tspan>
+    <tspan x="50%" dy="1.5em" font-size="80%">close friend, she has devoted much of her time into developing the perfect </tspan>
     <tspan x="50%" dy="1.5em" font-size="80%">espress prep methods with her machine. In doing so, she hopes to familiarize herself</tspan>
     <tspan x="50%" dy="1.5em" font-size="80%">with the art of making coffee to ultimately achieve her future goal of opening up a</tspan>
     <tspan x="50%" dy="1.5em" font-size="80%">hybrid coffee shop/internet cafe that focuses on traditional coffee while offering</tspan>
