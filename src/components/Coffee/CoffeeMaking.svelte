@@ -75,8 +75,6 @@
     import PinkCloud_mushroom from './assets/making_assets/IMG_8581.png';
     import PinkCloud_beans from './assets/making_assets/IMG_8426.png';
     
-    let selectedImage = null;
-    let isModalOpen = false;
     let images = [
         { name: 'Inheriting Hopey\'s Espresso Machine', src: NewMachine_machine, date: '2024-03-08', 
                             gallery: [NewMachine_machine, NewMachine_latte, NewMachine_shot, NewMachine_beans], 
@@ -121,7 +119,7 @@
                             Hokkaido milk bread with cinnamon sugar rolled into it. The bread turned out amazing, and dipping \
                             it into a hot latte was the perfect combination.'
         },
-        { name: '3D Printing a new Tamper and Funnel', src: Tamper, date: '2024-10-28',
+        { name: '3D Printing a New Tamper and Funnel', src: Tamper, date: '2024-10-28',
                             gallery: [Tamper, Funnel, ThreeD_latte, Tamper1, Tamper2],
                             entry: 'The tamper and funnel that came with the machine Hopey gave me didn’t fit the 51mm \
                             portafilter properly. This often led to uneven distribution of coffee grounds in the filter and \
@@ -180,27 +178,35 @@
         }
     }
 
-    // function openModal(image) {
-    //     console.log('Opening modal with image:', image);
-    //     console.log('image 2:', image.gallery[0])
-    //     selectedImage = image;
-    //     isModalOpen = true;
-        
-    // }
-
-    // function closeModal() {
-    //     isModalOpen = false;
-    //     selectedImage = null;
-    // }
-
-    // function formatDate(dateString) {
-    //     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    //     return new Date(dateString).toLocaleDateString(undefined, options);
-    // }
     function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+        const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+    }
+
+    let activeIndex = null;
+
+// Toggle the gallery visibility
+function toggleGallery(index) {
+    activeIndex = activeIndex === index ? null : index;
+    console.log('Toggling gallery: ', activeIndex !== null ? 'Opening' : 'Closing');
 }
+
+// Close gallery when clicking elsewhere
+function closeGallery(event) {
+    if (!event.target.closest('.image-wrapper')) {
+        activeIndex = null;
+        console.log('Closing gallery');
+    }
+}
+
+// Bind the click event to the document
+onMount(() => {
+    document.body.addEventListener('click', closeGallery);
+
+    return () => {
+        document.body.removeEventListener('click', closeGallery);
+    };
+});
 
 </script>
 
@@ -221,14 +227,8 @@
         </div>
     </div>
 
-    <!-- <ModalJournals
-        image={selectedImage}
-        isOpen={isModalOpen}
-        onClose={closeModal}
-    /> -->
-
     <div class="container">
-    <!-- First image container with images in rows -->
+        <!-- First image container with images in rows -->
         <div class="image-container">
             <div class="row">
                 {#each images as image (image.src)}
@@ -239,8 +239,8 @@
                                 <p>{image.name}</p>
                                 <p>{image.entry}</p>
                             </div>
-                            </div>
-                        <img src={image.src} alt="Coffee Art" class="summary_images"/>
+                        </div>
+                        <img src={image.src} alt="Coffee Art" class="summary_images" />
                         <div class="label bottom-label" on:click={scrollToImage} data-target={image.src}>Gallery</div>
                     </div>
                 {/each}
@@ -252,23 +252,35 @@
             </div>
         </div>
 
-    <!-- Second image container with single images -->
+        <!-- Second image container with single images -->
         <div class="image-container">
             <img src="{SpyhouseLatte}" alt="Coffee Art" class="title_image" />
-            
+
             <div class="text-overlay">
-                <h2 style="color: white; font-family: Luminari, cursive; font-size: 4vw" >Welcome</h2>
-                <p style="color: white; ">to my journal documenting my coffee making experience!</p>
+                <h2 style="color: white; font-family: Luminari, cursive; font-size: 4vw">Welcome</h2>
+                <p style="color: white;">to my journal documenting my coffee making experience!</p>
             </div>
-            
-            {#each images as image (image.src)}
-                <img src={image.src} alt="Coffee Art" class="subtitle_image" id={image.src}/>           
+
+            {#each images as image, index (image.src)}
+                <div class="image-wrapper" class:active={activeIndex === index}>
+                    <div class="photo-top-label">{image.name}</div>
+                    
+                    <!-- Updated Gallery Container -->
+                    {#if activeIndex === index}
+                        <div class="gallery-container">
+                            {#each image.gallery as gallery_image}
+                                <img src={gallery_image} alt="Coffee Art" class="gallery-images" />
+                            {/each}
+                        </div>
+                    {/if}
+
+                    <img src={image.src} alt="Coffee Art" class="subtitle_image" id={image.src} />
+                    <div class="photo-bottom-label" on:click={() => toggleGallery(index)}>More photos</div>
+                </div>
             {/each}
         </div>
     </div>
-
 </main>
-
 
 <style>
     .row {
@@ -283,7 +295,6 @@
         box-sizing: border-box;
         display: inline-block;
     }
-
 
 /* Adjust the size of the columns at different screen sizes */
     @media (max-width: 2400px) {
@@ -307,8 +318,8 @@
     @media (max-width: 480px) {
         .column {
             flex-basis: 100%;
-            }
         }
+    }
 
     .header {
         position: fixed;
@@ -336,14 +347,12 @@
         text-align: center;
     }
 
-
     .subtitle_container {
         z-index: 1000;
         display: flex;
         justify-content: center;
         padding: 75px 0 0;
     }
-
 
     .container {
         display: flex;
@@ -365,7 +374,6 @@
         transition: border 0.2s ease; /* Smooth transition for the border effect */
         border: none; /* Ensure there is no default border */
     }
-    
 
     .summary_images:hover {
         border: 2px solid rgba(255, 255, 255, 1); /* Light border with transparency */
@@ -390,16 +398,16 @@
     }
 
     .entry-details .text-container {
-        width: 90%;  /* Text only takes up 95% of the width */
-        height: 90%;  /* Text only takes up 95% of the height */
+        width: 90%;  /* Text only takes up 90% of the width */
+        height: 90%;  /* Text only takes up 90% of the height */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         padding: 0 10px; /* Optional padding inside text container */
+        font-size: 1vw
     }
-
 
     .column:hover .entry-details {
         opacity: 1;
@@ -444,16 +452,109 @@
         font-size: 0.9em;
         border-radius: 4px;
         border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
+        transition: background-color 0.3s ease; /* Add smooth transition */
     }
     
     .bottom-label {
         bottom: 0.5em;
         right: 0.5em;
     }
-    
+
+    /* Add hover effect for bottom-label */
+    .label.bottom-label:hover {
+        background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
+    }
+
+    .image-wrapper {
+        position: relative;
+        display: inline-block; /* Allows each image to be displayed next to each other */
+    }
+
+    .subtitle_image {
+        transition: opacity 0.3s ease;  /* Smooth transition for opacity */
+    }
+
+    .image-gallery {
+        display: none;  /* Hide the gallery initially */
+        opacity: 0;     /* Gallery is transparent initially */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap; /* Allows the images to wrap to the next row if needed */
+        gap: 10px; /* Adjusts the space between images */
+        justify-content: flex-start; /* Aligns items to the left */
+    }
+
+    .gallery-container {
+        position: absolute;
+        display: flex; /* Aligns images in a row */
+        flex-wrap: wrap; /* Allows wrapping if the images don't fit in one row */
+        gap: 0; /* Removes gaps between images */
+        padding: 0; /* Removes padding inside the container */
+        max-width: 100%; /* Ensures the container doesn't overflow */
+        box-sizing: border-box; /* Includes padding in width/height calculation */
+        justify-content: flex-start; /* Aligns images to the left */
+    }
+
+    .gallery-images {
+        flex: 1 1 50%; /* 25% width for each image */
+        max-width: 25vw; /* Ensures each image is exactly 25% of the container width */
+        height: 20vw; /* Dynamically set height to match aspect ratio of 4 images in a row */
+        object-fit: cover; /* Ensures images fill their container without distortion */
+        border: 5; /* Removes border for seamless alignment */
+        margin: 5; /* Ensures no additional spacing between images */
+    }
+
+    .image-wrapper.active .subtitle_image {
+        opacity: .1;  /* Make the coffee art image transparent when active */
+    }
+
+    .image-wrapper.active .image-gallery {
+        display: block;
+        opacity: 1;     /* Make the gallery visible */
+    }
+
+    .photo-top-label {
+        position: absolute;
+        top: 10px; /* Distance from the top of the image */
+        left: 10px; /* Distance from the left of the image */
+        margin: 0;
+        padding: 0.2em 0.5em;
+        background-color: rgba(116, 116, 116, 0.5);
+        color: #fff;
+        font-size: 1.8em;
+        border-radius: 4px;
+        border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
+    }
+
+    .photo-bottom-label {
+        position: absolute;
+        bottom: 10px; /* Distance from the bottom of the image */
+        right: 10px;  /* Distance from the right of the image */
+        margin: 0;
+        padding: 0.2em 0.5em;
+        background-color: rgba(116, 116, 116, 0.5);
+        color: #fff;
+        font-size: 0.9em;
+        border-radius: 4px;
+        border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
+        transition: background-color 0.3s ease; /* Add smooth transition */
+    }
+
+    /* Add hover effect for photo-bottom-label */
+    .photo-bottom-label:hover {
+        background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
+    }
+
     main {
         margin: 0;
         padding: 0;
     }
-    
 </style>
