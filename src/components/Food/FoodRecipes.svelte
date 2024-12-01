@@ -19,7 +19,11 @@
 
 <main>
     <p>Welcome to my food subpage!</p>
-
+    <div class="header">
+        <a href="{base}/" class="link">
+            <h1 style="color: white">Bean There, Brewed That</h1>
+        </a>
+    </div>
     <div class="search-container">
         <input 
             type="text" 
@@ -58,6 +62,17 @@
         padding: 20px;
     }
 
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #3f201f;
+        z-index: 999;
+        text-align: center;
+        padding: 1px 0;
+        transition: opacity 0.3s ease-in-out;
+    }
     .search-container {
         flex: 1; /* Search bar takes up less space */
         display: flex;
@@ -87,5 +102,12 @@
     #recipe-list li {
         margin: 5px 0;
         font-size: 18px;
+    }
+    .link {
+        color: inherit; /* Keeps the original text color */
+    }
+
+    .link:visited {
+        color: white; /* Prevents the link from turning purple */
     }
 </style>

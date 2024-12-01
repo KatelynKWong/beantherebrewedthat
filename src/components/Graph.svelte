@@ -100,14 +100,15 @@
     y="calc(40% - 4vw)"
     rx="20" 
     ry="20" 
-    fill="white" 
-    opacity={$tweenedAboutMeOpacity * 3 / 4}
+    fill="black" 
+    opacity={$tweenedAboutMeOpacity * 2 / 4}
   />
   <text class="aboutme"
     x="5%"
     y="40%"
     font-size="1.4vw"
     text-anchor="left"
+    fill="white"
     opacity={$tweenedAboutMeOpacity}
     in:fly={{ y: -300, duration: 1000 }}
     out:fly={{ y: -300, duration: 1000 }}
@@ -140,14 +141,15 @@
     y="calc(30% - 4vw)" 
     rx="20" 
     ry="20" 
-    fill="white" 
-    opacity={$tweenedAuthorOpacity * 3 / 4}
+    fill="black" 
+    opacity={$tweenedAuthorOpacity * 5 / 8}
   />
 
   <text class="author"
     y={$tweenedAuthorY}
     text-anchor="middle"
     font-size="1.7vw"
+    fill="white"
     opacity={$tweenedAuthorOpacity}
     in:fly={{ y: -300, duration: 1000 }}
     out:fly={{ y: -300, duration: 1000 }}

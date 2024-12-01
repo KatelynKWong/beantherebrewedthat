@@ -15,7 +15,7 @@
         <p>Savory Stories:</p>
         <p>Food Experiences</p>
       </div>
-      <div class="header">
+    <div class="header">
         <a href="{base}/" class="link">
             <h1 style="color: white">Bean There, Brewed That</h1>
         </a>
