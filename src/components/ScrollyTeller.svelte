@@ -41,12 +41,12 @@
   <a href={index < 3 ? null : 'food'}>
     <div class="grey-rectangle2" style={`opacity: ${$greyRectOpacity};`}></div>
   </a>
-  <div class="header" style={`opacity: ${$headerOpacity};`}>
-    <h1>Bean There, Brewed That</h1>
-  </div>
   <div class="title">
     <h1>Bean There, Brewed That</h1>
     <h4>A blog documenting the coffee and food journey of a study abroad student.</h4>
+  </div>
+  <div class="header" style={`opacity: ${$headerOpacity};`}>
+    <h1>Bean There, Brewed That</h1>
   </div>
   <a href={index < 3 ? null : 'coffee'}>
     <div class="subSection" style={`opacity: ${$subSectionOpacity};`}>
