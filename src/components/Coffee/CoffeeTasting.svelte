@@ -514,4 +514,11 @@
     border: 1px solid #ccc; /* Add a border for better visibility */
     border-radius: 4px; /* Rounded corners */
   }
+  .home-link {
+        color: inherit; /* Keeps the original text color */
+    }
+
+  .home-link:visited {
+      color: white; /* Prevents the link from turning purple */
+  }
 </style>

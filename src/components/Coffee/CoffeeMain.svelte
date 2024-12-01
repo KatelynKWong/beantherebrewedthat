@@ -123,4 +123,12 @@ main {
   margin: 0;
   padding: 0;
 }
+
+.home-link {
+        color: inherit; /* Keeps the original text color */
+    }
+
+.home-link:visited {
+    color: white; /* Prevents the link from turning purple */
+}
 </style>
