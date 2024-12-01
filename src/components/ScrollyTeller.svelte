@@ -32,13 +32,31 @@
 
   const greyRectOpacity = tweened(0, { duration: 400, easing: cubicOut });
   $: greyRectOpacity.set(index > 2 ? .8 : 0);
+
+  let showTopArrow = false;
+  $: showTopArrow = index === 1 | index === 2;
+  
+  let showBotArrow = false;
+  $: showBotArrow = index === 4;
 </script>
 
 <main>
-  <a href={index < 3 ? null : 'tokyo'}>
+  {#if showTopArrow}
+    <div class="wiggle-top-arrow">
+      ↓
+    </div>
+  {/if}
+
+  {#if showBotArrow}
+    <div class="wiggle-bot-arrow">
+      ↑
+    </div>
+  {/if}
+
+  <a href={index !== 3 ? null : 'tokyo'}>
     <div class="grey-rectangle1" style={`opacity: ${$greyRectOpacity};`}></div>
   </a>  
-  <a href={index < 3 ? null : 'food'}>
+  <a href={index !== 3 ? null : 'food'}>
     <div class="grey-rectangle2" style={`opacity: ${$greyRectOpacity};`}></div>
   </a>
   <div class="title">
@@ -48,19 +66,19 @@
   <div class="header" style={`opacity: ${$headerOpacity};`}>
     <h1>Bean There, Brewed That</h1>
   </div>
-  <a href={index < 3 ? null : 'coffee'}>
+  <a href={index !== 3 ? null : 'coffee'}>
     <div class="subSection" style={`opacity: ${$subSectionOpacity};`}>
       <h1 style="font-weight: 300;">Caffeine Chronicles</h1>
       <h4 style="font-weight: 300;">A coffee making and tasting journal.</h4>
     </div>
   </a>
-  <a href={index < 3 ? null : 'tokyo'}>
+  <a href={index !== 3 ? null : 'tokyo'}>
     <div class="subSection1" style={`opacity: ${$subSectionOpacity};`}>
       <h1 style="font-weight: 300;">Tokyo Tales</h1>
       <h4 style="font-weight: 300;">Hitotsubashi University study abroad experience.</h4>
     </div>
   </a>
-  <a href={index < 3 ? null : 'food'}>
+  <a href={index !== 3 ? null : 'food'}>
     <div class="subSection2" style={`opacity: ${$subSectionOpacity};`}>
       <h1 style="font-weight: 300;">Savory Stories</h1>
       <h4 style="font-weight: 300;">Food discoveries, favorite recipes, and more.</h4>
@@ -70,7 +88,7 @@
   <img src="{CherryTree}" alt="Cherry Tree" class="polaroid" style={`opacity: ${$image2Opacity};`} />
   <img src="{Croissant}" alt="Croissant" class="savory-stories" style={`opacity: ${$image2Opacity};`} />
   <img src="{MelonPan}" alt="Melon Pan" class="savory-stories" style={`opacity: ${$image1Opacity};`} />
-  <a href={index < 3 ? null : 'coffee'}>
+  <a href={index !== 3 ? null : 'coffee'}>
     <Scroller
       top={0.0}
       bottom={1}
@@ -86,8 +104,6 @@
       </div>
       <div class="foreground" slot="foreground">
         <section style="height:20vh"></section>
-        <section></section>
-        <section></section>
         <section></section>
         <section></section>
         <section></section>
@@ -245,5 +261,46 @@
     height: 100%;
     background-color: rgba(128, 128, 128, 0.5);
     z-index: 997;
+  }
+
+  .wiggle-top-arrow {
+    position: fixed;
+    bottom: 10%;
+    left: 33%;
+    transform: translateX(-25%);
+    font-size: 2rem;
+    font-weight: bold; /* Makes the text bold */
+    color: white;
+    background-color: black;
+    padding: 0.5rem 1rem; /* Adds padding for a wider background box */
+    border-radius: 8px; /* Slightly increases the corner rounding */
+    z-index: 1000;
+    animation: wiggle 0.5s ease-in-out infinite;
+    text-align: center;
+  }
+
+  .wiggle-bot-arrow {
+    position: fixed;
+    top: 11%;
+    left: 33%;
+    transform: translateX(-25%);
+    font-size: 2rem;
+    font-weight: bold; /* Makes the text bold */
+    color: white;
+    background-color: black;
+    padding: 0.5rem 1rem; /* Adds padding for a wider background box */
+    border-radius: 8px; /* Slightly increases the corner rounding */
+    z-index: 1000;
+    animation: wiggle 0.5s ease-in-out infinite;
+    text-align: center;
+  }
+
+  @keyframes wiggle {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-5px);
+    }
   }
 </style>
