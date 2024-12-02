@@ -234,7 +234,7 @@
             <div class="row">
                 {#each images as image (image.src)}
                     <div class="column">
-                        <div class="label">{formatDate(image.date)}</div>
+                        <div class="date-label">{formatDate(image.date)}</div>
                         <div class="entry-details" on:click={scrollToImage} data-target={image.src}>
                             <div class="text-container">
                                 <p>{image.name}</p>
@@ -444,7 +444,7 @@
         margin: 0;
     }
 
-    .label {
+    .date-label {
         position: absolute;
         margin: 0;
         padding: 0.2em 0.5em;
@@ -454,6 +454,19 @@
         border-radius: 4px;
         border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
         transition: background-color 0.3s ease; /* Add smooth transition */
+    }
+
+    .label {
+        position: absolute;
+        margin: 0;
+        padding: 0.2em 0.5em;
+        background-color: rgba(116, 116, 116, 0.6);
+        color: #fff;
+        font-size: 0.9em;
+        border-radius: 4px;
+        border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
+        transition: background-color 0.3s ease; /* Add smooth transition */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
     }
     
     .bottom-label {
@@ -528,7 +541,7 @@
         left: 10px; /* Distance from the left of the image */
         margin: 0;
         padding: 0.2em 0.5em;
-        background-color: rgba(116, 116, 116, 0.5);
+        background-color: rgba(116, 116, 116, 0.6);
         color: #fff;
         font-size: 1.8em;
         border-radius: 4px;
@@ -538,20 +551,22 @@
     .photo-bottom-label {
         position: absolute;
         bottom: 10px; /* Distance from the bottom of the image */
-        right: 10px;  /* Distance from the right of the image */
+        left: 10px;  /* Distance from the right of the image */
         margin: 0;
         padding: 0.2em 0.5em;
-        background-color: rgba(116, 116, 116, 0.5);
+        background-color: rgba(116, 116, 116, 0.8);
         color: #fff;
         font-size: 0.9em;
         border-radius: 4px;
         border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
         transition: background-color 0.3s ease; /* Add smooth transition */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
     }
 
     /* Add hover effect for photo-bottom-label */
     .photo-bottom-label:hover {
         background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
     }
 
     main {
