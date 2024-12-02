@@ -426,6 +426,10 @@
         object-fit: cover;
     }
 
+    .subtitle_image:hover + .photo-bottom-label {
+        animation: wiggle 0.8s infinite ease-in-out; /* Add wiggle animation only on hover */
+    }
+
     .text-overlay {
         position: absolute;
         top: 10%;
@@ -434,7 +438,6 @@
         background-color: rgba(0, 0, 0, 0.25);
         padding: 5px;
         text-align: right;
-        /* border-radius: 10px; */
         font-size: 2vw;
         font-weight: 50;
     }
@@ -469,9 +472,28 @@
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
     }
     
+    .column:hover .label {
+        animation: wiggle .8s infinite ease-in-out; /* Add wiggle animation only on hover */
+    }
+
     .bottom-label {
         bottom: 0.5em;
         right: 0.5em;
+    }
+
+    @keyframes wiggle {
+        0%, 100% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(-7deg);
+        }
+        50% {
+            transform: rotate(5deg);
+        }
+        75% {
+            transform: rotate(-6deg);
+        }
     }
 
     /* Add hover effect for bottom-label */
@@ -560,7 +582,7 @@
         border-radius: 4px;
         border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
         transition: background-color 0.3s ease; /* Add smooth transition */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Adds a subtle drop shadow */
     }
 
     /* Add hover effect for photo-bottom-label */
@@ -568,6 +590,7 @@
         background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
     }
+
 
     main {
         margin: 0;
