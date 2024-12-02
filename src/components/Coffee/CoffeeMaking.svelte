@@ -200,7 +200,7 @@
         }
     }
 
-    // Bind the click event to the document
+// Bind the click event to the document
     onMount(() => {
         document.body.addEventListener('click', closeGallery);
 
@@ -209,35 +209,6 @@
         };
     });
 
-    function compressImage(image) {
-        return new Promise((resolve, reject) => {
-            new Compressor(image, {
-                quality: 0.6, // Set the quality of the image (range: 0-1)
-                success(result) {
-                    resolve(result); // Return the compressed image file
-                },
-                error(err) {
-                    reject(err); // Handle any errors
-                }
-            });
-        });
-    }
-
-    async function compressImages() {
-        for (let i = 0; i < images.length; i++) {
-            try {
-                const compressedImage = await compressImage(images[i].src);
-                images[i].src = URL.createObjectURL(compressedImage); // Update the image source to the compressed version
-                console.log(`Image ${images[i].name} compressed successfully.`);
-            } catch (error) {
-                console.error(`Error compressing image ${images[i].name}:`, error);
-            }
-        }
-    }
-
-    onMount(() => {
-        compressImages(); // Compress all images when the component loads
-    });
 </script>
 
 <main>
