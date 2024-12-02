@@ -52,7 +52,7 @@
 
     .button {
         position: absolute;
-        top: 42vw;
+        top: 40vw;
         left: 5%;
         font-size: 4vw;
         background-color: rgba(178, 140, 140, 0.7);
@@ -89,7 +89,7 @@
         font-weight: bold;
         position: absolute;
         color: rgb(55, 15, 15);
-        top: 100px; /* Adjusted position to ensure visibility */
+        top: 110px; /* Adjusted position to ensure visibility */
         left: 4%;
         width: auto; /* Set width to auto */
         padding: 10px;
