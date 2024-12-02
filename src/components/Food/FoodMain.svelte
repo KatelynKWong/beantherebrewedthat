@@ -52,7 +52,7 @@
 
     .button {
         position: absolute;
-        top: 80vh;
+        top: 42vw;
         left: 5%;
         font-size: 4vw;
         background-color: rgba(178, 140, 140, 0.7);
