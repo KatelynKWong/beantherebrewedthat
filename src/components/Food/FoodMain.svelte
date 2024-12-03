@@ -62,7 +62,7 @@
         padding: 1px 0;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle drop shadow */
         transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-        animation: wiggle 3s infinite ease-in-out; /* Adds the wiggle animation */
+        animation: wiggle 2s infinite ease-in-out; /* Adds the wiggle animation */
     }
 
     .button:hover {

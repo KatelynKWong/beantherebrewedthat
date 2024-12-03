@@ -2,31 +2,81 @@
     import { base } from '$app/paths';
 
     let recipes = [
-        { name: "Cantonese Char Siu Yuk", cuisine: "Chinese" },
-        { name: "Cantonese Braised Pork Belly", cuisine: "Chinese" },
-        { name: "Cantonese Steamed Fish", cuisine: "Chinese" },
-        { name: "Chinese Cabbage Stir Fry", cuisine: "Chinese" },
-        { name: "Egg Drop Soup", cuisine: "Chinese" },
-        { name: "Garlic Sauteed Eggplant", cuisine: "Chinese" },
-        { name: "Hong Kong Clay Pot Rice", cuisine: "Chinese" },
-        { name: "Focaccia", cuisine: "Italian" },
-        { name: "Garlic Grilled Mushrooms", cuisine: "Western" },
-        { name: "Garlic Pull Apart Bread", cuisine: "Western" },
-        { name: "Key Lime Pie", cuisine: "American" },
-        { name: "Linguini with Shrimp Scampi", cuisine: "Italian" },
-        { name: "Mango Crepe Rolls", cuisine: "French" },
-        { name: "Mapo Tofu", cuisine: "Chinese" },
-        { name: "Matcha Tart", cuisine: "Japanese" },
-        { name: "Miso Salmon Mushroom Rice", cuisine: "Japanese" },
-        { name: "Mushroom Soup", cuisine: "Western" },
-        { name: "Pickled Cucumber", cuisine: "Japanese" },
-        { name: "Ponzu Sauce", cuisine: "Japanese" },
-        { name: "Pumpkin Puree", cuisine: "Western" },
-        { name: "Seared Salmon", cuisine: "Japanese" },
-        { name: "Steamed Egg", cuisine: "Chinese" },
-        { name: "Sukiyaki", cuisine: "Japanese" },
-        { name: "Tomato Egg", cuisine: "Chinese" },
-        { name: "Taro Sago", cuisine: "Chinese" }
+        { name: "Cantonese Char Siu Yuk", cuisine: "Chinese",
+            link: "https://kwokspots.com/crispy-pork-belly/#wprm-recipe-container-2260"
+         },
+        { name: "Cantonese Braised Pork Belly", cuisine: "Chinese",
+            link: "https://kwokspots.com/chinese-braised-pork-belly-hong-shao-rou/#wprm-recipe-container-4536"
+         },
+        { name: "Cantonese Steamed Fish", cuisine: "Chinese" ,
+            link: "https://thewoksoflife.com/cantonese-steamed-fish/#recipe"
+        },
+        { name: "Chinese Cabbage Stir Fry", cuisine: "Chinese" ,
+            link: "https://redhousespice.com/stir-fried-napa-cabbage/#recipe"
+        },
+        { name: "Egg Drop Soup", cuisine: "Chinese" ,
+            link: "https://thewoksoflife.com/egg-drop-soup/#recipe"
+        },
+        { name: "Garlic Sauteed Eggplant", cuisine: "Chinese" ,
+            link: "https://omnivorescookbook.com/chinese-eggplant-with-garlic-sauce"
+        },
+        { name: "Hong Kong Clay Pot Rice", cuisine: "Chinese" ,
+            link: "https://thewoksoflife.com/hong-kong-style-clay-pot-rice/#recipe"
+        },
+        { name: "Focaccia", cuisine: "Italian" ,
+            link: "https://alexandracooks.com/2018/03/02/overnight-refrigerator-focaccia-best-focaccia/"
+        },
+        { name: "Garlic Grilled Mushrooms", cuisine: "Western" ,
+            link: "https://thewoksoflife.com/soy-butter-glazed-king-oyster-mushrooms/#recipe"
+        },
+        { name: "Garlic Pull Apart Bread", cuisine: "Western" ,
+            link: "https://sallysbakingaddiction.com/rosemary-garlic-pull-apart-bread/print/93361/"
+        },
+        { name: "Key Lime Pie", cuisine: "American" ,
+            link: "https://www.browneyedbaker.com/key-lime-pie-recipe/"
+        },
+        { name: "Linguini with Shrimp Scampi", cuisine: "Italian" ,
+            link: "https://www.foodnetwork.com/recipes/ina-garten/linguine-with-shrimp-scampi-recipe3-"
+        },
+        { name: "Mango Crepe Rolls", cuisine: "French" ,
+            link: "https://zhangcatherine.com/mango-pancake/"
+        },
+        { name: "Mapo Tofu", cuisine: "Chinese" ,
+            link: "https://thewoksoflife.com/ma-po-tofu-real-deal/#respond"
+        },
+        { name: "Matcha Tart", cuisine: "Japanese" ,
+            link: "https://www.loveandoliveoil.com/2020/05/matcha-strawberry-tart.html"
+        },
+        { name: "Miso Salmon Mushroom Rice", cuisine: "Japanese" ,
+            link: "https://www.instagram.com/reel/C2jwWdVRPnd/?"
+        },
+        { name: "Mushroom Soup", cuisine: "Western" ,
+            link: "https://cookingwithayeh.com/wprm_print/7203"
+        },
+        { name: "Pickled Cucumber", cuisine: "Japanese" ,
+            link: "https://nomnompaleo.com/korean-cucumber-salad#wprm-recipe-container-35879"
+        },
+        { name: "Ponzu Sauce", cuisine: "Japanese" ,
+            link: "https://www.justonecookbook.com/ponzu-sauce/"
+        },
+        { name: "Pumpkin Puree", cuisine: "Western" ,
+            link: "https://www.inspiredtaste.net/35527/easy-pumpkin-puree-recipe/"
+        },
+        { name: "Seared Salmon", cuisine: "Japanese" ,
+            link: "https://www.youtube.com/watch?v=-OE6LhxsTNA"
+        },
+        { name: "Steamed Egg", cuisine: "Chinese" ,
+            link: "https://www.chinasichuanfood.com/chinese-steamed-egg/#recipe"
+        },
+        { name: "Sukiyaki", cuisine: "Japanese",
+            link: "https://www.justonecookbook.com/sukiyaki/"
+         },
+        { name: "Tomato Egg", cuisine: "Chinese",
+            link: "https://thewoksoflife.com/stir-fried-tomato-and-egg/#recipe"
+         },
+        { name: "Taro Sago", cuisine: "Chinese",
+            link: "https://thewoksoflife.com/taro-sago-dessert-soup/#recipe"
+         }
     ];
 
     let searchQuery = '';

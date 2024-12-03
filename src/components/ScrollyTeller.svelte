@@ -36,19 +36,34 @@
   let showTopArrow = false;
   $: showTopArrow = index === 1 | index === 2;
   
+  function scrollToNext() {
+        const nextIndex = index + 1; // Calculate the next index
+        const nextSection = document.querySelector(`[data-index="${nextIndex}"]`);
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
   let showBotArrow = false;
   $: showBotArrow = index === 4;
+
+  function scrollUp() {
+        const targetSection = document.querySelector('[data-index="3"]');
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+    }
 </script>
 
 <main>
   {#if showTopArrow}
-    <div class="wiggle-top-arrow">
+    <div class="wiggle-top-arrow" on:click={scrollToNext}>
       ↓
     </div>
   {/if}
 
   {#if showBotArrow}
-    <div class="wiggle-bot-arrow">
+    <div class="wiggle-bot-arrow" on:click={scrollUp}>
       ↑
     </div>
   {/if}
@@ -104,10 +119,10 @@
       </div>
       <div class="foreground" slot="foreground">
         <section style="height:20vh"></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
+        <section data-index="1"></section>
+        <section data-index="2"></section>
+        <section data-index="3"></section>
+        <section data-index="4"></section>
       </div>
     </Scroller>
   </a>
@@ -279,6 +294,14 @@
     text-align: center;
   }
 
+  .wiggle-top-arrow:hover {
+        background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
+    }
+
+  html {
+        scroll-behavior: smooth;
+    }
+
   .wiggle-bot-arrow {
     position: fixed;
     top: 11%;
@@ -294,6 +317,10 @@
     animation: wiggle 0.5s ease-in-out infinite;
     text-align: center;
   }
+
+  .wiggle-bot-arrow:hover {
+        background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
+    }
 
   @keyframes wiggle {
     0%, 100% {
