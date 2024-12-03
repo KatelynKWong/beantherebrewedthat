@@ -31,7 +31,7 @@
   $: image2Opacity.set(index === 4 ? 1 : 0);
 
   const greyRectOpacity = tweened(0, { duration: 400, easing: cubicOut });
-  $: greyRectOpacity.set(index > 2 ? .8 : 0);
+  $: greyRectOpacity.set(index === 3 ? .8 : 0);
 
   let showTopArrow = false;
   $: showTopArrow = index === 1 | index === 2;
@@ -68,6 +68,9 @@
     </div>
   {/if}
 
+  <a href={index !== 3 ? null : 'coffee'}>
+    <div class="grey-rectangle" style={`opacity: ${$greyRectOpacity};`}></div>
+  </a>
   <a href={index !== 3 ? null : 'tokyo'}>
     <div class="grey-rectangle1" style={`opacity: ${$greyRectOpacity};`}></div>
   </a>  
@@ -172,6 +175,9 @@
   }
   .subSection h1 {
     margin-bottom: 3px;
+    text-decoration: underline; /* Add this line for underlining */
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
   }
   .subSection h4 {
     margin-top: 6px;
@@ -187,6 +193,9 @@
   }
   .subSection1 h1 {
     margin-bottom: 3px;
+    text-decoration: underline; /* Add this line for underlining */
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
   }
   .subSection1 h4 {
     margin-top: 6px;
@@ -202,7 +211,11 @@
   }
   .subSection2 h1 {
     margin-bottom: 3px;
+    text-decoration: underline; /* Add this line for underlining */
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
   }
+  
   .subSection2 h4 {
     margin-top: 6px;
   }
@@ -259,15 +272,31 @@
     padding: 1em;
     margin: 0 0 2em 0;
   }
+
+  .grey-rectangle {
+    width: 66%; /* 2/3 of the screen */
+    height: 100%; /* Full height of the screen */
+    position: fixed; /* Fixes it to the screen */
+    top: 0; /* Aligns it to the top */
+    left: 0; /* Aligns it to the left */
+    z-index: 997; /* Ensure it’s above other elements */
+  }
+  .grey-rectangle:hover {
+    background-color: rgba(79, 79, 79, 0.5); /* Change to black on hover */
+  }
   .grey-rectangle1 {
     position: fixed;
     top: 0;
     right: 0;
     width: 33%;
-    height: 55%;
-    background-color: rgba(128, 128, 128, 0.5);
+    height: 56%;
+    background-color: rgba(128, 128, 128, 0.25);
     z-index: 997;
   }
+  .grey-rectangle1:hover {
+    background-color: rgba(79, 79, 79, 0.5); /* Change to black on hover */
+  }
+
   .grey-rectangle2 {
     position: fixed;
     top: 55vh;
@@ -276,6 +305,9 @@
     height: 100%;
     background-color: rgba(128, 128, 128, 0.5);
     z-index: 997;
+  }
+  .grey-rectangle2:hover {
+    background-color: rgba(79, 79, 79, 0.5); /* Change to black on hover */
   }
 
   .wiggle-top-arrow {

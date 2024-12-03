@@ -44,7 +44,7 @@
     if (index === 3) {
       tweenedAboutMeOpacity.set(0);
       tweenedAboutImageOpacity.set(0);
-      tweenedRectOpacity.set(.5);
+      tweenedRectOpacity.set(.25);
       tweenedAuthorOpacity.set(0);
       tweenedHeaderOpacity.set(1);
       tweenedCoffeeHeaderY.set(height * 4 / 5);
@@ -211,4 +211,5 @@
     top: 0;
     position: absolute;
   }
+
 </style>
