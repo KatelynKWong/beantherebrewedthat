@@ -58,6 +58,7 @@
         left: 5%;
         font-size: 4vw;
         background-color: rgba(140, 158, 178, 0.7);
+        color: white;
         border-radius: 10px;
         z-index: 999;
         text-align: left;
@@ -90,7 +91,7 @@
         font-size: 4vw;
         font-weight: bold;
         position: absolute;
-        color: rgb(55, 15, 15);
+        color: rgb(18, 41, 74);
         top: 110px; /* Adjusted position to ensure visibility */
         left: 4%;
         width: auto; /* Set width to auto */

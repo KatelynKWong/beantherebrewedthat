@@ -19,12 +19,28 @@
 
     onMount(() => {
         StaticMap = new mapboxgl.Map({
-        container,
-        style: "mapbox://styles/mapbox/light-v10",
-        center: [180, 0],
-        zoom: 0.8,
-        attributionControl: true,
+            container,
+            style: "mapbox://styles/mapbox/light-v10",
+            center: [138.2529, 36.2048], // Center on Japan
+            zoom: 5, // Initial zoom level
+            maxZoom: 8, // Restrict maximum zoom level
+            minZoom: 4, // Restrict minimum zoom level
+            attributionControl: true,
         });
+        // Enable scroll zoom and configure it to zoom towards the mouse pointer
+        StaticMap.scrollZoom.enable({ around: 'center' });
+
+        // Optional: Adjust scroll sensitivity
+        StaticMap.scrollZoom.setWheelZoomRate(1); // Default is 1, tweak as needed
+
+
+        // Set map bounds to Japan
+        const japanBounds = [
+            [122.9346, 24.3963], // Southwest corner of Japan (Okinawa area)
+            [153.9866, 45.5515], // Northeast corner of Japan (Hokkaido area)
+        ];
+        StaticMap.setMaxBounds(japanBounds);
+
 
         StaticMap.on("load", () => {
         // Convert JSON data from earthquakePoints to GeoJSON-like objects
@@ -171,17 +187,15 @@
     .home-link:visited {
         color: white; /* Prevents the link from turning purple */
     }
+
     .map {
         width: 100vw; /* Full width of the viewport */
-        height: 100vh; /* Full height of the viewport */
-        position: fixed; /* Stays fixed on the page */
-        top: 100px; /* Align to the top */
-        left: 0; /* Align to the left */
+        height: calc(100vh - 100px); /* Account for the header */
+        position: absolute; /* Use absolute positioning */
+        top: 100px; /* Start below the header */
+        left: 0;
+        z-index: 999; /* Ensure it's above other elements */
         outline: #96a8ad solid 3px; /* Border styling */
-        z-index: 999; /* Layer priority */
-        display: flex; /* Enables flexbox for centering */
-        align-items: center; /* Vertically centers the content */
-        justify-content: center; /* Horizontally centers the content */
     }
 
 
