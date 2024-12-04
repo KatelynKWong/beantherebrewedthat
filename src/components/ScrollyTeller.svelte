@@ -35,6 +35,10 @@
 
   let showTopArrow = false;
   $: showTopArrow = index === 1 | index === 2;
+
+  let showScroll = false;
+  $: showScroll = index === 1;
+  
   
   function scrollToNext() {
         const nextIndex = index + 1; // Calculate the next index
@@ -59,6 +63,12 @@
   {#if showTopArrow}
     <div class="wiggle-top-arrow" on:click={scrollToNext}>
       ↓
+    </div>
+  {/if}
+
+  {#if showScroll}
+    <div class="scroll">
+      (or scroll)
     </div>
   {/if}
 
@@ -314,21 +324,35 @@
     position: fixed;
     bottom: 10%;
     left: 33%;
-    transform: translateX(-25%);
+    transform: translateX(-50%);
     font-size: 2rem;
     font-weight: bold; /* Makes the text bold */
     color: white;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 0.5rem 1rem; /* Adds padding for a wider background box */
     border-radius: 8px; /* Slightly increases the corner rounding */
     z-index: 1000;
     animation: wiggle 0.5s ease-in-out infinite;
     text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow */
   }
 
   .wiggle-top-arrow:hover {
-        background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
+        background-color: rgba(116, 116, 116, .8); /* Fully opaque on hover */
     }
+
+  .scroll {
+    position: fixed;
+    bottom: 5%;
+    left: 33%;
+    transform: translateX(-50%); /* Centers the element at 33% of the page width */
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem 1rem; /* Adds padding for a wider background box */
+    border-radius: 8px; /* Slightly increases the corner rounding */
+    z-index: 1000;
+    text-align: center;
+  }
 
   html {
         scroll-behavior: smooth;
@@ -338,20 +362,21 @@
     position: fixed;
     top: 11%;
     left: 33%;
-    transform: translateX(-25%);
+    transform: translateX(-50%);
     font-size: 2rem;
     font-weight: bold; /* Makes the text bold */
     color: white;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 0.5rem 1rem; /* Adds padding for a wider background box */
     border-radius: 8px; /* Slightly increases the corner rounding */
     z-index: 1000;
     animation: wiggle 0.5s ease-in-out infinite;
     text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow */
   }
 
   .wiggle-bot-arrow:hover {
-        background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
+        background-color: rgba(116, 116, 116, .8); /* Fully opaque on hover */
     }
 
   @keyframes wiggle {
@@ -359,7 +384,7 @@
       transform: translateX(-50%) translateY(0);
     }
     50% {
-      transform: translateX(-50%) translateY(-5px);
+      transform: translateX(-50%) translateY(-7px);
     }
   }
 </style>
