@@ -171,7 +171,7 @@
     <tspan x="14%" dy="1.5em" font-size="80%">computer services to customers.</tspan>
     <tspan x="17%" dy="1.5em" font-size="80%">In addition to making coffee, Katelyn also enjoys playing music with friends and  </tspan>
     <tspan x="14%" dy="1.5em" font-size="80%">creating watercolor art pieces. If you are interested inchecking out more of her art, </tspan>
-    <tspan x="14%" dy="1.5em" font-size="80%">coffee, and study abroad experiences, please visit @twicks and @crusteacats on</tspan>
+    <tspan x="14%" dy="1.5em" font-size="80%">coffee, and study abroad experiences, please visit @twicksw and @crusteacats on</tspan>
     <tspan x="14%" dy="1.5em" font-size="80%">Instagram. Thank you!</tspan>
   </text>
 

@@ -80,7 +80,8 @@
     ];
 
     let searchQuery = '';
-    let selectedCuisine = 'All';
+    let selectedCuisine = 'All'
+    let selectedRecipe = null;
 
     // Filter recipes based on search query and selected cuisine
     $: filteredRecipes = recipes.filter(recipe => {
@@ -88,10 +89,31 @@
         const matchesCuisine = selectedCuisine === 'All' || recipe.cuisine === selectedCuisine;
         return matchesSearch && matchesCuisine;
     });
+
+    function selectRecipe(recipe) {
+        selectedRecipe = recipe;
+        console.log("recipe selected:" + {recipe})
+    }
+    function closePopup() {
+        selectedRecipe = null; // Close the pop-up
+        console.log("recipe closed")
+    }
 </script>
 
 <main>
-    <p>Welcome to my food subpage!</p>
+    <div class="popup" style:display={selectedRecipe ? 'block' : 'none'}>
+        <div class="popup-content">
+            <button class="close-btn" on:click={closePopup}>X</button>
+            {#if selectedRecipe}
+                <h2>{selectedRecipe.name}</h2>
+                <h7>Click 
+                    <a href={selectedRecipe ? selectedRecipe.link : '#'} target="_blank">here</a> 
+                    if pop-up doesn't load...
+                </h7>                <!-- Embed the page in an iframe -->
+                <iframe src={selectedRecipe.link} class="popup-iframe" title="{selectedRecipe.name} Recipe"></iframe>
+                {/if}
+        </div>
+    </div>
     <div class="header">
         <a href="{base}/" class="link">
             <h1 style="color: white">Bean There, Brewed That</h1>
@@ -118,10 +140,12 @@
     <div class="recipe">
         <ul id="recipe-list">
             {#each filteredRecipes as recipe}
-                <li>{recipe.name}</li>
+            <li on:click={() => selectRecipe(recipe)}>{recipe.name}</li>
             {/each}
         </ul>
     </div>
+    
+    
 </main>
 
 <style>
@@ -150,7 +174,7 @@
 
     .search-container {
         position: fixed;
-        top: 100px;
+        top: 110px;
         left: 20px;
         width: 250px;
         z-index: 1000;
@@ -167,15 +191,17 @@
         font-size: 16px;
         background-color: #fdfdfd;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        margin-left: 5%;
     }
 
     .recipe {
-        margin-top: 150px;
+        margin-top: 200px;
         padding-left: 0;
     }
 
     #recipe-list {
         list-style: none;
+        width: 30%; /* Limits the width to 1/3 of the page */
         padding: 0;
         margin: 0;
     }
@@ -183,6 +209,54 @@
     #recipe-list li {
         margin: 5px 0;
         font-size: 18px;
+        margin-left: 1%;
+        transition: background-color 0.3s ease; /* Optional for smooth transition */
     }
+    #recipe-list li:hover {
+        background-color: #d1d1d1; /* Change to your desired hover background color */
+    }
+    .popup {
+        position: fixed;
+        top: 15%;
+        right: 0;
+        width: 66.66%; /* 2/3rds of the window width */
+        height: 85%; /* Full height of the window */
+        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+        z-index: 1001;
+        display: none;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: hidden; /* Prevents content overflow */
+    }
+
+    .popup-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(89, 89, 89, 0.9);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        border-radius: 10%;
+    }
+
+    .popup-iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
 
 </style>

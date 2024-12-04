@@ -1,6 +1,5 @@
 <script>
     import CoffeeTaste from "./CoffeeTasting.svelte";
-    // src/components/Coffee/CoffeeTasting.svelte
     import PortaFilter from './assets/PortaFilter.jpeg';
     import CafeTable from './assets/CafeTable.jpeg';
     import Scroller from "@sveltejs/svelte-scroller";
@@ -8,8 +7,6 @@
     import { cubicOut } from 'svelte/easing';
     import { onMount, afterUpdate } from 'svelte';
     import * as d3 from 'd3'; // Import D3 library
-
-    // import ModalJournals from './ModalJournals.svelte';
     
     import { base } from '$app/paths';
     import Compressor from 'compressorjs';
@@ -200,7 +197,7 @@
         }
     }
 
-// Bind the click event to the document
+    // Bind the click event to the document
     onMount(() => {
         document.body.addEventListener('click', closeGallery);
 
@@ -266,7 +263,7 @@
                 <div class="image-wrapper" class:active={activeIndex === index}>
                     <div class="photo-top-label">{image.name}</div>
                     
-                    <!-- Updated Gallery Container -->
+                    <!-- Gallery Container -->
                     {#if activeIndex === index}
                         <div class="gallery-container">
                             {#each image.gallery as gallery_image}
@@ -344,7 +341,7 @@
         width: 50vw;
         z-index: 998;
         transition: bottom 0.3s;
-        background: #e4cab8; /* Adjust colors and direction as needed */
+        background: #e4cab8; 
         text-align: center;
     }
 
@@ -372,27 +369,27 @@
         width: 100%;
         height: 300px;
         object-fit: cover;
-        transition: border 0.2s ease; /* Smooth transition for the border effect */
-        border: none; /* Ensure there is no default border */
+        transition: border 0.2s ease; 
+        border: none; 
     }
 
     .summary_images:hover {
-        border: 2px solid rgba(255, 255, 255, 1); /* Light border with transparency */
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional: Add a shadow effect for more emphasis */
+        border: 2px solid rgba(255, 255, 255, 1); 
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
     }
 
     .entry-details {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;  /* Background covers the full width */
-        height: 100%;  /* Background covers the full height */
+        width: 100%;  
+        height: 100%; 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+        background: rgba(0, 0, 0, 0.6);
         color: white;
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
@@ -406,7 +403,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 0 10px; /* Optional padding inside text container */
+        padding: 0 10px; 
         font-size: 1vw
     }
 
@@ -455,8 +452,8 @@
         color: #fff;
         font-size: 0.9em;
         border-radius: 4px;
-        border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
-        transition: background-color 0.3s ease; /* Add smooth transition */
+        border: 5px solid rgba(255, 255, 255, 0); 
+        transition: background-color 0.3s ease; 
     }
 
     .label {
@@ -467,8 +464,8 @@
         color: #fff;
         font-size: 0.9em;
         border-radius: 4px;
-        border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
-        transition: background-color 0.3s ease; /* Add smooth transition */
+        border: 5px solid rgba(255, 255, 255, 0); 
+        transition: background-color 0.3s ease; 
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
     }
     
