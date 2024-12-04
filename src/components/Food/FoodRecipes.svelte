@@ -230,7 +230,7 @@
     .popup {
         position: fixed;
         top: 15%;
-        right: 0;
+        right: 3%;
         width: 66.66%; /* 2/3rds of the window width */
         height: 85%; /* Full height of the window */
         background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
