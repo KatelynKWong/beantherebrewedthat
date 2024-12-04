@@ -107,10 +107,13 @@
         alt="Strawberry Background"
         class="strawberry-img"
     />
+    <div class="instruction-text">
+        <h1>Explore the recipes on the right</h1>
+        <h1>to discover some of my favorites!</h1>
+    </div>    
     <svg class="background-svg" width="100%" height="100%">
-\        <rect class="grey-rectangle-background"/>
+        <rect class="grey-rectangle-background"/>
     </svg>
-    
 
     <div class="popup" style:display={selectedRecipe ? 'block' : 'none'}>
         <div class="popup-content">
@@ -160,11 +163,6 @@
 </main>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
 
     main {
         padding: 20px;
@@ -222,10 +220,14 @@
         font-size: 18px;
         margin-left: 10%;
         border-radius: 10%;
+        color: white;
         transition: background-color 0.3s ease; /* Optional for smooth transition */
+        box-shadow: 0px 0px 4px rgba(61, 2, 2, 0.3);
+        line-height: 1.7em;
     }
+
     #recipe-list li:hover {
-        background-color: rgb(248, 242, 242); /* Change to your desired hover background color */
+        background-color: rgba(61, 2, 2, 0.3); /* Change to your desired hover background color */
     }
     .popup {
         position: fixed;
@@ -233,7 +235,7 @@
         right: 3%;
         width: 66.66%; /* 2/3rds of the window width */
         height: 85%; /* Full height of the window */
-        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+        background-color: rgba(255, 255, 255); /* Slightly transparent background */
         z-index: 1001;
         display: none;
         padding: 20px;
@@ -255,13 +257,18 @@
         position: absolute;
         top: 10px;
         right: 10px;
-        background-color: rgba(89, 89, 89, 0.9);
+        background-color: rgba(102, 17, 17, 0.9);
         color: white;
         border: none;
         padding: 10px;
         cursor: pointer;
         font-size: 1.5rem;
         border-radius: 10%;
+    }
+
+    .close-btn:hover {
+        background-color: rgba(195, 92, 92, 0.9);
+        transform: scale(1.08);
     }
 
     .popup-iframe {
@@ -278,16 +285,9 @@
         height: 100%;
     }
 
-    .red-rectangle-background {
-        fill: rgb(191, 122, 122);
-        opacity: 0.5;
-        width: 100%; /* 2/3 of the screen width */
-        height: 100%; /* Full screen height */
-        left: 25%; /* Positions the rectangle from the right, taking up 2/3 of the screen */
-    }
     .grey-rectangle-background {
         position: fixed;  /* Fixed positioning to keep it in place when scrolling */
-        fill: rgb(219, 209, 209);  /* Apply fill color if it's an SVG */
+        fill: rgb(155, 8, 8);  /* Apply fill color if it's an SVG */
         opacity: 0.5;
         width: 25vw;  /* 25% of the viewport width */
         height: 100vh;  /* Full screen height */
@@ -295,18 +295,28 @@
     }
     .strawberry-img {
         position: fixed;
-        opacity: 0.5;
+        opacity: 0.8;
         z-index: -1;
         width: auto;
         height: 100%;
         top: 10%;
         left: 26%; /* Starts at 25% of the window width */
     }
-
-
-
-
-
-
-
+    .instruction-text{
+        position: fixed;
+        z-index: -1;
+        width: auto;
+        height: auto;
+        top: 40%;
+        left: 60%; /* Starts at 25% of the window width */
+        transform: translateX(-50%);        
+        background: rgba(117, 81, 81, 0.6);
+        border-radius: 4%;
+        text-align: center; /* Centers the text inside the box */
+        color: white;
+        padding: 10px; /* Adds padding for better readability */
+        font-size: 1.2em;
+        line-height: 1.5em;
+        box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2);
+    }
 </style>
