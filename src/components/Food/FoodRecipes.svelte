@@ -1,5 +1,6 @@
 <script>
     import { base } from '$app/paths';
+    import strawberryBackground from "./assets/strawberry.png"
 
     let recipes = [
         { name: "Cantonese Char Siu Yuk", cuisine: "Chinese",
@@ -101,6 +102,16 @@
 </script>
 
 <main>
+    <img 
+        src="{strawberryBackground}" 
+        alt="Strawberry Background"
+        class="strawberry-img"
+    />
+    <svg class="background-svg" width="100%" height="100%">
+\        <rect class="grey-rectangle-background"/>
+    </svg>
+    
+
     <div class="popup" style:display={selectedRecipe ? 'block' : 'none'}>
         <div class="popup-content">
             <button class="close-btn" on:click={closePopup}>X</button>
@@ -176,7 +187,7 @@
         position: fixed;
         top: 110px;
         left: 20px;
-        width: 250px;
+        width: 20vw;
         z-index: 1000;
         display: flex;
         flex-direction: column;
@@ -191,7 +202,7 @@
         font-size: 16px;
         background-color: #fdfdfd;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        margin-left: 5%;
+        margin-left: 10%;
     }
 
     .recipe {
@@ -201,7 +212,7 @@
 
     #recipe-list {
         list-style: none;
-        width: 30%; /* Limits the width to 1/3 of the page */
+        width: 20vw; /* Limits the width to 1/3 of the page */
         padding: 0;
         margin: 0;
     }
@@ -209,11 +220,12 @@
     #recipe-list li {
         margin: 5px 0;
         font-size: 18px;
-        margin-left: 1%;
+        margin-left: 10%;
+        border-radius: 10%;
         transition: background-color 0.3s ease; /* Optional for smooth transition */
     }
     #recipe-list li:hover {
-        background-color: #d1d1d1; /* Change to your desired hover background color */
+        background-color: rgb(248, 242, 242); /* Change to your desired hover background color */
     }
     .popup {
         position: fixed;
@@ -257,6 +269,44 @@
         height: 100%;
         border: none;
     }
+    .background-svg {
+        position: fixed; /* Keeps it fixed in place on the background */
+        top: 0;
+        left: 0;
+        z-index: -2; /* Puts the SVG behind everything else */
+        width: 100%;
+        height: 100%;
+    }
+
+    .red-rectangle-background {
+        fill: rgb(191, 122, 122);
+        opacity: 0.5;
+        width: 100%; /* 2/3 of the screen width */
+        height: 100%; /* Full screen height */
+        left: 25%; /* Positions the rectangle from the right, taking up 2/3 of the screen */
+    }
+    .grey-rectangle-background {
+        position: fixed;  /* Fixed positioning to keep it in place when scrolling */
+        fill: rgb(219, 209, 209);  /* Apply fill color if it's an SVG */
+        opacity: 0.5;
+        width: 25vw;  /* 25% of the viewport width */
+        height: 100vh;  /* Full screen height */
+        left: 0;  /* Positions the rectangle from the left side of the viewport */
+    }
+    .strawberry-img {
+        position: fixed;
+        opacity: 0.5;
+        z-index: -1;
+        width: auto;
+        height: 100%;
+        top: 10%;
+        left: 26%; /* Starts at 25% of the window width */
+    }
+
+
+
+
+
 
 
 </style>
