@@ -4,7 +4,7 @@
     import mapboxgl from "mapbox-gl";
     import { onMount } from "svelte";
     import * as d3 from 'd3'; // Import D3 library
-    import earthquakePoints from './assets/earthquakes.json';
+    import japanPlaces from './assets/japanPlaces.json';
     
     export let geoJsonToFit;
 
@@ -14,16 +14,12 @@
     let container;
     let StaticMap;
 
-    let slider_time = "Slide For Decade";
-        let slider_label = "";
-
     onMount(() => {
         StaticMap = new mapboxgl.Map({
             container,
             style: "mapbox://styles/mapbox/light-v10",
             center: [138.2529, 36.2048], // Center on Japan
             zoom: 5, // Initial zoom level
-            maxZoom: 8, // Restrict maximum zoom level
             minZoom: 4, // Restrict minimum zoom level
             attributionControl: true,
         });
@@ -43,51 +39,43 @@
 
 
         StaticMap.on("load", () => {
-        // Convert JSON data from earthquakePoints to GeoJSON-like objects
-        const features = earthquakePoints.map(earthquake => ({
+        // Convert JSON data from japanPlaces to GeoJSON-like objects
+        const features = japanPlaces.map(location => ({
             type: 'Feature',
             geometry: {
-            type: 'Point',
-            coordinates: [parseFloat(earthquake.Longitude), parseFloat(earthquake.Latitude)]
+                type: 'Point',
+                coordinates: [parseFloat(location.Longitude), parseFloat(location.Latitude)]
             },
             properties: {
-            magnitude: parseFloat(earthquake.Mag),
-            date: new Date(earthquake.Time), // Convert date string to Date object
-            year: Math.floor(new Date(earthquake.Time).getUTCFullYear() / 10) * 10
+                size: parseFloat(location.size), // Ensure this matches the JSON
+                color: location.color,           // Ensure this matches the JSON
+                description: location.description,
+                type: location.Type,
+                place: location.Place
             }
         }));
 
         // Add GeoJSON source
-        StaticMap.addSource('earthquakePoints', {
+        StaticMap.addSource('japanPlaces', {
             type: 'geojson',
             data: {
-            type: 'FeatureCollection',
-            features: features
+                type: 'FeatureCollection',
+                features: features
             }
         });
 
         // Add layer for plotting points
         StaticMap.addLayer({
-            id: 'earthquakePoints',
+            id: 'japanPlaces',
             type: 'circle',
-            source: 'earthquakePoints',
+            source: 'japanPlaces',
             paint: {
-            'circle-radius': [
-                'interpolate',
-                ['exponential', 4],
-                ['get', 'magnitude'],
-                0,0.5,9,20
-                ],
-            'circle-color': [
-                'interpolate',
-                ['exponential', 4],
-                ['get', 'magnitude'],
-                0.5,'#fec311',
-                9,'#990000'
-                ],
-            'circle-opacity': 0.6
+                'circle-radius': ['get', 'size'], // Pulls size from properties
+                'circle-color': ['get', 'color'], // Pulls color from properties
+                'circle-opacity': 0.6             // Sets constant opacity
             }
         });
+
 
         // Hide label layers
         hideLabelLayers();
@@ -128,16 +116,6 @@
         bounds._sw.lng,
         bounds._sw.lat,
         ];
-    }
-
-    function filterBy(year) {
-        StaticMap.setFilter('earthquakePoints', ['==', 'year', year]);
-    }
-
-    $: {
-        if (slider_time != "Slide For Decade") {
-        filterBy(slider_time)
-        }
     }
 
 </script>
