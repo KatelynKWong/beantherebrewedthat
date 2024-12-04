@@ -108,7 +108,7 @@
         class="strawberry-img"
     />
     <div class="instruction-text">
-        <h1>Explore the recipes on the right</h1>
+        <h1>Explore the recipes on the left</h1>
         <h1>to discover some of my favorites!</h1>
     </div>    
     <svg class="background-svg" width="100%" height="100%">
@@ -177,7 +177,7 @@
         background-color: #3f201f;
         z-index: 999;
         text-align: center;
-        padding: 10px 0;
+        padding: 1px 0;
         transition: opacity 0.3s ease-in-out;
     }
 
