@@ -92,8 +92,11 @@
   height: 85vh;
   width: 50vw;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the scaling effect */
 }
-
+.coffee_main:hover {
+  transform: scale(1.1); /* Enlarges the image by 10% on hover */
+}
 .image-container {
   position: relative;
   width: 50vw;

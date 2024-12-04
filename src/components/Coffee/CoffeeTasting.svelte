@@ -296,7 +296,7 @@
   <img 
     src="{CoffeeMainPic}" 
     alt="Coffee Art"
-    class="coffee_main"
+    class="banner_art"
   />
   <div class="title">
     <p>Caffeine Chronicles:</p>
@@ -433,13 +433,21 @@
   } 
 
 
-
-  .coffee_main {
+  .banner_art {
     width: 100%; /* Set the width to 100% of its container */
     height: 100%; /* Let the height adjust proportionally to maintain aspect ratio */
     object-fit: cover; /* Ensure the image covers the entire container */
   }
 
+  .coffee_main {
+    width: 100%; /* Set the width to 100% of its container */
+    height: 100%; /* Let the height adjust proportionally to maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the scaling effect */
+  }
+  .coffee_main:hover {
+    transform: scale(1.05); /* Enlarges the image by 10% on hover */
+  }
   .title {
     font-size: 4vw;
     font-weight: bold;
