@@ -372,10 +372,10 @@
 
 
 <style>
-  .row {
+.row {
     display: flex;
-    flex-wrap: wrap; /* Allow flex items to wrap onto multiple lines */
-  }
+    flex-wrap: wrap;
+}
 
   .column {
     flex: 1 0 25%; /* Flex-grow, Flex-shrink, Flex-basis */
@@ -511,16 +511,23 @@
   }
 
   .drop-down {
-    width: 100%; /* Make the select element span the entire width of its container */
+    position: relative;
+    top: -50px;
+    left: 1%;
+    width: 10%; /* Make the select element span the entire width of its container */
     box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
     background-color: #9a7952;
     font-family: 'Roboto', sans-serif; /* Apply a custom font */
     color: white;
-    font-size: 16px; /* Set a pleasant font size */
+    font-size: 1.2vw; /* Set a pleasant font size */
+    font-weight: bold;
     text-align: center; /* Center the text within the select element */
-    padding: 8px; /* Add some padding for better spacing */
+    padding: 6px; /* Add some padding for better spacing */
     border: 1px solid #ccc; /* Add a border for better visibility */
     border-radius: 4px; /* Rounded corners */
+  }
+  .drop-down:hover{
+    background-color: #49351d;
   }
   .home-link {
         color: inherit; /* Keeps the original text color */
