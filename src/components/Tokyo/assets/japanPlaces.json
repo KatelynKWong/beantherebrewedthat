@@ -1,11 +1,431 @@
 [
   {
     "Place": "Hitotsubashi University Dorms",
-    "Latitude": "35.72024205223734",
-    "Longitude": "139.47447165863787",
+    "Coord": [35.72024205223734, 139.47447165863787],
     "size": "5",
     "color": "dark red",
     "description": "Where I stayed at while I studied abroad",
-    "Type": "location"
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Hitotsubashi University Campus",
+    "Coord": [35.69534313083985, 139.4480498679923],
+    "size": "5",
+    "color": "dark red",
+    "dot-type": "essentials",
+    "description": "University that I studied at",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Mustard Seed Christian Church",
+    "Coord": [35.67042704274083, 139.70459017517683],
+    "size": "5",
+    "color": "dark red",
+    "dot-type": "essentials",
+    "description": "Western style church with both English and Japanese translations. Church I went to during the duration of my stay in Japan.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Lighthouse Tokyo Bar",
+    "Coord": [35.697925657443434, 139.48175659046862],
+    "size": "5",
+    "color": "green",
+    "dot-type": "frequents",
+    "description": "A bar that I visited every Thursday with friends to hang out, play games, meet other exchange students, etc. Very cheap drinks for students.",
+    "Type": "location",
+    "Province": "Tokyo"
+  }, 
+  {
+    "Place": "B-Pump Ogikubo Climbing Gym",
+    "Coord": [35.70484447388098, 139.61875671138273],
+    "size": "5",
+    "color": "green",
+    "dot-type": "frequents",
+    "description": "Whenever I was free, I would come here to climb either alone or with friends. Over the course of my stay in Japan, I brought 17 different people to B-Pump and they all got memberships at the gym.",
+    "Type": "location",
+    "Province": "Tokyo"
+  }, 
+  {
+    "Place": "E-Sports Cafe",
+    "Coord": [35.70169210131043, 139.69952357120562],
+    "size": "5",
+    "color": "green",
+    "dot-type": "frequents",
+    "description": "If I was free and not climbing, I would come here with friends to play valorant. The cost to play here was pretty cheap and it was near so many good Korean restaurants, making it a place I frequented.",
+    "Type": "location",
+    "Province": "Tokyo"
+  }, 
+  {
+    "Place": "Lopia Kodaira",
+    "Coord": [35.71523772113738, 139.47844823810618],
+    "size": "5",
+    "color": "green",
+    "dot-type": "frequents",
+    "description": "This grocery was not necessarily the closest, but it was the cheapest within a 10 minute biking radius. I would come here a lot to get ready made meals, snacks, and fruits.",
+    "Type": "location",
+    "Province": "Tokyo"
+  }, 
+  {
+    "Place": "みなとや製パン",
+    "Coord": [36.780570413141604, 137.08448185365674],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "The air bnb I stayed at with my friends when we went to Toyama",
+    "Type": "location",
+    "Province": "Toyama"
+  }, 
+  {
+    "Place": "Nagamachi District",
+    "Coord": [36.56361607774801, 136.65148281268506],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "The samurai district village at Kanazawa recommended by my parents that my friends and I visited when we travelled to Kanazawa. Pretty small place, about the size of 3 streets.",
+    "Type": "location",
+    "Province": "Ishikawa"
+  }, 
+  {
+    "Place": "Mawaki Native Site",
+    "Coord": [37.30570991100009, 137.20694232976646],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "As we travelled peninsula, we stopped at a couple historical tourist sites, including this one, which displayed wooden pillars in a circle similar to Stonehenge.",
+    "Type": "location",
+    "Province": "Ishikawa"
+  }, 
+  {
+    "Place": "Rokkōsaki Lighthouse",
+    "Coord": [37.521613458046915, 137.32582259610624],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "Lighthouse at the tip of the peninsula. This area was hit by a devastating earthquake earlier in the year and the aftermath was still very visible. Most of the people decided to move out of the area rather than rebuild so it looked post-apocalyptic.",
+    "Type": "location",
+    "Province": "Ishikawa"
+  }, 
+  {
+    "Place": "Shiroyone Senmaida Rice Terraces",
+    "Coord": [37.42609606036227, 137.00331486358147],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "It was dark when we were here so there wasn't much we could see of the rice terraces. I ended up getting bit by 3 mosquitoes in the span of 20 minutes here.",
+    "Type": "location",
+    "Province": "Ishikawa"
+  },
+  {
+    "Place": "Roadside station Okuhida-onsengo Kamitakara",
+    "Coord": [36.24951428837359, 137.49974723496246],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A roadside plaza/restop where we ate dipping soba served by a couple really nice old ladies. There was too much food for me to finish though and given that I was sick, I only made it through half of my bowl.",
+    "Type": "location",
+    "Province": "Gifu"
+  },
+  {
+    "Place": "Tenryo-no-yu",
+    "Coord": [36.129519797738226, 137.24344987252084],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "All of us were craving a warm onsen bath so we stopped by here after eating a big meal of delicious gyoza. The water was a bit too warm for my friends and the bath itself was not very big, but we were satisfied.",
+    "Type": "location",
+    "Province": "Gifu"
+  },
+  {
+    "Place": "Takashima Castle",
+    "Coord": [36.031705632442886, 138.11028414098251],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "We made a lunch stop in the city and decided to visit this place after eating. It was a small castle, but we were able to get some nice photos and see a good view of the surrounding city from higher up in the castle.",
+    "Type": "location",
+    "Province": "Nagano"
+  },
+  {
+    "Place": "Hotel Tawadaso",
+    "Coord": [40.4231383972712, 140.9016167148479],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "Stayed here for one night next to the lake. It came with a nice onsen as well as a big AYCE breakfast in the morning. Would definitely come back here again and try biking around the lake.",
+    "Type": "location",
+    "Province": "Aomori"
+  },
+  {
+    "Place": "Lake Tawado",
+    "Coord": [40.464193364192205, 140.94319976814322],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A beautiful, clear lake that I visited in my Aomori trip. Getting here was difficult because there was only one bus going this way from Hachinohe and back so trying to make it was a bit stressful.",
+    "Type": "location",
+    "Province": "Aomori"
+  },
+  {
+    "Place": "Michinoeki Oirase Roman Park",
+    "Coord": [40.58405575564852, 141.11875681526024],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "Made a it stop at this plaza and bought some apple flavored goods, which is what Aomori is known for.",
+    "Type": "location",
+    "Province": "Aomori"
+  },
+  {
+    "Place": "Minato Shokudō",
+    "Coord": [40.52404959388518, 141.52893356574603],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "A restaurant known for their amazing seafood bowls. Unfortunately, they did not have any uni left but luckily, we had already eaten some two days before so I was still happy with the fresh bowl of fish I got.",
+    "Type": "location",
+    "Province": "Aomori"
+  },
+  {
+    "Place": "Haku Shokudo",
+    "Coord": [40.50656372475314, 141.6086442730463],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "travels",
+    "description": "Known for their uni meals. I got a set with an uni rice bowl, uni soup, and sashimi side and it was probably one of the best meals I have had in my life. The uni texture was so rich, buttery, and soft. The cooked uni in the soup gave off the texture of cooked egg yolk, but the flavor was even stronger. Amazing.",
+    "Type": "location",
+    "Province": "Aomori"
+  },
+  {
+    "Place": "Geibikei Gorge",
+    "Coord": [38.98182717599113, 141.26379555514993],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "travels",
+    "description": "One of the most beautiful places I visited in Japan. It was a gorge a bit of a drive away from the station, but it was worth the taxi ride. We were early so our boat ride up the gorge was not crowded at all and the sun was just starting to shine so it wasn't too hot yet.",
+    "Type": "location",
+    "Province": "Iwate"
+  },
+  {
+    "Place": "Inn Maizuru",
+    "Coord": [38.98909060579382, 141.11149275965448],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "The hotel we stayed at while we were in Hiraizumi. Small family owned, but good service.",
+    "Type": "location",
+    "Province": "Iwate"
+  },
+  {
+    "Place": "Kosekiya (Annex)",
+    "Coord": [38.56976442932443, 140.53127149063022],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "The ryoukan we stayed at while were in Ginzane Onsen. Amazing hospitality with one of the best meals I've had at Japan at night called a kaiseki course meal. So many interesting foods that were served, including crab. The breakfast meal was also a course meal that was delicious too.",
+    "Type": "location",
+    "Province": "Yamagata"
+  },
+  {
+    "Place": "Shirogane Falls",
+    "Coord": [38.56824346744881, 140.53161566221388],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A short but pretty hike up the gorge to a waterfall where we sat on the bridge and took photos of each other and the view of the valley of Ginzan Onsen below.",
+    "Type": "location",
+    "Province": "Yamagata"
+  },
+  {
+    "Place": "Silver Mine Cafe",
+    "Coord": [38.56618426776463, 140.5320496176889],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "Visited right before dark so it was a bit scary going into the cave. It was an interesting archelogical site though, where Ginzan Onsen gets its namesake from.",
+    "Type": "location",
+    "Province": "Yamagata"
+  },
+  {
+    "Place": "Ginzan Onsen Public Bath Shiroganeyu",
+    "Coord": [38.5711086343344, 140.53045774286366],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "We visited this onsen and while it was nice, there were many bugs flying around and in the water so not the best onsen experience I've had in Japan.",
+    "Type": "location",
+    "Province": "Yamagata"
+  },
+  {
+    "Place": "Risshaku-ji Temple (Yamadera)",
+    "Coord": [38.313922063896754, 140.43422476025475],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "The best view in Japan I've seen so far. The temple is over a thousand steps to reach the top and when you reach the temple, you can see a view of the entire valley below. Very green with meadows, forests, and hills.",
+    "Type": "location",
+    "Province": "Yamagata"
+  },
+  {
+    "Place": "Risshaku-ji Temple (Yamadera)",
+    "Coord": [38.313922063896754, 140.43422476025475],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "The best view in Japan I've seen so far. The temple is over a thousand steps to reach the top and when you reach the temple, you can see a view of the entire valley below. Very green with meadows, forests, and hills.",
+    "Type": "location",
+    "Province": "Yamagata"
+  },
+  {
+    "Place": "Daiwa Roynet Hotel Yamagata Station",
+    "Coord": [38.24735368096898, 140.32970823361939],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "The hotel we stayed while at Yamagata. This was the only hotel in our whole trip that was modern without an onsen and traditional meals that came with the stay.",
+    "Type": "location",
+    "Province": "Yamagata"
+  },
+  {
+    "Place": "Yonezawa Beef Tokiwa",
+    "Coord": [38.246744528071574, 140.32951432204231],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "I tried Yonezawa wagyu here. This was the second time I've had wagyu in Japan and while it didn't compare to the Kobe beef I had in Kobe, this was still a close second.",
+    "Type": "location",
+    "Province": "Yamagata"
+  },
+  {
+    "Place": "Akiu Great Falls",
+    "Coord": [38.27273540424505, 140.6038692282586],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "Went hiking and swimming in the waterfall here with friends. It was funny because all the locals were looking at us foreigners like we were crazy because some of my friends just dived headfirst into the water from the cliff next to the waterfall.",
+    "Type": "location",
+    "Province": "Miyagi"
+  },
+  {
+    "Place": "Kukka Cafe",
+    "Coord": [38.238591380316215, 140.701267584491],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "A cute cafe in the inaka outside of Sendai with super cute and kind cats that were willing to be pet.",
+    "Type": "location",
+    "Province": "Miyagi"
+  },
+  {
+    "Place": "Togatta Onsen Kotobuki no Yu Hot Spring",
+    "Coord": [38.12549639257443, 140.57842108402576],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A small onsen that was okay with admitting my friend who had lots of tattoos. The water was too hot for them to enjoy though.",
+    "Type": "location",
+    "Province": "Miyagi"
+  },
+  {
+    "Place": "Matsushima",
+    "Coord": [38.367970487822504, 141.0624428508686],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A tourist location with many islands that you can go on and hike/walk around. Very relaxing and peaceful location",
+    "Type": "location",
+    "Province": "Miyagi"
+  },
+  {
+    "Place": "Zenjiro Sendai Station Gyutan Dori",
+    "Coord": [38.261083812181475, 140.88190208986256],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "The best restaurant with beef tongue that I have tried yet. Very accessible since it is inside Sendai station, but the line was very long; took about a 45 minute wait.",
+    "Type": "location",
+    "Province": "Miyagi"
+  },
+  {
+    "Place": "Nagatoro Iwadatami",
+    "Coord": [36.093687125010575, 139.11446575939738],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "A massive white water rapid location with a waterfall. Nice place to walk, rest, and visit nearby small village souvenir shops.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "Hijiri Shrine",
+    "Coord": [36.04632416120162, 139.10795510302245],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A small shrine located near the local train station. There are also several hiking trails nearby, but we didn't walk to far because we had a train and another location we needed to get to soon after arrival. This shrine is known for their massive coin statue.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "Bakery Lapin Noir",
+    "Coord": [35.98760793454707, 139.0831448506077],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I got myself a beer bread here, but it didn't taste like beer at all.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "Chichibu Imamiya Shrine",
+    "Coord": [35.99472526547569, 139.0802342374352],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "Visited this shrine because my friends said that Chichibu is famous for this shrine. It was an okay experience. I didn't participate in any of the activities this time.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "My friend's summer house",
+    "Coord": [35.88878747859668, 138.4141717299386],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "We stayed here when we visited Yamanashi. Luckily, my friend's family let us stay there for free and we were able to focus on spending time in the surrounding touristy areas.",
+    "Type": "location",
+    "Province": "Yamanashi"
+  },
+  {
+    "Place": "コンプレ堂",
+    "Coord": [35.88449817393296, 138.4157158927372],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "A really good bakery with delicious bread and a nice owner.",
+    "Type": "location",
+    "Province": "Yamanashi"
+  },
+  {
+    "Place": "Cou Cou Cafe",
+    "Coord": [35.88610669040789, 138.4118554857408],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I went to this cafe alone because none of my friends wanted to wake up earlier to go. It had delicious coffee and I felt like I could recharge alone since I had been spending all weekend surrounded by people.",
+    "Type": "location",
+    "Province": "Yamanashi"
+  },
+  {
+    "Place": "School Bus Bakery",
+    "Coord": [35.90044684811512, 138.44260737917003],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "A sweet lady was running a bakery business out of a renovated school bus. She is apparently famous for her bread so my friends took me here and we got some delicious breads and sat nearby to have a picnic.",
+    "Type": "location",
+    "Province": "Yamanashi"
   }
 ]

@@ -44,7 +44,7 @@
             type: 'Feature',
             geometry: {
                 type: 'Point',
-                coordinates: [parseFloat(location.Longitude), parseFloat(location.Latitude)]
+                coordinates: [parseFloat(location.Coord[1]), parseFloat(location.Coord[0])]
             },
             properties: {
                 size: parseFloat(location.size), // Ensure this matches the JSON
