@@ -427,5 +427,115 @@
     "description": "A sweet lady was running a bakery business out of a renovated school bus. She is apparently famous for her bread so my friends took me here and we got some delicious breads and sat nearby to have a picnic.",
     "Type": "location",
     "Province": "Yamanashi"
+  },
+  {
+    "Place": "Kobe Beef Steak Ishida.Main-Shop",
+    "Coord": [34.694059602141465, 135.19248206019705],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "Type": "location",
+    "Province": "Kitanagasadori"
+  },
+  {
+    "Place": "Osaka Aquarium Kaiyukan",
+    "Coord": [34.65639385428864, 135.4282236308678],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "Tagged along with my friends to visit this museum. Ended up staying here for 2 hours looking at the fish. I also got a lot closer to one of my closest study abroad friends here.",
+    "Type": "location",
+    "Province": "Osaka"
+  },
+  {
+    "Place": "Mugen Ramen",
+    "Coord": [34.658908634614264, 135.49915168407898],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "My two friends and I were really tired from a day of travelling. So we wandered in to this ramen shop and it was one of the best meat filled ramen shops I had tasted. It came with 5 slices of raw beef that cooked in the hot soup.",
+    "Type": "location",
+    "Province": "Osaka"
+  },
+  {
+    "Place": "Melon Bread",
+    "Coord": [34.66884083803293, 135.50349022804647],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I'm a huge fan of melon pan and pineapple buns. This street vendor took freshly baked melon pan, sliced it in half, and added a slab of ice cream in between. Very sweet, but reminds me of childhood.",
+    "Type": "location",
+    "Province": "Osaka"
+  },
+  {
+    "Place": "Tonkatsu Wako",
+    "Coord": [34.674312508988905, 135.50474377220297],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "My friend's dad highly recommended this tonkatsu place so we tried it. It was so cheap, but delicious! I paid $7 for a large plate of tonkatsu and refillable veggies, soup, and rice.",
+    "Type": "location",
+    "Province": "Osaka"
+  },
+  {
+    "Place": "Osaka Castle",
+    "Coord": [34.686688126929816, 135.52572160279632],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A very popular tourist attraction that is alright. We didn't go inside but we ended up taking lots of photos with the cherry blossom trees in the park surrounding the castle.",
+    "Type": "location",
+    "Province": "Osaka"
+  },
+  {
+    "Place": "Kobe Beef Steak Ishida.Main-Shop",
+    "Coord": [34.694059602141465, 135.19248206019705],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "Type": "location",
+    "Province": "Kitanagasadori"
+  },
+  {
+    "Place": "Kobe Beef Steak Ishida.Main-Shop",
+    "Coord": [34.694059602141465, 135.19248206019705],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "Type": "location",
+    "Province": "Kitanagasadori"
+  },
+  {
+    "Place": "Kobe Beef Steak Ishida.Main-Shop",
+    "Coord": [34.694059602141465, 135.19248206019705],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "Type": "location",
+    "Province": "Kitanagasadori"
+  },
+  {
+    "Place": "Kobe Beef Steak Ishida.Main-Shop",
+    "Coord": [34.694059602141465, 135.19248206019705],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "Type": "location",
+    "Province": "Kitanagasadori"
+  },
+  {
+    "Place": "Kobe Beef Steak Ishida.Main-Shop",
+    "Coord": [34.694059602141465, 135.19248206019705],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "Type": "location",
+    "Province": "Kitanagasadori"
   }
 ]

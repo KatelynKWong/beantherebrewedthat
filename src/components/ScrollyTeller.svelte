@@ -139,9 +139,9 @@
       </div>
     </Scroller>
   </a>
-  <div class="progress-bars" style={`opacity: ${$progressBarOpacity}; visibility: ${index >= 1 ? 'visible' : 'hidden'}`}>
+  <!-- <div class="progress-bars" style={`opacity: ${$progressBarOpacity}; visibility: ${index >= 1 ? 'visible' : 'hidden'}`}>
     <progress value={offset || 0} />
-  </div>
+  </div> -->
 </main>
 
 <style>
@@ -266,9 +266,11 @@
     position: relative;
     z-index: 996;
   }
-  .progress-bars progress {
-    background-color: orange !important;
-  }
+
+  progress::-webkit-progress-value { background: orange; }
+  progress::-moz-progress-bar { background: blue; }
+
+
   .progress-bars {
     position: fixed;
     top: 10vh;
