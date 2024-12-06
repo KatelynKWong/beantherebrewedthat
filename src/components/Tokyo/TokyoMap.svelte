@@ -14,6 +14,14 @@
     let container;
     let StaticMap;
 
+    // Modal visibility and content
+    let modalVisible = false;
+    let modalContent = {
+        place: '',
+        description: '',
+        type: '',
+    };
+    
     onMount(() => {
         StaticMap = new mapboxgl.Map({
             container,
@@ -72,9 +80,80 @@
             paint: {
                 'circle-radius': ['get', 'size'], // Pulls size from properties
                 'circle-color': ['get', 'color'], // Pulls color from properties
-                'circle-opacity': 0.6             // Sets constant opacity
+                'circle-opacity': 0.9             // Sets constant opacity
             }
         });
+
+        // allows dots to enlarge when mouse is hovering nearby
+        StaticMap.on('mousemove', (e) => {
+            const mousePoint = e.point; // Get the mouse pointer location
+            const proximityThreshold = 20; // Radius in pixels to detect nearby dots
+
+            // Get all features in the 'japanPlaces' layer
+            const features = StaticMap.queryRenderedFeatures(undefined, {
+                layers: ['japanPlaces'],
+            });
+
+            let hoveredFeature = null;
+
+            // Loop through features to check distance from the mouse
+            for (const feature of features) {
+                const screenPoint = StaticMap.project(feature.geometry.coordinates);
+                const distance = Math.hypot(mousePoint.x - screenPoint.x, mousePoint.y - screenPoint.y);
+
+                if (distance <= proximityThreshold) {
+                    hoveredFeature = feature;
+                    break; // Stop once the nearest feature is found
+                }
+            }
+
+            if (hoveredFeature) {
+                // Enlarge the dot by increasing its size
+                StaticMap.setPaintProperty('japanPlaces', 'circle-radius', [
+                    'case',
+                    ['==', ['get', 'place'], hoveredFeature.properties.place],
+                    ['+', ['get', 'size'], 5], // Increase size by 5
+                    ['get', 'size']
+                ]);
+
+                // Change cursor style to pointer
+                StaticMap.getCanvas().style.cursor = 'pointer';
+            } else {
+                // Reset dot sizes when no dot is nearby
+                StaticMap.setPaintProperty('japanPlaces', 'circle-radius', ['get', 'size']);
+
+                // Reset cursor style
+                StaticMap.getCanvas().style.cursor = '';
+            }
+        });
+
+
+            StaticMap.on('mouseleave', 'japanPlaces', () => {
+                StaticMap.getCanvas().style.cursor = '';
+                StaticMap.setPaintProperty('japanPlaces', 'circle-radius', ['get', 'size']);
+            });
+
+        // on click, map zooms towards dot
+        StaticMap.on('click', 'japanPlaces', (e) => {
+                const clickedFeature = e.features[0].properties;
+
+                // Update modal content
+                modalContent = {
+                    place: clickedFeature.place,
+                    description: clickedFeature.description,
+                    type: clickedFeature.type
+                };
+
+                // Show modal
+                modalVisible = true;
+
+                // Optional: Zoom to the clicked point
+                StaticMap.flyTo({
+                    center: e.features[0].geometry.coordinates,
+                    zoom: 10
+                });
+            });
+    
 
 
         // Hide label layers
@@ -118,6 +197,12 @@
         ];
     }
 
+
+    // Close modal function
+    function closeModal() {
+        modalVisible = false;
+    }
+
 </script>
 
 <main>
@@ -127,6 +212,15 @@
         </a>
     </div>
 
+    {#if modalVisible}
+        <div class="modal-backdrop" on:click={closeModal}></div>
+        <div class="modal">
+            <h2>{modalContent.place}</h2>
+            <p><strong>Type:</strong> {modalContent.type}</p>
+            <p>{modalContent.description}</p>
+            <button on:click={closeModal}>Close</button>
+        </div>
+    {/if}
 </main>
 
 
@@ -181,5 +275,49 @@
     opacity: 1;
     visibility: visible;
   }
+
+  .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .modal {
+        position: fixed;
+        bottom: 10%; /* Center vertically */
+        right: 5%; /* Position 10% from the right */
+        width: 25vw; /* Spans 20% of the viewport width (10% to 30% from the right) */
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        font-size: clamp(1rem, 1vw, 1.5rem); /* Responsive font size */
+        max-height: 70vh; /* Prevent modal from being too tall */
+        overflow-y: auto; /* Add scroll if content exceeds height */
+    }
+
+
+    .modal h2 {
+        margin-top: 0;
+    }
+
+    .modal button {
+        margin-top: 20px;
+        padding: 10px 15px;
+        background-color: #54757e;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .modal button:hover {
+        background-color: #425a63;
+    }
 
 </style>
