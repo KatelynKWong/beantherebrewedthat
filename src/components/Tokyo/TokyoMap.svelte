@@ -89,7 +89,7 @@
         // allows dots to enlarge when mouse is hovering nearby
         StaticMap.on('mousemove', (e) => {
             const mousePoint = e.point; // Get the mouse pointer location
-            const proximityThreshold = 20; // Radius in pixels to detect nearby dots
+            const proximityThreshold = 10; // Radius in pixels to detect nearby dots
 
             // Get all features in the 'japanPlaces' layer
             const features = StaticMap.queryRenderedFeatures(undefined, {
@@ -114,7 +114,7 @@
                 StaticMap.setPaintProperty('japanPlaces', 'circle-radius', [
                     'case',
                     ['==', ['get', 'place'], hoveredFeature.properties.place],
-                    ['+', ['get', 'size'], 5], // Increase size by 5
+                    ['+', ['get', 'size'], 7], // Increase size by 5
                     ['get', 'size']
                 ]);
 
