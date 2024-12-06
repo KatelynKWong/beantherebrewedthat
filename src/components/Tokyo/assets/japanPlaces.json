@@ -489,53 +489,253 @@
     "Province": "Osaka"
   },
   {
-    "Place": "Kobe Beef Steak Ishida.Main-Shop",
-    "Coord": [34.694059602141465, 135.19248206019705],
+    "Place": "Takkun",
+    "Coord": [34.67725365890336, 135.53542986414917],
     "size": "5",
     "color": "orange",
     "dot-type": "food",
-    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "description": "A really good takoyaki roadside store. The best takoyaki I've ever tried so far.",
     "Type": "location",
-    "Province": "Kitanagasadori"
+    "Province": "Osaka"
   },
   {
-    "Place": "Kobe Beef Steak Ishida.Main-Shop",
-    "Coord": [34.694059602141465, 135.19248206019705],
+    "Place": "Coffee Taiga",
+    "Coord": [34.66849066642942, 135.52584994591322],
     "size": "5",
-    "color": "orange",
-    "dot-type": "food",
-    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "One of the best lattes I've tried in Japan so far. Owner was really sweet and we had a conversation of what beans he preferred for various drinks.",
     "Type": "location",
-    "Province": "Kitanagasadori"
+    "Province": "Osaka"
   },
   {
-    "Place": "Kobe Beef Steak Ishida.Main-Shop",
-    "Coord": [34.694059602141465, 135.19248206019705],
+    "Place": "Homare Nursery",
+    "Coord": [34.67460074068495, 135.52663198005496],
     "size": "5",
-    "color": "orange",
-    "dot-type": "food",
-    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "The air bnb we stayed at while we visited Osaka. The location was very central and close to a few train stations. While the space wasn't very big, the place fit many people. There were 12 of us living there together.",
     "Type": "location",
-    "Province": "Kitanagasadori"
+    "Province": "Osaka"
   },
   {
-    "Place": "Kobe Beef Steak Ishida.Main-Shop",
-    "Coord": [34.694059602141465, 135.19248206019705],
+    "Place": "Nakamura Tokichi Honten",
+    "Coord": [34.88930764630222, 135.8017590515073],
     "size": "5",
     "color": "orange",
     "dot-type": "food",
-    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "description": "One of the most famous matcha/dessert shops in Uji. My friend from home told me that they highly recommended me to try the matcha parfaits here so I got the 2000 Yen parfait. Probably one of the best desserts I tried in Japan.",
     "Type": "location",
-    "Province": "Kitanagasadori"
+    "Province": "Kyoto"
   },
   {
-    "Place": "Kobe Beef Steak Ishida.Main-Shop",
-    "Coord": [34.694059602141465, 135.19248206019705],
+    "Place": "Yamadaen Tea Stall",
+    "Coord": [34.89110339038755, 135.806286006823],
     "size": "5",
     "color": "orange",
     "dot-type": "food",
-    "description": "I tried my first wagyu beef here. We hadn't thought to reserve so we went wagyu beef hunting until we found this place that had extra space. It was one of the best pieces of meat I have ever eaten in my life. It just melted in my mouth like butter.",
+    "description": "I bought ceremonial grade matcha here. The owner was very nice and helped me find the best matcha that matched what I was looking for even though I confused her a lot with my very broken Japanese at the time.",
     "Type": "location",
-    "Province": "Kitanagasadori"
+    "Province": "Kyoto"
+  },
+  {
+    "Place": "Iwatoyama Hostel(岩戸山ホステル)",
+    "Coord": [35.00072317433637, 135.7570926783294],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "This is the first and only hostel that I stayed at in Japan. The owner was very nice and allowed me to check in even though I was late by a couple minutes. Very willing to accommodate for a foreign traveller. This was also one of the cheapest overnight places in Kyoto that I could find.",
+    "Type": "location",
+    "Province": "Kyoto"
+  },
+  {
+    "Place": "The Bridge",
+    "Coord": [34.999484790476416, 135.75819587607074],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "I was looking for a coffee shop in the morning before travelling on the Shinkansen and I saw this Christian owned cafe. So I went and talked a bit with the workers about finding a church in Japan as I studied abroad, and they gave me lots of advice. It was actually through these workers that I found Mustard Seed. The coffee was also really good here.",
+    "Type": "location",
+    "Province": "Kyoto"
+  },
+  {
+    "Place": "Yamanakako Onsen Benifuji no Yu hot spring",
+    "Coord": [35.42490778553271, 138.84596121757716],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "An onsen bath house that is apparently known for their views of Mount Fuji as you relax in the hot spring. However, when we finally arrived at the onsen, it was dark so I was unable to see any view of Mount Fuji. However, the outdoor area had a huge variety of baths. 8/10",
+    "Type": "location",
+    "Province": "Yamanashi"
+  },
+  {
+    "Place": "Togendai station",
+    "Coord": [35.23912360021012, 138.99444696976252],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "The cable car station that stops at Lake Ashi. Came here with a friend, took a couple pictures and left pretty soon afterwards.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Owakudani",
+    "Coord": [35.24224405759411, 139.02011577822077],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A very famous tourist area featuring a volcanic area on top of the gondola cable car ride. This place is known for their black volcanic eggs, black ice cream, and various other black food items. The view is usually amazing here of the surrounding mountains, but when I went here with my friend, it was foggy so we couldn't see too far in the distance unfortunately.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Hakone Gora Park",
+    "Coord": [35.24850109009379, 139.0454516171336],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A very pretty park with greenhouses, flower gardens, a fountain, cafes, an arts and crafts workshop, souvenir shops, etc. Very aesthetic place for photos with flowers.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Café Ryusenkei",
+    "Coord": [35.2437872688653, 139.05011355986167],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "A cafe inside a trailer run by a kind owner who makes and serves the coffee directly in front of you as he talks to you. Very cozy spot, coffee was alright.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Fujiya Umeboshi Store",
+    "Coord": [35.23148074509554, 139.10115317781393],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "A store that sells pickled plum foods. I sampled a pack of delicious umeboshi and because the lady was also very kind and speaking to me in Japanese, I decided to get a big pack of umeboshi. Very delicious.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Kinosuke",
+    "Coord": [35.23203572353719, 139.10221903546372],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "This place is famous for grilled fish. It was delicious, but a bit too pricey.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Kappa Tengoku",
+    "Coord": [35.23341316478709, 139.10338651224745],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "An onsen in the hills that opens late. This was the first onsen I went to in Japan, so it was a bit awkward at first, but after a while, the awkwardness disappears. The water was a bit too hot though, so it took a while to adjust to the temperature.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Yumoto",
+    "Coord": [35.23315898661205, 139.1132613378578],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "The air bnb my friend and I stayed at while we were at Hakone. While the place itself was quite nice, the only way to get there was either through a dark tunnel or a sketchy rope bridge. So going home at night each night was very scary.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Pico",
+    "Coord": [35.30876478449836, 139.4862097225469],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "An Italian Japanese fusion restaurant that sold white bait (shirasu) in various dishes like pizza, pastas, etc. Satisfied my desire to try white bait.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Kamakurakōkō-Mae Station",
+    "Coord": [35.306781596470856, 139.50058841336164],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "A famous train stop that tourists stop by because of a famous scene in the Slam Dunk anime which featured the bus stop in a scene. My friends and I were really lucky to get a clip in front of the train tracks as the trian passed behind us.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Lawson Kamakura Sakanoshita",
+    "Coord": [35.30843425653663, 139.53400368074793],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "We watched the Kamakura fireworks show here in front of the Lawson store. It was the first matsuri festival I had been to in Japan. There were lots of novel firework designs that I had never seen before.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Zeniarai Benten Shrine",
+    "Coord": [35.325828549563546, 139.54226160153723],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "Although it took a while to get to this shrine since it was nestled in the mountains, the area was really pretty, similar to inaka areas. It did start raining a bit though, and we had to wait for a friend to recover from walking so far.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Chayakado",
+    "Coord": [35.33137218409811, 139.5506307739231],
+    "size": "5",
+    "color": "orange",
+    "dot-type": "food",
+    "description": "We tried nagashi soumen here for the first time. The old lady would send bundles of soumen down bamboo poles and we would use our chopsticks to pick them up as they flowed past us. It was a really fun experience, but unfortunately, the wait was over an hour long because the place was a very popular location for other tourists as well.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "Cup Noodles Museum Yokohama",
+    "Coord": [35.45546673331555, 139.6388883542138],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "My parents booked the instant noodle making class months in advance (the one where you make the noodles from scratch) and the overall experience was really fun. There was also a cute video and museum showing the history of how cup noodles came to be.",
+    "Type": "location",
+    "Province": "Kanagawa"
+  },
+  {
+    "Place": "JFA YUME Field Makuhari Onsen Yura no Sato",
+    "Coord": [35.63539568566083, 140.03844462136857],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "The best onsen I have been to yet in Japan. It has restaurants, arcades, lounging areas with a view of Mount Fuji, many variety of indoor and outdoor baths in the onsen area. My favorite onsen pool is the shallow one with a stone pillow where you can lie down and fall asleep. The onsen also has a view of Mount Fuji.",
+    "Type": "location",
+    "Province": "Chiba"
+  },
+  {
+    "Place": "Costco Wholesale Makuhari",
+    "Coord": [35.654016205403884, 140.02866822137165],
+    "size": "5",
+    "color": "pink",
+    "dot-type": "favorites",
+    "description": "My international friends and I really wanted to try Costco and compare it to the ones we had in our home country. We managed to sneak in with me disguised as my friend's mom and buy lots of delicious food from the food court and bulk snacks.",
+    "Type": "location",
+    "Province": "Chiba"
+  },
+  {
+    "Place": "Tokyo Disneyland",
+    "Coord": [35.63310721456685, 139.88033672705848],
+    "size": "5",
+    "color": "rgb(184, 134, 11)",
+    "dot-type": "travels",
+    "description": "Some friends came and visited me from home. We spent a whole day at Disneyland",
+    "Type": "location",
+    "Province": "Kanagawa"
   }
 ]
