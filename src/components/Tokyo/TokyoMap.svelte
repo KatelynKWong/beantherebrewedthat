@@ -82,7 +82,7 @@
             paint: {
                 'circle-radius': ['get', 'size'], // Pulls size from properties
                 'circle-color': ['get', 'color'], // Pulls color from properties
-                'circle-opacity': 0.9             // Sets constant opacity
+                'circle-opacity': 0.7             // Sets constant opacity
             }
         });
 
@@ -204,6 +204,13 @@
         ];
     }
 
+    // Reset zoom function
+    function resetZoom() {
+        StaticMap.flyTo({
+            center: [138.2529, 36.2048], // Center on Japan
+            zoom: 5, // Default zoom level
+        });
+    }
 
     // Close modal function
     function closeModal() {
@@ -230,6 +237,7 @@
             <button on:click={closeModal}>X</button>
         </div>
     {/if}
+    <button class="reset-zoom" on:click={resetZoom}>Reset Zoom</button>
 
 </main>
 
@@ -306,7 +314,7 @@
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         z-index: 1000;
-        font-size: clamp(1rem, 1vw, 1.5rem); /* Responsive font size */
+        font-size: 2vh; /* Responsive font size */
         max-height: 70vh; /* Prevent modal from being too tall */
         overflow-y: auto; /* Add scroll if content exceeds height */
     }
@@ -331,6 +339,27 @@
     .modal button:hover {
         background-color: #425a63;
         color: #b6b6b6;
+    }
+
+    .reset-zoom {
+        position: absolute;
+        top: 105px; /* Slightly increased to ensure it stays clear from the header */
+        right: 5px; /* Adjusted for better spacing from the edge */
+        background-color: #7cb7cd;
+        border: none;
+        color: white;
+        padding: 1% 2%; /* Increased padding for a better visual */
+        font-size: clamp(.25em, 1.5vh, 2em); /* Responsive font size using clamp */
+        border-radius: 8px; /* Slightly rounded edges */
+        cursor: pointer;
+        z-index: 1001; /* Ensures the button is above the map */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for better visibility */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Adds smooth transition for hover */
+    }
+
+    .reset-zoom:hover {
+        background-color: #425a63;
+        transform: scale(1.10); 
     }
 
 </style>
