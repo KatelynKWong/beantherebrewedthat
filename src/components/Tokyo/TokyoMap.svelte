@@ -59,7 +59,9 @@
                 color: location.color,           // Ensure this matches the JSON
                 description: location.description,
                 type: location.Type,
-                place: location.Place
+                place: location.Place,
+                list: location.list,       // Ensure 'list' is correctly mapped
+                province: location.Province 
             }
         }));
 
@@ -135,24 +137,29 @@
 
         // on click, map zooms towards dot
         StaticMap.on('click', 'japanPlaces', (e) => {
-                const clickedFeature = e.features[0].properties;
+            const clickedFeature = e.features[0].properties;
 
-                // Update modal content
-                modalContent = {
-                    place: clickedFeature.place,
-                    description: clickedFeature.description,
-                    type: clickedFeature.type
-                };
+            console.log(clickedFeature); // Check the structure of clickedFeature
 
-                // Show modal
-                modalVisible = true;
+            // Update modal content
+            modalContent = {
+                place: clickedFeature.place,
+                description: clickedFeature.description,
+                type: clickedFeature.type,
+                list: clickedFeature.list,       // Access 'list' correctly
+                province: clickedFeature.province // Access 'Province' correctly
+            };
 
-                // Optional: Zoom to the clicked point
-                StaticMap.flyTo({
-                    center: e.features[0].geometry.coordinates,
-                    zoom: 10
-                });
+            // Show modal
+            modalVisible = true;
+
+            // Optional: Zoom to the clicked point
+            StaticMap.flyTo({
+                center: e.features[0].geometry.coordinates,
+                zoom: 10
             });
+        });
+
     
 
 
@@ -213,14 +220,17 @@
     </div>
 
     {#if modalVisible}
-        <div class="modal-backdrop" on:click={closeModal}></div>
+    <div class="modal-backdrop" on:click={closeModal}></div>
         <div class="modal">
             <h2>{modalContent.place}</h2>
-            <p><strong>Type:</strong> {modalContent.type}</p>
+            <p><strong>List:</strong> {modalContent.list}</p>
+            <p><strong>Province:</strong> {modalContent.province}</p> 
+
             <p>{modalContent.description}</p>
-            <button on:click={closeModal}>Close</button>
+            <button on:click={closeModal}>X</button>
         </div>
     {/if}
+
 </main>
 
 
@@ -306,18 +316,21 @@
         margin-top: 0;
     }
 
-    .modal button {
-        margin-top: 20px;
-        padding: 10px 15px;
-        background-color: #54757e;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+    button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    background-color: #7cb7cd;
+    cursor: pointer;
+}
 
     .modal button:hover {
         background-color: #425a63;
+        color: #b6b6b6;
     }
 
 </style>
