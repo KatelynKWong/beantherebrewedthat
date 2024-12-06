@@ -139,9 +139,9 @@
       </div>
     </Scroller>
   </a>
-  <!-- <div class="progress-bars" style={`opacity: ${$progressBarOpacity}; visibility: ${index >= 1 ? 'visible' : 'hidden'}`}>
+  <div class="progress-bars" style={`opacity: ${$progressBarOpacity}; visibility: ${index >= 1 ? 'visible' : 'hidden'}`}>
     <progress value={offset || 0} />
-  </div> -->
+  </div>
 </main>
 
 <style>

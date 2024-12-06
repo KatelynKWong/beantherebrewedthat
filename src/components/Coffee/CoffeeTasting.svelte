@@ -293,7 +293,7 @@
 </script>
 
 <main>
-  <div class="nav-bar">
+  <div class="nav-bar" style="opacity: {showBanner ? 1 : 0}">
     <div class="dropdown">
         <a href="{base}/coffee" class="nav-link">Coffee Chronicles</a>
         <div class="dropdown-menu">
