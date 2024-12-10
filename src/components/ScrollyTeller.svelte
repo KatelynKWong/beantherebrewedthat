@@ -15,8 +15,12 @@
   let count, index, offset=0, progress;
   let width, height;
 
+  
   const progressBarOpacity = tweened(0, { duration: 400, easing: cubicOut });
   $: progressBarOpacity.set(index >= 1 ? 1 : 0);
+
+  const progressBarTop = tweened(0, { duration: 10, easing: cubicOut });
+  $: progressBarTop.set(index >= 2 ? 75 : 0);
 
   const headerOpacity = tweened(0, { duration: 400, easing: cubicOut });
   $: headerOpacity.set(index > 1 ? 1 : 0);
@@ -139,9 +143,11 @@
       </div>
     </Scroller>
   </a>
-  <div class="progress-bars" style={`opacity: ${$progressBarOpacity}; visibility: ${index >= 1 ? 'visible' : 'hidden'}`}>
-    <progress value={offset || 0} />
-  </div>
+  <div class="progress-bars" 
+  style={`top: ${$progressBarTop}px; opacity: ${$progressBarOpacity}; visibility: ${index >= 1 ? 'visible' : 'hidden'}`}>
+  <progress value={offset || 0} />
+</div>
+
 </main>
 
 <style>
@@ -267,17 +273,44 @@
     z-index: 996;
   }
 
-  progress::-webkit-progress-value { background: orange; }
-  progress::-moz-progress-bar { background: blue; }
+/* Webkit-based browsers (Chrome, Safari) */
+progress::-webkit-progress-value {
+  background-color: rgb(184, 133, 96) !important;
+}
 
+/* Firefox */
+progress::-moz-progress-bar {
+  background-color: rgb(184, 133, 96) !important;
+}
 
-  .progress-bars {
+/* Internet Explorer/Edge */
+progress::-ms-fill {
+  background-color: rgb(184, 133, 96) !important;
+}
+
+/* Standard progress bar styles */
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  width: 100%; /* Full width of the viewport */
+  height: 10px; /* Set the height of the progress bar */
+  appearance: none; /* Remove default styles */
+}
+
+/* Optional: Style for the progress container (optional) */
+.progress-bars {
     position: fixed;
-    top: 10vh;
+    top: 75px; /* Keeps it 10% from the top of the viewport */
+    left: 5px; /* Start from the left edge */
+    width: 65vw; /* Full width of the viewport */
     background: rgba(153, 153, 153, 0.2);
     visibility: hidden;
     z-index: 999;
+    transition: top 0.5s ease;
   }
+
   section {
     height: 80vh;
     text-align: center;
