@@ -74,6 +74,13 @@
 </main>
 
 <style>
+html, body {
+  height: 100%;         /* Ensure body and html fill the viewport height */
+  margin: 0;            /* Remove default margins */
+  padding: 0;           /* Remove default padding */
+  overflow: hidden;     /* Disable scrolling */
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -87,7 +94,7 @@
 }
 
 .title {
-  font-size: 3vw;
+  font-size: clamp(1.20rem, 2.5vw, 2rem);  
   font-weight: bold;
   position: fixed;
   color: rgb(48, 34, 26);
@@ -96,22 +103,30 @@
   transform: translateX(-50%);
   width: 100%;
   z-index: 998;
-  transition: bottom 0.3s;
   background-color: rgb(228, 206, 184);
   text-align: center;
-  padding: .3rem 0; /* Add padding to control thickness */
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  padding: .1rem 0; /* Decrease padding to make it less thick */
 }
 
 
 .container {
-  display: flex;
-  justify-content: center;
-  padding: 15% 0 0;
-  z-index: 997; /* Move container behind the title */
-  position: relative; /* Ensure z-index works */
+  position: fixed;      /* Fixed positioning keeps it in place */
+  top: 140px;               /* Align to the top of the screen */
+  left: -10px;              /* Align to the left of the screen */
+  width: 100vw;         /* Full width of the viewport */
+  height: 100vh;        /* Full height of the viewport */
+  display: flex;        /* Align images side by side */
+  justify-content: space-between; /* Distribute children evenly */
 }
 
+/* Image container settings */
+.image-container {
+  position: absolute;   /* Position inside the container */
+  top: 0;               /* Align to the top */
+  width: 50vw;          /* Each image takes up half the viewport width */
+  height: 100vh;        /* Full viewport height */
+  overflow: hidden;     /* Hide any overflow */
+}
 .link {
   flex: 1;
   margin: 0 10px;
@@ -125,12 +140,6 @@
 }
 .coffee_main:hover {
   transform: scale(1.1); /* Enlarges the image by 10% on hover */
-}
-.image-container {
-  position: relative;
-  width: 50vw;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .text-overlay {
@@ -147,12 +156,6 @@
 .text-overlay h2,
 .text-overlay p {
   margin: 0;
-}
-
-body,
-main {
-  margin: 0;
-  padding: 0;
 }
 
 .home-link {
