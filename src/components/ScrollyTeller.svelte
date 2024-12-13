@@ -19,7 +19,7 @@
   const progressBarOpacity = tweened(0, { duration: 400, easing: cubicOut });
   $: progressBarOpacity.set(index >= 1 ? 1 : 0);
 
-  const progressBarTop = tweened(0, { duration: 10, easing: cubicOut });
+  const progressBarTop = tweened(0, { duration: 5, easing: cubicOut });
   $: progressBarTop.set(index >= 2 ? 75 : 0);
 
   const headerOpacity = tweened(0, { duration: 400, easing: cubicOut });

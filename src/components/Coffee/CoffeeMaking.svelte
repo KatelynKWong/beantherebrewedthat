@@ -1,15 +1,9 @@
 <script>
-    import CoffeeTaste from "./CoffeeTasting.svelte";
-    import PortaFilter from './assets/PortaFilter.jpeg';
-    import CafeTable from './assets/CafeTable.jpeg';
-    import Scroller from "@sveltejs/svelte-scroller";
-    import { tweened } from 'svelte/motion';
-    import { cubicOut } from 'svelte/easing';
+
     import { onMount, afterUpdate } from 'svelte';
     import * as d3 from 'd3'; // Import D3 library
     
     import { base } from '$app/paths';
-    import Compressor from 'compressorjs';
     import SpyhouseLatte from './assets/Spyhouselatte.jpg';
 
     import NewMachine_machine from './assets/making_assets/IMG_9756.png';
@@ -237,48 +231,43 @@
     </div>
 
     <div class="subtitle_container">
-        <div class="title">
+        <div class="title1">
             <p>Timeline</p>
         </div>
 
-        <div class="title">
-            <p>Journal</p>
+        <div class="title2">
+            <p>Gallery Roll</p>
         </div>
     </div>
 
     <div class="container">
         <!-- First image container with images in rows -->
         <div class="image-container">
-            <div class="row">
-                {#each images as image (image.src)}
-                    <div class="column">
-                        <div class="date-label">{formatDate(image.date)}</div>
-                        <div class="entry-details" on:click={scrollToImage} data-target={image.src}>
-                            <div class="text-container">
-                                <p>{image.name}</p>
-                                <p>{image.entry}</p>
-                            </div>
+            {#each images as image (image.src)}
+                <div class="image-item">
+                    <div class="date-label">{formatDate(image.date)}</div>
+                    <div class="entry-details" on:click={scrollToImage} data-target={image.src}>
+                        <div class="text-container">
+                            <p>{image.name}</p>
+                            <p>{image.entry}</p>
                         </div>
-                        <img src={image.src} alt="Coffee Art" class="summary_images" />
-                        <div class="label bottom-label" on:click={scrollToImage} data-target={image.src}>Gallery</div>
                     </div>
-                {/each}
-                {#if images.length % 2 !== 0}
-                    {#each Array(3 - images.length % 3) as _}
-                        <div class="column placeholder"></div>
-                    {/each}
-                {/if}
-            </div>
-        </div>
-
+                    <img src={image.src} alt="Coffee Art" class="summary_images" />
+                    <div class="label bottom-label" on:click={scrollToImage} data-target={image.src}>Gallery</div>
+                </div>
+            {/each}
+    </div>
+    
+    
         <!-- Second image container with single images -->
-        <div class="image-container">
-            <img src="{SpyhouseLatte}" alt="Coffee Art" class="title_image" />
-
+        <div class="right-container">
             <div class="text-overlay">
                 <h2 style="color: white; font-family: Luminari, cursive; font-size: 4vw">Welcome</h2>
                 <p style="color: white;">to my journal documenting my coffee making experience!</p>
             </div>
+            <img src="{SpyhouseLatte}" alt="Coffee Art" class="title_image" />
+
+        
 
             {#each images as image, index (image.src)}
                 <div class="image-wrapper" class:active={activeIndex === index}>
@@ -302,43 +291,48 @@
 </main>
 
 <style>
-    .row {
-        display: flex;
-        flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* or center, depending on desired alignment */
+    padding: 0% 0 0;
+    position: fixed;
+}
+
+    .image-container {
+        position: relative;
+        width: 35vw;
+        height: 85vh;
+        overflow-y: scroll;
+        top: 150px;
     }
 
-    .column {
-        position: relative; /* Makes each column the positioning context for its children */
-        flex: 1 0 25%; /* Control the size and behavior of each column */
-        padding: 0px;
-        box-sizing: border-box;
-        display: inline-block;
-    }
 
-/* Adjust the size of the columns at different screen sizes */
-    @media (max-width: 2400px) {
-        .column {
-            flex-basis: 35%;
-        }
-    }
+    .right-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    top: 20px; /* Adjusted for a more consistent vertical positioning */
+}
 
-    @media (max-width: 1200px) {
-        .column {
-            flex-basis: 50%;
-        }
-    }
 
-    @media (max-width: 768px) {
-        .column {
-            flex-basis: 100%;
-        }
-    }
+.image-item {
+    margin-bottom: 20px; /* Space between images */
+    
+    box-sizing: border-box;
+    display: block; /* Each item takes full width, with only one per row */
+    margin: 10px auto; /* Center each image item */
+}
 
-    @media (max-width: 480px) {
-        .column {
-            flex-basis: 100%;
-        }
-    }
+.summary_images {
+    width: 100%; /* Make image responsive, occupying 100% of the container's width */
+    height: auto;
+}
+
 
     .header {
         position: fixed;
@@ -352,16 +346,27 @@
         transition: opacity 0.3s ease-in-out;
     }
 
-    .title {
+    .title1 {
         font-size: 2;
         font-weight: bold;
         position: relative;
         color: rgb(48, 34, 26);
         top: 10%;
-        right: 0%;
-        width: 50vw;
+        left: 0vw;
+        width: 30vw;
         z-index: 998;
-        transition: bottom 0.3s;
+        background: #e4cab8; 
+        text-align: center;
+    }
+    .title2 {
+        font-size: 2;
+        font-weight: bold;
+        position: relative;
+        color: rgb(48, 34, 26);
+        top: 10%;
+        right: 0vw;
+        width: 75vw;
+        z-index: 998;
         background: #e4cab8; 
         text-align: center;
     }
@@ -370,20 +375,8 @@
         z-index: 1000;
         display: flex;
         justify-content: center;
-        padding: 75px 0 0;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        padding: 0% 0 0;
-    }
-
-    .image-container {
-        position: relative;
-        width: 50vw;
-        height: 85vh;
-        overflow-y: scroll;
+        position: fixed;
+        top: 110px;
     }
 
     .summary_images {
@@ -399,22 +392,30 @@
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
     }
 
-    .entry-details {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;  
-        height: 100%; 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.6);
-        color: white;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
+    .image-item {
+    position: relative; /* Make the image-item the reference point for absolute positioning */
+}
+
+.entry-details {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-item:hover .entry-details {
+    opacity: 1; /* Show the details when the item is hovered */
+   
+}
 
     .entry-details .text-container {
         width: 90%;  /* Text only takes up 90% of the width */
@@ -428,42 +429,43 @@
         font-size: 1vw
     }
 
-    .column:hover .entry-details {
-        opacity: 1;
-    }
+    
 
-    .title_image {
-        height: 50vh;
-        width: 50vw;
-        object-fit: cover;
-    }
-
+    .title_image,
     .subtitle_image {
-        height: 75vh;
-        width: 50vw;
+        width: 100%;
+        height: auto;
         object-fit: cover;
     }
 
     .subtitle_image:hover + .photo-bottom-label {
         animation: wiggle 0.8s infinite ease-in-out; /* Add wiggle animation only on hover */
     }
+    .title_image {
+    position: relative; /* Ensure it has a positioned context for z-index */
+    z-index: 999; /* Ensure the title image is below the overlay */
+    top: 0;
+}
 
-    .text-overlay {
-        position: absolute;
-        top: 10%;
-        left: 40%;
-        transform: translate(-5%,0%);
-        background-color: rgba(0, 0, 0, 0.25);
-        padding: 5px;
-        text-align: right;
-        font-size: 2vw;
-        font-weight: 50;
-    }
+/* Text Overlay */
+.text-overlay {
+    position: relative; /* Keeps it in the normal flow */
+    top: 20%;
+    right: -30%;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 5px;
+    text-align: right;
+    font-size: 2vw;
+    font-weight: 50;
+    z-index: 1000; /* Higher z-index to be above the title image */
+    width: auto; /* Make the background fit the text size */
+    display: inline-block;
+}
 
-    .text-overlay h2,
-    .text-overlay p {
-        margin: 0;
-    }
+.text-overlay h2,
+.text-overlay p {
+    margin: 0;
+}
 
     .date-label {
         position: absolute;
@@ -559,7 +561,7 @@
 
     .gallery-images {
         flex: 1 1 50%; /* 25% width for each image */
-        max-width: 25vw; /* Ensures each image is exactly 25% of the container width */
+        max-width: 50vw; /* Ensures each image is exactly 25% of the container width */
         height: 20vw; /* Dynamically set height to match aspect ratio of 4 images in a row */
         object-fit: cover; /* Ensures images fill their container without distortion */
         border: 5; /* Removes border for seamless alignment */
