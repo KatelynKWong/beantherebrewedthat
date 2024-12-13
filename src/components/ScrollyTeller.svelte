@@ -38,10 +38,10 @@
   $: greyRectOpacity.set(index === 3 ? .8 : 0);
 
   let showTopArrow = false;
-  $: showTopArrow = index === 1 | index === 2;
+  $: showTopArrow = index === 1 | index === 2 | index === 3;
 
   let showScroll = false;
-  $: showScroll = index === 1;
+  $: showScroll = index === 1 | index === 2;
   
   
   function scrollToNext() {

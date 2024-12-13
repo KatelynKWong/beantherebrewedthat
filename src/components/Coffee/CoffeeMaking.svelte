@@ -166,9 +166,13 @@
         const targetId = event.target.dataset.target;
         const targetImage = document.getElementById(targetId);
         if (targetImage) {
-        targetImage.scrollIntoView({ behavior: 'smooth' });
+            targetImage.scrollIntoView({
+                behavior: 'smooth',
+                block: 'end',  // Scroll so that the bottom of the image aligns with the bottom of the viewport
+            });
         }
     }
+
 
     function formatDate(dateString) {
         const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
@@ -292,13 +296,13 @@
 
 <style>
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* or center, depending on desired alignment */
-    padding: 0% 0 0;
-    position: fixed;
-}
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* or center, depending on desired alignment */
+        padding: 0% 0 0;
+        position: fixed;
+    }
 
     .image-container {
         position: relative;
@@ -310,29 +314,28 @@
 
 
     .right-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow-y: auto;
-    padding: 10px;
-    box-sizing: border-box;
-    top: 20px; /* Adjusted for a more consistent vertical positioning */
-}
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 10px;
+        box-sizing: border-box;
+        top: 20px; /* Adjusted for a more consistent vertical positioning */
+    }
 
 
-.image-item {
-    margin-bottom: 20px; /* Space between images */
-    
-    box-sizing: border-box;
-    display: block; /* Each item takes full width, with only one per row */
-    margin: 10px auto; /* Center each image item */
-}
+    .image-item {
+        position: relative;
+        margin-bottom: 20px; /* Space between images */
+        box-sizing: border-box;
+        display: block; /* Each item takes full width, with only one per row */
+        margin: 10px auto; /* Center each image item */
+    }
 
-.summary_images {
-    width: 100%; /* Make image responsive, occupying 100% of the container's width */
-    height: auto;
-}
-
+    .summary_images {
+        width: 100%; /* Make image responsive, occupying 100% of the container's width */
+        height: auto;
+    }
 
     .header {
         position: fixed;
@@ -392,30 +395,25 @@
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
     }
 
-    .image-item {
-    position: relative; /* Make the image-item the reference point for absolute positioning */
-}
+    .entry-details {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
 
-.entry-details {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.image-item:hover .entry-details {
-    opacity: 1; /* Show the details when the item is hovered */
-   
-}
+    .image-item:hover .entry-details {
+        opacity: 1; /* Show the details when the item is hovered */
+    }
 
     .entry-details .text-container {
         width: 90%;  /* Text only takes up 90% of the width */
@@ -429,12 +427,9 @@
         font-size: 1vw
     }
 
-    
-
-    .title_image,
     .subtitle_image {
-        width: 100%;
-        height: auto;
+        width: 75vw;
+        height: 80vh; /* Set height to 50% of the viewport height */
         object-fit: cover;
     }
 
@@ -442,30 +437,32 @@
         animation: wiggle 0.8s infinite ease-in-out; /* Add wiggle animation only on hover */
     }
     .title_image {
-    position: relative; /* Ensure it has a positioned context for z-index */
-    z-index: 999; /* Ensure the title image is below the overlay */
-    top: 0;
-}
+        position: relative; /* Ensure it has a positioned context for z-index */
+        z-index: 999; /* Ensure the title image is below the overlay */
+        top: 0;
+        width: 75vw;
+        height: 80%;
+        object-fit: cover;
+    }
 
-/* Text Overlay */
-.text-overlay {
-    position: relative; /* Keeps it in the normal flow */
-    top: 20%;
-    right: -30%;
-    background-color: rgba(0, 0, 0, 0.25);
-    padding: 5px;
-    text-align: right;
-    font-size: 2vw;
-    font-weight: 50;
-    z-index: 1000; /* Higher z-index to be above the title image */
-    width: auto; /* Make the background fit the text size */
-    display: inline-block;
-}
+    .text-overlay {
+        position: relative; /* Keeps it in the normal flow */
+        top: 160px;
+        right: -25%;
+        background-color: rgba(0, 0, 0, 0.25);
+        padding: 5px;
+        text-align: right;
+        font-size: 2vw;
+        font-weight: 50;
+        z-index: 1000; /* Higher z-index to be above the title image */
+        width: auto; /* Make the background fit the text size */
+        display: inline-block;
+    }
 
-.text-overlay h2,
-.text-overlay p {
-    margin: 0;
-}
+    .text-overlay h2,
+    .text-overlay p {
+        margin: 0;
+    }
 
     .date-label {
         position: absolute;
@@ -488,11 +485,11 @@
         font-size: 0.9em;
         border-radius: 4px;
         border: 5px solid rgba(255, 255, 255, 0); 
-        transition: background-color 0.3s ease; 
+        transition: background-color 0.2s ease; 
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
     }
     
-    .column:hover .label {
+    .image-item:hover .label {
         animation: wiggle .8s infinite ease-in-out; /* Add wiggle animation only on hover */
     }
 
@@ -530,23 +527,6 @@
         transition: opacity 0.3s ease;  /* Smooth transition for opacity */
     }
 
-    .image-gallery {
-        display: none;  /* Hide the gallery initially */
-        opacity: 0;     /* Gallery is transparent initially */
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1;
-        transition: opacity 0.3s ease;
-    }
-
-    .image-gallery {
-        display: flex;
-        flex-wrap: wrap; /* Allows the images to wrap to the next row if needed */
-        gap: 10px; /* Adjusts the space between images */
-        justify-content: flex-start; /* Aligns items to the left */
-    }
 
     .gallery-container {
         position: absolute;
@@ -570,11 +550,6 @@
 
     .image-wrapper.active .subtitle_image {
         opacity: .1;  /* Make the coffee art image transparent when active */
-    }
-
-    .image-wrapper.active .image-gallery {
-        display: block;
-        opacity: 1;     /* Make the gallery visible */
     }
 
     .photo-top-label {
@@ -624,82 +599,82 @@
         color: white; /* Prevents the link from turning purple */
     }
     .nav-bar {
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center;    /* Center items vertically */
-    background-color: #583f38; /* Dark background for contrast */
-    color: white;           /* White text for readability */
-    height: 30px;           /* Fixed height */
-    transform: translateX(-1%);
-    width: 103%;
-    position: fixed;       /* Stay at the top on scroll */
-    top: 80px;              /* Stick to the top */
-    z-index: 1000;          /* Stay above other content */
-}
-
-/* Navigation Links */
-.nav-link {
-    margin: 0 10vw;         /* Add spacing between items */
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;  /* Remove underline by default */
-    color: white;           /* White text */
-}
-
-/* Adjust font size and spacing for smaller screens */
-@media (max-width: 768px) {
-    .nav-link {
-        font-size: 0.8rem; /* Reduce font size for smaller screens */
-        margin: 0 3vw;    /* Reduce margin to prevent overlap */
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        align-items: center;    /* Center items vertically */
+        background-color: #583f38; /* Dark background for contrast */
+        color: white;           /* White text for readability */
+        height: 30px;           /* Fixed height */
+        transform: translateX(-1%);
+        width: 103%;
+        position: fixed;       /* Stay at the top on scroll */
+        top: 80px;              /* Stick to the top */
+        z-index: 1000;          /* Stay above other content */
     }
-}
 
-/* Further adjustments for very narrow screens */
-@media (max-width: 480px) {
+    /* Navigation Links */
     .nav-link {
-        font-size: 0.7rem; /* Further reduce font size */
-        margin: 0 2vw;    /* Narrower spacing */
+        margin: 0 10vw;         /* Add spacing between items */
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;  /* Remove underline by default */
+        color: white;           /* White text */
     }
-}
 
-.nav-link:hover {
-    color: #ff8000;         /* Highlight color on hover */
-    text-decoration: underline; /* Underline only on hover */
-}
+    /* Adjust font size and spacing for smaller screens */
+    @media (max-width: 768px) {
+        .nav-link {
+            font-size: 0.8rem; /* Reduce font size for smaller screens */
+            margin: 0 3vw;    /* Reduce margin to prevent overlap */
+        }
+    }
 
-/* Dropdown Menu */
-.dropdown {
-    position: relative; /* Parent element for dropdown positioning */
-}
+    /* Further adjustments for very narrow screens */
+    @media (max-width: 480px) {
+        .nav-link {
+            font-size: 0.7rem; /* Further reduce font size */
+            margin: 0 2vw;    /* Narrower spacing */
+        }
+    }
 
-.dropdown-menu {
-    display: none;        /* Initially hide the dropdown */
-    position: absolute;   /* Position relative to the parent */
-    background-color: #3f2a25; /* Slightly darker background */
-    padding: 10px 0;
-    border-radius: 5px;
-    top: 100%;            /* Place directly below the parent */
-    left: 10vw;
-    min-width: 150px;     /* Set a minimum width */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    z-index: 1000;
-}
+    .nav-link:hover {
+        color: #ff8000;         /* Highlight color on hover */
+        text-decoration: underline; /* Underline only on hover */
+    }
 
-.dropdown-menu a {
-    display: block;       /* Stack items vertically */
-    padding: 5px 15px;
-    color: white;         /* White text for items */
-    text-decoration: none; /* Remove underline */
-    font-size: 0.9rem;
-}
+    /* Dropdown Menu */
+    .dropdown {
+        position: relative; /* Parent element for dropdown positioning */
+    }
 
-.dropdown-menu a:hover {
-    background-color: rgb(205, 166, 118); /* Highlight background on hover */
-    color: #3f2a25;               /* Text color change for visibility */
-}
+    .dropdown-menu {
+        display: none;        /* Initially hide the dropdown */
+        position: absolute;   /* Position relative to the parent */
+        background-color: #3f2a25; /* Slightly darker background */
+        padding: 10px 0;
+        border-radius: 5px;
+        top: 100%;            /* Place directly below the parent */
+        left: 10vw;
+        min-width: 150px;     /* Set a minimum width */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        z-index: 1000;
+    }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-    display: block; /* Show the dropdown menu */
-}
+    .dropdown-menu a {
+        display: block;       /* Stack items vertically */
+        padding: 5px 15px;
+        color: white;         /* White text for items */
+        text-decoration: none; /* Remove underline */
+        font-size: 0.9rem;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: rgb(205, 166, 118); /* Highlight background on hover */
+        color: #3f2a25;               /* Text color change for visibility */
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-menu {
+        display: block; /* Show the dropdown menu */
+    }
 </style>
