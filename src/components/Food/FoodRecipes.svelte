@@ -207,7 +207,7 @@
         top: 115px;
         left: 20px;
         width: 20vw;
-        z-index: 1000;
+        z-index: 999;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -222,6 +222,7 @@
         background-color: #fdfdfd;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         margin-left: 10%;
+        z-index: 999;
     }
 
     .recipe {
@@ -411,6 +412,7 @@
     color: white;         /* White text for items */
     text-decoration: none; /* Remove underline */
     font-size: 0.9rem;
+    z-index: 1000;
 }
 
 .dropdown-menu a:hover {

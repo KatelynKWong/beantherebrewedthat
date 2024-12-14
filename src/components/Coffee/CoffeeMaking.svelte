@@ -375,7 +375,7 @@
     }
 
     .subtitle_container {
-        z-index: 1000;
+        z-index: 999;
         display: flex;
         justify-content: center;
         position: fixed;
@@ -666,6 +666,7 @@
         color: white;         /* White text for items */
         text-decoration: none; /* Remove underline */
         font-size: 0.9rem;
+        z-index: 1000;
     }
 
     .dropdown-menu a:hover {
