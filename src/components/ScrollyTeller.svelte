@@ -9,6 +9,7 @@
   import Polaroid from './assets/polaroid.png';
   import MelonPan from './assets/melon-pan.jpg';
   import Croissant from './assets/croissant.png';
+  import AboutIcon from './assets/icon.png';
   import * as d3 from 'd3'; // Import D3 library
   import { Link, Router, Route, navigate } from "svelte-routing";
   
@@ -38,10 +39,10 @@
   $: greyRectOpacity.set(index === 3 ? .8 : 0);
 
   let showTopArrow = false;
-  $: showTopArrow = index === 1 | index === 2 | index === 3;
+  $: showTopArrow = index === 1 | index === 2 ;
 
   let showScroll = false;
-  $: showScroll = index === 1 | index === 2;
+  $: showScroll = index === 1 | index === 2 | index === 3;
   
   
   function scrollToNext() {
@@ -53,28 +54,36 @@
     }
 
   let showBotArrow = false;
-  $: showBotArrow = index === 4;
+  $: showBotArrow= index === 2 | index === 3 ;
 
   function scrollUp() {
-        const targetSection = document.querySelector('[data-index="3"]');
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: "smooth" });
+        const nextIndex = index - 1; // Calculate the next index
+        const nextSection = document.querySelector(`[data-index="${nextIndex}"]`);
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
         }
     }
 </script>
 
 <main>
+  <a href={'about'} class="button">
+    <img src="{AboutIcon}" alt="About Me Icon" class="image-button"/>
+    <div class="about">
+      <h7>About Me</h7>
+    </div>
+  </a>
+
   {#if showTopArrow}
     <div class="wiggle-top-arrow" on:click={scrollToNext}>
       ↓
     </div>
   {/if}
 
-  {#if showScroll}
+  <!-- {#if showScroll}
     <div class="scroll">
       (or scroll)
     </div>
-  {/if}
+  {/if} -->
 
   {#if showBotArrow}
     <div class="wiggle-bot-arrow" on:click={scrollUp}>
@@ -117,8 +126,8 @@
     </div>
   </a>
   <img src="{Polaroid}" alt="Polaroid Photo" class="polaroid" style={`opacity: ${$image1Opacity};`} />
-  <img src="{CherryTree}" alt="Cherry Tree" class="polaroid" style={`opacity: ${$image2Opacity};`} />
-  <img src="{Croissant}" alt="Croissant" class="savory-stories" style={`opacity: ${$image2Opacity};`} />
+  <!-- <img src="{CherryTree}" alt="Cherry Tree" class="polaroid" style={`opacity: ${$image2Opacity};`} /> -->
+  <!-- <img src="{Croissant}" alt="Croissant" class="savory-stories" style={`opacity: ${$image2Opacity};`} /> -->
   <img src="{MelonPan}" alt="Melon Pan" class="savory-stories" style={`opacity: ${$image1Opacity};`} />
   <a href={index !== 3 ? null : 'coffee'}>
     <Scroller
@@ -139,7 +148,6 @@
         <section data-index="1"></section>
         <section data-index="2"></section>
         <section data-index="3"></section>
-        <section data-index="4"></section>
       </div>
     </Scroller>
   </a>
@@ -151,6 +159,66 @@
 </main>
 
 <style>
+.button {
+    position: fixed; /* Fix the button in place */
+    bottom: 20px; /* Set distance from the bottom */
+    left: 20px; /* Set distance from the left */
+    height: 40px; /* Let the height adjust based on the content */
+    width: 120px; /* Make the button a fixed width */
+    color: white;
+    border-radius: 20px; /* Rounded corners */
+    z-index: 999;
+    text-align: left; /* Center the content */
+    padding: 10px 20px; /* Increase padding for better button size */
+    transition: background-color 0.3s ease, transform 0.2s ease, border 0.3s ease; /* Smooth transitions */
+    cursor: pointer; /* Ensure the button is clickable */
+}
+
+.button:hover {
+    background-color: rgb(119, 142, 165, 0.5); /* Change background color on hover */
+}
+
+.image-button {
+    width: auto; /* Make the image fill the width of the button */
+    height: 100%; /* Maintain aspect ratio */
+    transform: translate(-15%, -10%);
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Ensure the image is clickable */
+    background-color: rgba(95, 112, 131, 0.7); /* Semi-transparent background */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Add a visible border */
+    animation: borderAnimation 2s infinite alternate; /* Border animation */
+    transition: background-color 0.2s ease, transform 0.2s ease, border 0.2s ease; /* Smooth transitions */
+}
+
+.about {
+    position: absolute; /* Position relative to the button */
+    opacity: 0;
+    visibility: hidden;
+    bottom: 15px; /* Align vertically to the middle of the button */
+    left: 65px; /* Position the text to the right of the button */
+    z-index: 1000;
+    color: white;
+    text-align: left;
+    padding: 5px;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for text visibility */
+}
+
+.button:hover .about {
+    opacity: 1; /* Show text when button is hovered */
+    visibility: visible; /* Make the text visible */
+}
+@keyframes borderAnimation {
+    0% {
+        border-width: 2px; /* Thin border */
+    }
+    50% {
+        border-width: 6px; /* Thick border */
+    }
+    100% {
+        border-width: 2px; /* Thin border again */
+    }
+}
+
   .header {
     position: fixed;
     top: 0;

@@ -133,7 +133,7 @@
     in:crossfade={{ duration: 1000 }}
     out:crossfade={{ duration: 1000 }}
   />
-
+<!-- 
   <rect 
     width="52vw" 
     height="40vw" 
@@ -173,15 +173,15 @@
     <tspan x="14%" dy="1.5em" font-size="80%">creating watercolor art pieces. If you are interested inchecking out more of her art, </tspan>
     <tspan x="14%" dy="1.5em" font-size="80%">coffee, and study abroad experiences, please visit @twicksw and @crusteacats on</tspan>
     <tspan x="14%" dy="1.5em" font-size="80%">Instagram. Thank you!</tspan>
-  </text>
+  </text> -->
 
-  <image class="tsunamiImage"
+  <!-- <image class="tsunamiImage"
     x={-width * 5 / 12} y="0" width="100%" height="100%"
     xlink:href={tsunamiImage}
     opacity={$tweenedStory3Opacity}
     in:crossfade={{ duration: 1000 }}
     out:crossfade={{ duration: 1000 }}
-  />
+  /> -->
   {/if}
 </svg>
 
@@ -192,24 +192,12 @@
     font-size: 20px;
   }
 
-  /* Title */
-  .title {
-    font-size: 40px;
-    font-weight: 500;
-    position: absolute;
-  }
-
-  /* Subtitle */
-  .subtitle {
-    font-size: 20px;
-  }
-
   /* Graph */
   .graph {
     width: 100%;
-    height: 100%;
+    height: 120%;
     top: 0;
-    position: absolute;
+    position: relative;
   }
 
 </style>

@@ -321,8 +321,13 @@
         padding: 10px;
         box-sizing: border-box;
         top: 20px; /* Adjusted for a more consistent vertical positioning */
+        overflow: hidden; /* Disables scrolling */
+        pointer-events: none;
     }
 
+    .right-container * {
+        pointer-events: auto; /* Re-enables interaction for children elements */
+    }
 
     .image-item {
         position: relative;
