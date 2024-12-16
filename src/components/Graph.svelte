@@ -2,7 +2,7 @@
   import { fly } from "svelte/transition";
   import { crossfade } from 'svelte/transition';
   import { tweened } from "svelte/motion";
-  import coffeePlant from './assets/coffee-g5e25637ad_1920.webp';
+  import coffeePlant from './assets/coffee.png';
   import GreyLatte from './assets/grey-latte.png';
   import tsunamiImage from './assets/tsunami.jpg';
 
