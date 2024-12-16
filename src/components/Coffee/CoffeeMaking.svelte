@@ -179,21 +179,26 @@
         return new Date(dateString).toLocaleDateString(undefined, options);
     }
 
-    let activeIndex = null;
+    let activeIndex = null; // Keeps track of the active image index
+let currentIndex = 0;   // Keeps track of the currently displayed image within the gallery
 
-    // Toggle the gallery visibility
-    function toggleGallery(index) {
-        activeIndex = activeIndex === index ? null : index;
-        console.log('Toggling gallery: ', activeIndex !== null ? 'Opening' : 'Closing');
-    }
 
-    // Close gallery when clicking elsewhere
-    function closeGallery(event) {
-        if (!event.target.closest('.image-wrapper')) {
-            activeIndex = null;
-            console.log('Closing gallery');
-        }
-    }
+// Toggle the gallery view based on the clicked image's index
+function toggleGallery(index) {
+    activeIndex = activeIndex === index ? null : index;
+    console.log('Toggling gallery: ', activeIndex !== null ? 'Opening' : 'Closing');
+}
+
+// Next image in the gallery
+function nextImage(gallery) {
+    currentIndex = (currentIndex + 1) % gallery.length;
+}
+
+// Previous image in the gallery
+function prevImage(gallery) {
+    currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+}
+
 
     // Bind the click event to the document
     onMount(() => {
@@ -243,55 +248,55 @@
             <p>Gallery Roll</p>
         </div>
     </div>
-
-    <div class="container">
-        <!-- First image container with images in rows -->
-        <div class="image-container">
-            {#each images as image (image.src)}
-                <div class="image-item">
-                    <div class="date-label">{formatDate(image.date)}</div>
-                    <div class="entry-details" on:click={scrollToImage} data-target={image.src}>
-                        <div class="text-container">
-                            <p>{image.name}</p>
-                            <p>{image.entry}</p>
-                        </div>
+    <div class="image-container">
+        {#each images as image, index (image.src)}
+            <div class="image-item">
+                <div class="date-label">{formatDate(image.date)}</div>
+                <div class="entry-details">
+                    <div class="text-container">
+                        <p>{image.name}</p>
+                        <p>{image.entry}</p>
                     </div>
-                    <img src={image.src} alt="Coffee Art" class="summary_images" />
-                    <div class="label bottom-label" on:click={scrollToImage} data-target={image.src}>Gallery</div>
                 </div>
-            {/each}
+                <img src={image.src} alt="Coffee Art" class="summary_images" />
+                
+                <!-- Gallery Label with Combined Functionality -->
+                <div
+                    class="label bottom-label"
+                    on:click={(event) => {
+                        scrollToImage(event); 
+                        toggleGallery(index); 
+                    }}
+                    data-target={image.src}
+                >
+                    Gallery
+                </div>
+            </div>
+        {/each}
     </div>
     
-    
-        <!-- Second image container with single images -->
-        <div class="right-container">
-            <div class="text-overlay">
-                <h2 style="color: white; font-family: Luminari, cursive; font-size: 4vw">Welcome</h2>
-                <p style="color: white;">to my journal documenting my coffee making experience!</p>
-                <p style="color: white; font-size: 0.8em;">Hover over the images on the left to view entries.</p>
-            </div>
-            <img src="{SpyhouseLatte}" alt="Coffee Art" class="title_image" />
-
-        
-
-            {#each images as image, index (image.src)}
-                <div class="image-wrapper" class:active={activeIndex === index}>
-                    <div class="photo-top-label">{image.name}</div>
-                    
-                    <!-- Gallery Container -->
-                    {#if activeIndex === index}
-                        <div class="gallery-container">
-                            {#each image.gallery as gallery_image}
-                                <img src={gallery_image} alt="Coffee Art" class="gallery-images" />
-                            {/each}
-                        </div>
-                    {/if}
-
-                    <img src={image.src} alt="Coffee Art" class="subtitle_image" id={image.src} />
-                    <div class="photo-bottom-label" on:click={() => toggleGallery(index)}>More photos</div>
-                </div>
-            {/each}
+    <!-- Image Display Container (Only visible for activeIndex) -->
+    <div class="right-container">
+        <div class="text-overlay">
+            <h2 style="color: white; font-family: Luminari, cursive; font-size: 4vw">Welcome</h2>
+            <p style="color: white;">to my journal documenting my coffee making experience!</p>
+            <p style="color: white; font-size: 0.8em;">Hover over the images on the left to view entries.</p>
         </div>
+        <img src="{SpyhouseLatte}" alt="Coffee Art" class="title_image" />
+        {#each images as image, index (image.src)}
+            <div class="image-wrapper" class:active={activeIndex === index}>
+                
+                <!-- Gallery Container Only Visible When Active Index Matches -->
+                {#if activeIndex === index}
+                <div class="photo-top-label">{image.name}</div>
+                    <div class="slideshow-container">
+                        <button class="arrow left" on:click={() => prevImage(image.gallery)}>&#10094;</button>
+                        <img src={image.gallery[currentIndex]} alt="Gallery Image" class="slideshow-image" />
+                        <button class="arrow right" on:click={() => nextImage(image.gallery)}>&#10095;</button>
+                    </div>
+                {/if}
+            </div>
+        {/each}
     </div>
 </main>
 
@@ -308,7 +313,7 @@
     .image-container {
         position: fixed;
         left: 10px;
-        width: calc(25vw); /* Keeps a consistent width */
+        width: calc(35vw); /* Keeps a consistent width */
         height: 85vh;
         overflow-y: scroll;
         top: 150px;
@@ -316,15 +321,15 @@
 
     .right-container {
         position: fixed;
-        width: calc(75vw); /* Ensures no overlap */
+        width: calc(65vw); /* Ensures no overlap */
         height: 80vh;
-        left: calc(25vw + 20px); /* Matches left-container's width */
+        left: calc(35vw + 20px); /* Matches left-container's width */
         overflow-y: auto;
         padding: 20px; /* Adjust padding as needed */
         box-sizing: border-box;
         top: 150px; /* Aligned with left-container */
         pointer-events: auto;
-        overflow-y: hidden; /* Disables vertical scrolling */
+        overflow-y: hidden; 
     }
 
 
@@ -449,7 +454,7 @@
         z-index: 999; /* Ensure the title image is below the overlay */
         top: -15vw;
         width: 75vw;
-        height: auto;
+        height: 90vh;
         object-fit: cover;
     }
 
@@ -536,35 +541,64 @@
         transition: opacity 0.3s ease;  /* Smooth transition for opacity */
     }
 
+    .slideshow-container {
+    position: fixed;
+    max-width: 65vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1001;
+    top: 160px;
+    left: calc(35vw + 20px);
+    border-radius: 5px;
+}
 
-    .gallery-container {
-        position: absolute;
-        display: flex; /* Aligns images in a row */
-        flex-wrap: wrap; /* Allows wrapping if the images don't fit in one row */
-        gap: 0; /* Removes gaps between images */
-        padding: 0; /* Removes padding inside the container */
-        max-width: 100%; /* Ensures the container doesn't overflow */
-        box-sizing: border-box; /* Includes padding in width/height calculation */
-        justify-content: flex-start; /* Aligns images to the left */
-    }
+.slideshow-image {
+    position: relative;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+    width: 75vw;
+    height: 100%; /* Set height to 50% of the viewport height */
+}
 
-    .gallery-images {
-        flex: 1 1 50%; /* 25% width for each image */
-        max-width: 50vw; /* Ensures each image is exactly 25% of the container width */
-        height: 20vw; /* Dynamically set height to match aspect ratio of 4 images in a row */
-        object-fit: cover; /* Ensures images fill their container without distortion */
-        border: 5; /* Removes border for seamless alignment */
-        margin: 5; /* Ensures no additional spacing between images */
-    }
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1000;
+    opacity: 0.7;
+}
+
+.arrow.left {
+    left: 20px; /* Adjust for better visibility */
+}
+
+.arrow.right {
+    right: 20px; /* Adjust for better visibility */
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+}
 
     .image-wrapper.active .subtitle_image {
         opacity: .1;  /* Make the coffee art image transparent when active */
     }
 
     .photo-top-label {
-        position: absolute;
-        top: 10px; /* Distance from the top of the image */
-        left: 10px; /* Distance from the left of the image */
+        position: fixed;
+        top: 180px; /* Distance from the top of the image */
+        left: 40vw; /* Distance from the left of the image */
+        z-index: 1002;
         margin: 0;
         padding: 0.2em 0.5em;
         background-color: rgba(116, 116, 116, 0.6);
