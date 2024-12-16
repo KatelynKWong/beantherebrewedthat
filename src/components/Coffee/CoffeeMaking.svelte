@@ -306,25 +306,27 @@
     }
 
     .image-container {
-        position: relative;
-        width: 35vw;
+        position: fixed;
+        left: 10px;
+        width: calc(25vw); /* Keeps a consistent width */
         height: 85vh;
         overflow-y: scroll;
         top: 150px;
     }
 
-
     .right-container {
-        position: relative;
-        width: 100%;
-        height: 100vh;
+        position: fixed;
+        width: calc(75vw); /* Ensures no overlap */
+        height: 80vh;
+        left: calc(25vw + 20px); /* Matches left-container's width */
         overflow-y: auto;
-        padding: 10px;
+        padding: 20px; /* Adjust padding as needed */
         box-sizing: border-box;
-        top: 0px; /* Adjusted for a more consistent vertical positioning */
-        overflow: hidden; /* Disables scrolling */
-        pointer-events: none;
+        top: 150px; /* Aligned with left-container */
+        pointer-events: auto;
+        overflow-y: hidden; /* Disables vertical scrolling */
     }
+
 
     .right-container * {
         pointer-events: auto; /* Re-enables interaction for children elements */
@@ -445,15 +447,15 @@
     .title_image {
         position: relative; /* Ensure it has a positioned context for z-index */
         z-index: 999; /* Ensure the title image is below the overlay */
-        top: 0;
+        top: -15vw;
         width: 75vw;
-        height: 80%;
+        height: auto;
         object-fit: cover;
     }
 
     .text-overlay {
         position: relative; /* Keeps it in the normal flow */
-        top: 200px;
+        top: 10px;
         left: 5%;
         background-color: rgba(0, 0, 0, 0.4);
         padding: 5px;
@@ -526,6 +528,7 @@
 
     .image-wrapper {
         position: relative;
+        top: -15vw;
         display: inline-block; /* Allows each image to be displayed next to each other */
     }
 
