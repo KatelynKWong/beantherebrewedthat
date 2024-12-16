@@ -49,7 +49,7 @@
             In addition to making coffee, Katelyn enjoys playing music with friends and creating watercolor art pieces. If you are interested in checking out more of her art, coffee creations, and study abroad experiences, please visit @twicksw and @crusteacats on Instagram. Thank you!
         </p>
     </div>
-    <a href={'/'}>
+    <a href="{base}/">
     <div class="back">
         <p>Back</p>
       </div>
