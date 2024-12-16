@@ -97,7 +97,7 @@
     width="40vw" 
     height="24vw" 
     x="20%" 
-    y="calc(40% - 4vw)"
+    y="calc(30% - 4vw)"
     rx="20" 
     ry="20" 
     fill="black" 
@@ -105,7 +105,7 @@
   />
   <text class="aboutme"
     x="5%"
-    y="40%"
+    y="30%"
     font-size="1.4vw"
     text-anchor="left"
     fill="white"

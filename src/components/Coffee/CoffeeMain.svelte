@@ -43,20 +43,6 @@
   </div>
 
   <div class="container">
-    <a href={'coffee/tasting'} class="link">
-      <div class="image-container">
-        <img 
-          src="{CafeTable}" 
-          alt="Coffee Art"
-          class="coffee_main"
-        />
-        <div class="text-overlay">
-          <h2 style="color: white;">The Tasting:</h2>
-          <p style="color: white;">Cafe exploration and taste testing</p>
-        </div>
-      </div>
-    </a>
-
     <a href={'coffee/making'} class="link">
       <div class="image-container">
         <img 
@@ -67,6 +53,20 @@
         <div class="text-overlay">
           <h2 style="color: white;">The Making:</h2>
           <p style="color: white;">A coffee making journal</p>
+        </div>
+      </div>
+    </a>
+
+    <a href={'coffee/tasting'} class="link">
+      <div class="image-container">
+        <img 
+          src="{CafeTable}" 
+          alt="Coffee Art"
+          class="coffee_main"
+        />
+        <div class="text-overlay">
+          <h2 style="color: white;">The Tasting:</h2>
+          <p style="color: white;">Cafe exploration and taste testing</p>
         </div>
       </div>
     </a>

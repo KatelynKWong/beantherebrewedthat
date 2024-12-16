@@ -268,6 +268,7 @@
             <div class="text-overlay">
                 <h2 style="color: white; font-family: Luminari, cursive; font-size: 4vw">Welcome</h2>
                 <p style="color: white;">to my journal documenting my coffee making experience!</p>
+                <p style="color: white; font-size: 0.8em;">Hover over the images on the left to view entries.</p>
             </div>
             <img src="{SpyhouseLatte}" alt="Coffee Art" class="title_image" />
 
@@ -320,7 +321,7 @@
         overflow-y: auto;
         padding: 10px;
         box-sizing: border-box;
-        top: 20px; /* Adjusted for a more consistent vertical positioning */
+        top: 0px; /* Adjusted for a more consistent vertical positioning */
         overflow: hidden; /* Disables scrolling */
         pointer-events: none;
     }
@@ -452,11 +453,11 @@
 
     .text-overlay {
         position: relative; /* Keeps it in the normal flow */
-        top: 160px;
-        right: -25%;
-        background-color: rgba(0, 0, 0, 0.25);
+        top: 200px;
+        left: 5%;
+        background-color: rgba(0, 0, 0, 0.4);
         padding: 5px;
-        text-align: right;
+        text-align: left;
         font-size: 2vw;
         font-weight: 50;
         z-index: 1000; /* Higher z-index to be above the title image */
