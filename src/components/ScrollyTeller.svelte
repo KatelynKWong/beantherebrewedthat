@@ -186,7 +186,7 @@
     cursor: pointer; /* Ensure the image is clickable */
     background-color: rgba(95, 112, 131, 0.7); /* Semi-transparent background */
     border: 2px solid rgba(255, 255, 255, 0.7); /* Add a visible border */
-    animation: borderAnimation 2s infinite alternate; /* Border animation */
+    animation: borderAnimation 1.5s infinite alternate; /* Border animation */
     transition: background-color 0.2s ease, transform 0.2s ease, border 0.2s ease; /* Smooth transitions */
 }
 
@@ -212,7 +212,7 @@
         border-width: 2px; /* Thin border */
     }
     50% {
-        border-width: 6px; /* Thick border */
+        border-width: 7px; /* Thick border */
     }
     100% {
         border-width: 2px; /* Thin border again */
