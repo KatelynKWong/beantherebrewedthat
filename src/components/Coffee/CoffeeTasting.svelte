@@ -59,7 +59,7 @@
   let count, index, offset=0, progress;
   let width, height;
   let showBanner = true;
-  let selectedSortOption = 'latest';
+  let selectedSortOption = 'rating';
   let selectedImage = null;
   let isModalOpen = false;
 

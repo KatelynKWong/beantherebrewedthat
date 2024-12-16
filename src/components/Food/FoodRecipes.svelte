@@ -258,7 +258,7 @@
         width: 66.66%; /* 2/3rds of the window width */
         height: 85%; /* Full height of the window */
         background-color: rgba(255, 255, 255); /* Slightly transparent background */
-        z-index: 1001;
+        z-index: 999;
         display: none;
         padding: 20px;
         box-sizing: border-box;
