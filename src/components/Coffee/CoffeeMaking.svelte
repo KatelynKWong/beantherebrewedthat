@@ -189,14 +189,16 @@ function toggleGallery(index) {
     console.log('Toggling gallery: ', activeIndex !== null ? 'Opening' : 'Closing');
 }
 
-// Next image in the gallery
 function nextImage(gallery) {
-    currentIndex = (currentIndex + 1) % gallery.length;
+    if (gallery && gallery.length > 0) {
+        currentIndex = (currentIndex + 1) % gallery.length;
+    }
 }
 
-// Previous image in the gallery
 function prevImage(gallery) {
-    currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+    if (gallery && gallery.length > 0) {
+        currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+    }
 }
 
 
@@ -322,14 +324,14 @@ function prevImage(gallery) {
     .right-container {
         position: fixed;
         width: calc(65vw); /* Ensures no overlap */
-        height: 80vh;
-        left: calc(35vw + 20px); /* Matches left-container's width */
+        height: 82vh;
+        left: calc(35vw + 5px); /* Matches left-container's width */
         overflow-y: auto;
         padding: 20px; /* Adjust padding as needed */
         box-sizing: border-box;
         top: 150px; /* Aligned with left-container */
         pointer-events: auto;
-        overflow-y: hidden; 
+        overflow: hidden; 
     }
 
 
@@ -343,6 +345,7 @@ function prevImage(gallery) {
         box-sizing: border-box;
         display: block; /* Each item takes full width, with only one per row */
         margin: 10px auto; /* Center each image item */
+        border-radius: 8px;
     }
 
     .summary_images {
@@ -440,22 +443,14 @@ function prevImage(gallery) {
         font-size: 1vw
     }
 
-    .subtitle_image {
-        width: 75vw;
-        height: 80vh; /* Set height to 50% of the viewport height */
-        object-fit: cover;
-    }
-
-    .subtitle_image:hover + .photo-bottom-label {
-        animation: wiggle 0.8s infinite ease-in-out; /* Add wiggle animation only on hover */
-    }
     .title_image {
         position: relative; /* Ensure it has a positioned context for z-index */
         z-index: 999; /* Ensure the title image is below the overlay */
         top: -15vw;
-        width: 75vw;
+        width: 65vw;
         height: 90vh;
         object-fit: cover;
+        border-radius: 10px;
     }
 
     .text-overlay {
@@ -552,7 +547,7 @@ function prevImage(gallery) {
     z-index: 1001;
     top: 160px;
     left: calc(35vw + 20px);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .slideshow-image {
@@ -567,18 +562,19 @@ function prevImage(gallery) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(86, 62, 53, 0.7);
     color: white;
     border: none;
-    padding: 1rem 2rem;
+    padding: 1vw 2vw;
     cursor: pointer;
     font-size: 2rem;
     z-index: 1000;
-    opacity: 0.7;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
 }
 
 .arrow.left {
-    left: 20px; /* Adjust for better visibility */
+    left: 0px; /* Adjust for better visibility */
 }
 
 .arrow.right {
@@ -586,8 +582,7 @@ function prevImage(gallery) {
 }
 
 .arrow:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    opacity: 1;
+    background-color: rgba(74, 49, 39, .8);
 }
 
     .image-wrapper.active .subtitle_image {
@@ -601,7 +596,7 @@ function prevImage(gallery) {
         z-index: 1002;
         margin: 0;
         padding: 0.2em 0.5em;
-        background-color: rgba(116, 116, 116, 0.6);
+        background-color: rgba(54, 44, 40, 0.6);
         color: #fff;
         font-size: 1.8em;
         border-radius: 4px;
