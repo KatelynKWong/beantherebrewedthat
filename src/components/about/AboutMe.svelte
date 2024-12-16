@@ -118,7 +118,7 @@
         font-size: 1.5vw;
         font-weight: 500;
         text-align: center;
-        position: fixed;
+        position: absolute;
         color: rgb(3, 28, 18);
         left: 50%; /* Center horizontally */
         top: calc(120px + 40vw + 20px); /* Top of title + its height + spacing */
