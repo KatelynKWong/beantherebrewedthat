@@ -329,7 +329,7 @@
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
         width: auto;
         position: absolute;
-        top: 140px;
+        top: 160px;
         left: 20px;
         z-index: 1000;
     }
@@ -482,12 +482,13 @@
 
     .reset-zoom {
         position: absolute;
-        top: 110px; /* Slightly increased to ensure it stays clear from the header */
-        right: 5px; /* Adjusted for better spacing from the edge */
+        top: 120px; /* Slightly increased to ensure it stays clear from the header */
+        left: 20px; /* Adjusted for better spacing from the edge */
+        width: 100px;
         background-color: #7cb7cd;
         border: none;
         color: white;
-        padding: 1% 2%; /* Increased padding for a better visual */
+        padding: 10px 0px; /* Increased padding for a better visual */
         font-size: clamp(.25em, 1.5vh, 2em); /* Responsive font size using clamp */
         border-radius: 8px; /* Slightly rounded edges */
         cursor: pointer;
