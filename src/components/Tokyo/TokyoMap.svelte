@@ -273,8 +273,8 @@
     <div class="modal-backdrop" on:click={closeModal}></div>
         <div class="modal">
             <h2>{modalContent.place}</h2>
-            <p><strong>List:</strong> {modalContent.list}</p>
-            <p><strong>Province:</strong> {modalContent.province}</p> 
+            <p class="small-deet"><strong>Province:</strong> {modalContent.province}</p> 
+            <p class="small-deet"><strong>Location Type:</strong> {modalContent.list}</p>
 
             <p>{modalContent.description}</p>
             <button on:click={closeModal}>X</button>
@@ -364,24 +364,25 @@
 
     /* Button to minimize/expand the legend */
     .toggle-button {
-        background: rgb(178, 202, 209, .5);
+        background: #7cb7cd;
+        color: white; /* Initial text color */
+        opacity: .8;
         position: absolute;
         border: none;
         top: 4px;
         right: 4px;
         height: 20px;
-        width: 30px; /* Added fixed width for better control */
+        width: 30px; /* Fixed width for better control */
         border-radius: 4px;
         font-size: 10px;
-        color: #112337;
         cursor: pointer;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         animation: growAnimation 1.5s infinite ease-in-out; /* Border animation and growing animation */
-    }
+        }
 
-    .toggle-button:hover {
+        .toggle-button:hover {
         background: #54757e;
-        color: white;
-    }
+        }
 
     @keyframes growAnimation {
         0% {
@@ -402,9 +403,9 @@
     }
 
     /* Position the minimize/expand button in the bottom right corner of the legend */
-    .toggle-button {
-        color: #112337;
-        cursor: pointer;
+    .small-deet {
+        font-size: 0.8em; /* Make the text smaller */
+        line-height: .6;
     }
     .home-link {
         color: inherit; /* Keeps the original text color */
@@ -467,9 +468,11 @@
     background: none;
     border: none;
     font-size: 20px;
-    color: #333;
+    color: white;
     background-color: #7cb7cd;
     cursor: pointer;
+    border-radius: 5px;
+
 }
 
     .modal button:hover {
