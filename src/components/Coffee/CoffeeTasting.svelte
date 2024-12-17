@@ -474,29 +474,27 @@ main {
 
   .wiggle-arrow {
     position: absolute;
-    top: 51vw;
+    top: 52vw;
     left: 40%;
     transform: translateX(-50%);
     font-size: 1.5vw;
     font-weight: bold; /* Makes the text bold */
     color: white;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(76, 49, 24, 0.4);
     padding: 0.5rem 1rem; /* Adds padding for a wider background box */
-    border-radius: 8px; /* Slightly increases the corner rounding */
     z-index: 999;
     animation: wiggle 0.5s ease-in-out infinite;
     text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow */
   }
 
-  @keyframes wiggle {
+  /* @keyframes wiggle {
     0%, 100% {
       transform: translateX(-50%) translateY(0);
     }
     50% {
       transform: translateX(-50%) translateY(-7px);
     }
-  }
+  } */
 
   .coffee_main {
     width: 100%; /* Set the width to 100% of its container */
