@@ -402,6 +402,8 @@ main {
     padding: 20px;
     margin-left: 0;
     font-family: 'Gudea', sans-serif;
+    background-color: #e3dcd6;
+    min-height: 100vh;  
 }
 .row {
     display: flex;

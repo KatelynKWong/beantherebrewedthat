@@ -233,8 +233,6 @@ function toggleDetails(index) {
     activeDetailsIndex = activeDetailsIndex === index ? null : index;
 }
 
-
-
 </script>
 
 <main>
@@ -338,8 +336,9 @@ main {
     padding: 20px;
     margin-left: 0;
     font-family: 'Gudea', sans-serif;
+    background-color: #e3dcd6;
+    min-height: 100vh;  
 }
-
 
     .image-container {
         position: fixed;
@@ -419,6 +418,7 @@ main {
         justify-content: center;
         position: fixed;
         top: 110px;
+        left: -0px;
     }
 
     .summary_images {
@@ -540,10 +540,6 @@ main {
         right: 0.5em;
     }
 
-    .bottom-label:click + .entry-details {
-        opacity: 1; /* Show the details when the item is hovered */
-    }    
-
     @keyframes wiggle {
         0%, 100% {
             transform: rotate(0deg);
@@ -568,10 +564,6 @@ main {
         position: relative;
         top: -15vw;
         display: inline-block; /* Allows each image to be displayed next to each other */
-    }
-
-    .subtitle_image {
-        transition: opacity 0.3s ease;  /* Smooth transition for opacity */
     }
 
     .slideshow-container {
@@ -622,11 +614,6 @@ main {
 .arrow:hover {
     background-color: rgba(74, 49, 39, .8);
 }
-
-    .image-wrapper.active .subtitle_image {
-        opacity: .1;  /* Make the coffee art image transparent when active */
-    }
-
     .photo-top-label {
         position: fixed;
         top: 180px; /* Distance from the top of the image */
@@ -655,13 +642,6 @@ main {
         transition: background-color 0.3s ease; /* Add smooth transition */
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Adds a subtle drop shadow */
     }
-
-    /* Add hover effect for photo-bottom-label */
-    .photo-bottom-label:hover {
-        background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
-    }
-
 
     main {
         margin: 0;

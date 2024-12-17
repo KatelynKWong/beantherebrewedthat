@@ -280,6 +280,8 @@
         padding: 20px;
         margin-left: 0;
         font-family: 'Gudea', sans-serif;
+        min-height: 100vh;  
+        background-color: #e3dcd6;
     }
     .header {
         position: fixed;

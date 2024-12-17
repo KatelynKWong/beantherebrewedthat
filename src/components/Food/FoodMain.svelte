@@ -65,6 +65,8 @@ main {
     overflow: hidden; /* Prevent scrolling inside main */
     position: fixed;
     width: 100vw;
+    min-height: 100vh;  
+    background-color: #e3dcd6;
 }
     .background_img {
         width: 100%; /* Set the width to 100% of its container */

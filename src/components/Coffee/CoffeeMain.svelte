@@ -81,7 +81,9 @@
         padding: 20px;
         margin-left: 0;
         font-family: 'Gudea', sans-serif;
-    }
+        background-color: #e3dcd6;
+        min-height: 100vh;  
+      }
 
 .header {
   position: fixed;
@@ -181,7 +183,6 @@
     top: 80px;              /* Stick to the top */
     z-index: 1000;          /* Stay above other content */
     transition: opacity 0.3s ease-in-out;
-
 }
 
 /* Navigation Links */
