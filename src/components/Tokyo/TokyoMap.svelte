@@ -217,6 +217,12 @@
         modalVisible = false;
     }
 
+    let isMinimized = false;  // Keeps track of whether the legend is minimized
+
+// Toggle the legend between minimized and expanded states
+    function toggleLegend() {
+        isMinimized = !isMinimized;
+    }
 </script>
 
 <main>
@@ -248,8 +254,12 @@
     </div>
 
     <div class="legend">
-        <h3>Locations</h3>
-        <ul>
+        <h3>Study Abroad Locations
+          <button class="toggle-button" on:click={toggleLegend}>
+            {isMinimized ? 'Exp' : 'Min'}
+          </button>
+        </h3>
+        <ul class={isMinimized ? 'hidden' : ''}>
           <li><span class="color-box" style="background-color: darkred;"></span> Important</li>
           <li><span class="color-box" style="background-color: pink;"></span> Favorites</li>
           <li><span class="color-box" style="background-color: green;"></span> Frequented</li>
@@ -257,6 +267,7 @@
           <li><span class="color-box" style="background-color: orange;"></span> Food</li>
         </ul>
       </div>
+      
 
     {#if modalVisible}
     <div class="modal-backdrop" on:click={closeModal}></div>
@@ -313,10 +324,10 @@
 
     .legend {
         background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-        padding: 0px 0px 0px 35px;
+        padding: 0px 35px 0px 35px;
         border-radius: 8px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-        width: 200px;
+        width: auto;
         position: absolute;
         top: 140px;
         left: 20px;
@@ -327,6 +338,9 @@
         text-align: left;
         font-size: 18px;
         margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .legend ul {
@@ -346,6 +360,51 @@
         height: 15px;
         margin-right: 20px;
         border-radius: 50%;
+    }
+
+    /* Button to minimize/expand the legend */
+    .toggle-button {
+        background: rgb(178, 202, 209, .5);
+        position: absolute;
+        border: none;
+        top: 4px;
+        right: 4px;
+        height: 20px;
+        width: 30px; /* Added fixed width for better control */
+        border-radius: 4px;
+        font-size: 10px;
+        color: #112337;
+        cursor: pointer;
+        animation: growAnimation 1.5s infinite ease-in-out; /* Border animation and growing animation */
+    }
+
+    .toggle-button:hover {
+        background: #54757e;
+        color: white;
+    }
+
+    @keyframes growAnimation {
+        0% {
+            transform: scale(1); /* Original size */
+        }
+        50% {
+            transform: scale(1.2); /* Slightly larger */
+        }
+        100% {
+            transform: scale(1); /* Returns to original size */
+        }
+    }
+
+
+    /* Hide the list when minimized */
+    .hidden {
+        display: none;
+    }
+
+    /* Position the minimize/expand button in the bottom right corner of the legend */
+    .toggle-button {
+        color: #112337;
+        cursor: pointer;
     }
     .home-link {
         color: inherit; /* Keeps the original text color */
@@ -420,7 +479,7 @@
 
     .reset-zoom {
         position: absolute;
-        top: 105px; /* Slightly increased to ensure it stays clear from the header */
+        top: 110px; /* Slightly increased to ensure it stays clear from the header */
         right: 5px; /* Adjusted for better spacing from the edge */
         background-color: #7cb7cd;
         border: none;
