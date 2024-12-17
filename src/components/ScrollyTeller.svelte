@@ -62,8 +62,8 @@
 </script>
 
 <main>
-  <a href={'about'} class="button">
-    <img src={AboutIcon} alt="About Me Icon" class="image-button"/>
+  <a href={'about'}>
+    <!-- <img src={AboutIcon} alt="About Me Icon" class="image-button"/> -->
     <div class="about">
       <h7>About Me</h7>
     </div>
@@ -122,7 +122,6 @@
       top={0.0}
       bottom={1}
       threshold={0.5}
-      initialPosition={0}
       bind:count
       bind:index
       bind:offset
@@ -155,24 +154,6 @@
         margin-left: 0;
         font-family: 'Gudea', sans-serif;
     }
-.button {
-    position: fixed; /* Fix the button in place */
-    bottom: 20px; /* Set distance from the bottom */
-    left: 20px; /* Set distance from the left */
-    height: 40px; /* Let the height adjust based on the content */
-    width: 120px; /* Make the button a fixed width */
-    color: white;
-    border-radius: 20px; /* Rounded corners */
-    z-index: 999;
-    text-align: left; /* Center the content */
-    padding: 10px 20px; /* Increase padding for better button size */
-    transition: background-color 0.3s ease, transform 0.2s ease, border 0.3s ease; /* Smooth transitions */
-    cursor: pointer; /* Ensure the button is clickable */
-}
-
-.button:hover {
-    background-color: rgb(119, 142, 165, 0.5); /* Change background color on hover */
-}
 
 .image-button {
     width: auto; /* Make the image fill the width of the button */
@@ -187,21 +168,25 @@
 }
 
 .about {
-    position: absolute; /* Position relative to the button */
-    opacity: 0;
-    visibility: hidden;
+    position: fixed; /* Position relative to the button */
     bottom: 15px; /* Align vertically to the middle of the button */
-    left: 65px; /* Position the text to the right of the button */
+    left: 30px; /* Position the text to the right of the button */
     z-index: 1000;
     color: white;
-    text-align: left;
-    padding: 5px;
+    text-align: center;
+    padding: 10px 5px;
+    animation: borderAnimation 1.5s infinite alternate; /* Border animation */
     transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for text visibility */
+    background-color: rgba(95, 112, 131, 0.7); /* Semi-transparent background */
+    border: 2px solid rgba(95, 112, 131, 0.7); /* Add a visible border */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow */
 }
 
-.button:hover .about {
-    opacity: 1; /* Show text when button is hovered */
-    visibility: visible; /* Make the text visible */
+.about:hover {
+  background-color: rgb(168, 185, 206); /* Semi-transparent background */
+  color: rgb(26, 31, 72);
+  border: 2px solid rgb(168, 185, 206);
 }
 @keyframes borderAnimation {
     0% {
