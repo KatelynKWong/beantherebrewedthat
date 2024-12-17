@@ -389,20 +389,19 @@
         transform: scale(1.10); 
     }
     .nav-bar {
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center;    /* Center items vertically */
-    background-color: #0f2e4d; /* Dark background for contrast */
-    color: white;           /* White text for readability */
-    height: 30px;           /* Fixed height */
-    transform: translateX(-1%);
-    width: 103%;
-    position: fixed;       /* Stay at the top on scroll */
-    top: 80px;              /* Stick to the top */
-    z-index: 1000;          /* Stay above other content */
-    transition: opacity 0.3s ease-in-out;
-
-}
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        align-items: center;    /* Center items vertically */
+        background-color: #0f2e4d; /* Dark background for contrast */
+        color: white;           /* White text for readability */
+        height: 30px;           /* Fixed height */
+        left: 0%;
+        width: 100vw;
+        position: fixed;       /* Stay at the top on scroll */
+        top: 80px;              /* Stick to the top */
+        z-index: 1000;          /* Stay above other content */
+        transition: opacity 0.3s ease-in-out;
+    }
 
 /* Navigation Links */
 .nav-link {

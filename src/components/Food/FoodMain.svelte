@@ -31,7 +31,7 @@
     <img 
         src="{FoodMainBackground}" 
         alt="Coffee Art"
-        class="coffee_main"
+        class="background_img"
     />
     <div class="title">
         <p>Savory Stories:</p>
@@ -59,11 +59,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
 
 main {
-    padding: 20px;
     margin-left: 0;
     font-family: 'Gudea', sans-serif;
+    height: 100vh; /* Ensure it takes full viewport height */
+    overflow: hidden; /* Prevent scrolling inside main */
+    position: fixed;
+    width: 100vw;
 }
-    .coffee_main {
+    .background_img {
         width: 100%; /* Set the width to 100% of its container */
         height: 100%; /* Let the height adjust proportionally to maintain aspect ratio */
         object-fit: cover; /* Ensure the image covers the entire container */
@@ -82,7 +85,7 @@ main {
 
     .button {
         position: absolute;
-        top: 40vw;
+        bottom: 20%;
         left: 5%;
         font-size: 4vw;
         background-color: rgba(178, 140, 140, 0.7);
@@ -115,7 +118,7 @@ main {
     }
 
     .title {
-        font-size: 4vw;
+        font-size: clamp(3em, 5vw + 2em, 5em);
         font-weight: bold;
         position: absolute;
         color: rgb(55, 15, 15);
@@ -142,10 +145,10 @@ main {
         left: 60%;
         max-width: 33%; /* Set max-width to limit expansion */
         padding: 10px;
-        z-index: 999;
+        z-index: 998;
         background-color: rgba(96, 55, 55, 0.8);
         vertical-align: middle; /* Align vertically */
-        top: 34vw; 
+        top: 50%;
         height: 20vw; 
     } 
 
@@ -158,20 +161,19 @@ main {
     }
 
     .nav-bar {
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center;    /* Center items vertically */
-    background-color: #1c0b0b; /* Dark background for contrast */
-    color: white;           /* White text for readability */
-    height: 30px;           /* Fixed height */
-    transform: translateX(-1%);
-    width: 103%;
-    position: fixed;       /* Stay at the top on scroll */
-    top: 80px;              /* Stick to the top */
-    z-index: 1000;          /* Stay above other content */
-    transition: opacity 0.3s ease-in-out;
-
-}
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        align-items: center;    /* Center items vertically */
+        background-color: #1c0b0b; /* Dark background for contrast */
+        color: white;           /* White text for readability */
+        height: 30px;           /* Fixed height */
+        left: 0%;
+        width: 100vw;
+        position: fixed;       /* Stay at the top on scroll */
+        top: 80px;              /* Stick to the top */
+        z-index: 1000;          /* Stay above other content */
+        transition: opacity 0.3s ease-in-out;
+    }
 
 /* Navigation Links */
 .nav-link {

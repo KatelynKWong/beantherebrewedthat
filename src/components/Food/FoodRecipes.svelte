@@ -350,8 +350,8 @@
         background-color: #1c0b0b; /* Dark background for contrast */
         color: white;           /* White text for readability */
         height: 30px;           /* Fixed height */
-        transform: translateX(-2%);
-        width: 104%;
+        left: 0%;
+        width: 100vw;
         position: fixed;       /* Stay at the top on scroll */
         top: 80px;              /* Stick to the top */
         z-index: 1000;          /* Stay above other content */

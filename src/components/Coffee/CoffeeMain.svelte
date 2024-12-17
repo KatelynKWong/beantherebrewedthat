@@ -175,8 +175,8 @@
     background-color: #583f38; /* Dark background for contrast */
     color: white;           /* White text for readability */
     height: 30px;           /* Fixed height */
-    transform: translateX(-1%);
-    width: 103%;
+    left: 0%;
+    width: 100vw;
     position: fixed;       /* Stay at the top on scroll */
     top: 80px;              /* Stick to the top */
     z-index: 1000;          /* Stay above other content */

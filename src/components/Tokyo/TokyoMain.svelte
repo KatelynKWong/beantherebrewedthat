@@ -60,9 +60,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
 
     main {
-        padding: 20px;
         margin-left: 0;
         font-family: 'Gudea', sans-serif;
+        height: 100vh; /* Ensure it takes full viewport height */
+        overflow: hidden; /* Prevent scrolling inside main */
+        position: fixed;
+        width: 100vw
     }
     .background_img {
         width: 100%; /* Set the width to 100% of its container */
@@ -83,7 +86,7 @@
 
     .button {
         position: absolute;
-        top: 40vw;
+        bottom: 20%;
         left: 5%;
         font-size: 4vw;
         background-color: rgba(140, 158, 178, 0.7);
@@ -117,7 +120,7 @@
     }
 
     .title {
-        font-size: 4vw;
+        font-size: clamp(3em, 5vw , 4em);
         font-weight: bold;
         position: absolute;
         color: rgb(18, 41, 74);
@@ -144,10 +147,11 @@
         left: 58%;
         max-width: 36%; /* Set max-width to limit expansion */
         padding: 10px;
-        z-index: 999;
+        z-index: 998;
         background-color: rgba(55, 85, 96, 0.8);
         vertical-align: middle; /* Align vertically */
-        top: 34vw; 
+        /* top: calc(min(100vw, 50%)); */
+        top: 50%;
         height: 20vw; 
     } 
 
