@@ -10,8 +10,8 @@
         <div class="dropdown">
             <a href="{base}/coffee" class="nav-link">Coffee Chronicles</a>
             <div class="dropdown-menu">
+                <a href="{base}/coffee/making" class="dropdown-item">Coffee Making Journal</a>
                 <a href="{base}/coffee/tasting" class="dropdown-item">Cafe Reviews</a>
-                <a href="{base}/coffee/making" class="dropdown-item">The Making Journal</a>
             </div>
         </div>
         <div class="dropdown">
@@ -138,7 +138,7 @@
         background-color: rgba(96, 55, 55, 0.8);
         vertical-align: middle; /* Align vertically */
         top: 34vw; 
-        height: 18vw; 
+        height: 20vw; 
     } 
 
     .link {

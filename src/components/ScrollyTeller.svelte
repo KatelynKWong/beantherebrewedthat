@@ -40,10 +40,6 @@
 
   let showTopArrow = false;
   $: showTopArrow = index === 1 | index === 2 ;
-
-  let showScroll = false;
-  $: showScroll = index === 1 | index === 2 | index === 3;
-  
   
   function scrollToNext() {
         const nextIndex = index + 1; // Calculate the next index
@@ -78,12 +74,6 @@
       ↓
     </div>
   {/if}
-
-  <!-- {#if showScroll}
-    <div class="scroll">
-      (or scroll)
-    </div>
-  {/if} -->
 
   {#if showBotArrow}
     <div class="wiggle-bot-arrow" on:click={scrollUp}>

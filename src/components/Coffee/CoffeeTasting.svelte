@@ -297,8 +297,8 @@
     <div class="dropdown">
         <a href="{base}/coffee" class="nav-link">Coffee Chronicles</a>
         <div class="dropdown-menu">
-            <a href="{base}/coffee/tasting" class="dropdown-item">Cafe Reviews</a>
-            <a href="{base}/coffee/making" class="dropdown-item">The Making Journal</a>
+          <a href="{base}/coffee/making" class="dropdown-item">Coffee Making Journal</a>
+          <a href="{base}/coffee/tasting" class="dropdown-item">Cafe Reviews</a>
         </div>
     </div>
     <div class="dropdown">
@@ -314,6 +314,9 @@
         </div>
     </div>
 </div>
+  <div class="wiggle-arrow">
+    ↓
+  </div>
   <img 
     src="{CoffeeMainPic}" 
     alt="Coffee Art"
@@ -450,7 +453,7 @@
     background-color: rgba(76, 49, 24, 0.64);
     vertical-align: middle; /* Align vertically */
     top: 34vw; 
-    height: 18vw; 
+    height: 20vw; 
   } 
 
 
@@ -458,6 +461,32 @@
     width: 100%; /* Set the width to 100% of its container */
     height: 100%; /* Let the height adjust proportionally to maintain aspect ratio */
     object-fit: cover; /* Ensure the image covers the entire container */
+  }
+
+  .wiggle-arrow {
+    position: absolute;
+    top: 51vw;
+    left: 40%;
+    transform: translateX(-50%);
+    font-size: 1.5vw;
+    font-weight: bold; /* Makes the text bold */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 1rem; /* Adds padding for a wider background box */
+    border-radius: 8px; /* Slightly increases the corner rounding */
+    z-index: 999;
+    animation: wiggle 0.5s ease-in-out infinite;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow */
+  }
+
+  @keyframes wiggle {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-7px);
+    }
   }
 
   .coffee_main {
@@ -533,7 +562,7 @@
 
   .drop-down {
     position: relative;
-    left: 1%;
+    left: 3px;
     width: 10%; /* Make the select element span the entire width of its container */
     box-sizing: border-box; /* Ensure padding and border are included in the width calculation */
     background-color: #4e3416;

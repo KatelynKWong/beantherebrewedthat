@@ -120,7 +120,6 @@
     <tspan x="25%" dy="1.8em">delicious food and drink experiences. If you want to learn</tspan>
     <tspan x="25%" dy="1.8em">more, just click on the sections below to explore each topic.</tspan>
     <tspan x="25%" dy="1.8em">Let's enjoy discovering more about Japan together! </tspan>
-    <tspan x="25%" dy="1.8em" fill="red">Please scroll to see more ↓ </tspan>
   </text>
 
   <rect class="grey-rectangle"
@@ -186,11 +185,34 @@
 </svg>
 
 <style>
-  @import url('https://fonts.google.com/share?query=playfair');
-  svg {
-    font-family: 'Playfair Display';
-    font-size: 20px;
+
+  /* Import the font */
+  @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+
+  /* Apply globally */
+  :global(*) {
+      font-family: 'Gudea', sans-serif;
   }
+
+/* @import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+:global(*) {
+    font-family: 'Klee One', sans-serif;
+} */
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:global(*) {
+    font-family: 'Nunito', sans-serif;
+} */
+
+
+  :global(body) {
+        background-color: rgb(232, 224, 216);
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+    }
 
   /* Graph */
   .graph {

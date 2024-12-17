@@ -224,8 +224,8 @@
         <div class="dropdown">
             <a href="{base}/coffee" class="nav-link">Coffee Chronicles</a>
             <div class="dropdown-menu">
+                <a href="{base}/coffee/making" class="dropdown-item">Coffee Making Journal</a>
                 <a href="{base}/coffee/tasting" class="dropdown-item">Cafe Reviews</a>
-                <a href="{base}/coffee/making" class="dropdown-item">The Making Journal</a>
             </div>
         </div>
         <div class="dropdown">

@@ -1,3 +1,7 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
 <script>
 
     import { onMount, afterUpdate } from 'svelte';
@@ -226,8 +230,8 @@ function toggleDetails(index) {
         <div class="dropdown">
             <a href="{base}/coffee" class="nav-link">Coffee Chronicles</a>
             <div class="dropdown-menu">
+                <a href="{base}/coffee/making" class="dropdown-item">Coffee Making Journal</a>
                 <a href="{base}/coffee/tasting" class="dropdown-item">Cafe Reviews</a>
-                <a href="{base}/coffee/making" class="dropdown-item">The Making Journal</a>
             </div>
         </div>
         <div class="dropdown">
@@ -293,9 +297,9 @@ function toggleDetails(index) {
     <!-- Image Display Container (Only visible for activeIndex) -->
     <div class="right-container">
         <div class="text-overlay">
-            <h2 style="color: white; font-family: Luminari, cursive; font-size: 4vw">Welcome</h2>
-            <p style="color: white;">to my journal documenting my coffee making experience!</p>
-            <p style="color: white; font-size: 0.8em;">Hover over the images on the left to view entries.</p>
+            <h2>Welcome</h2>
+            <p style="color: white; font-size: .8em;">to my journal documenting my coffee making experience!</p>
+            <p style="color: white; font-size: .8em;">Hover over the images on the left to view entries.</p>
         </div>
         <img src="{SpyhouseLatte}" alt="Coffee Art" class="title_image" />
         {#each images as image, index (image.src)}
@@ -473,7 +477,7 @@ function toggleDetails(index) {
 
     .text-overlay {
         position: relative; /* Keeps it in the normal flow */
-        top: 10px;
+        top: 15px;
         left: 5%;
         background-color: rgba(0, 0, 0, 0.4);
         padding: 5px;
@@ -488,6 +492,12 @@ function toggleDetails(index) {
     .text-overlay h2,
     .text-overlay p {
         margin: 0;
+    }
+
+    h2 {
+        font-family: 'Dancing Script', cursive;
+        color: white;
+        font-size: 6vw;
     }
 
     .date-label {

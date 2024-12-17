@@ -106,8 +106,8 @@
         <div class="dropdown">
             <a href="{base}/coffee" class="nav-link">Coffee Chronicles</a>
             <div class="dropdown-menu">
+                <a href="{base}/coffee/making" class="dropdown-item">Coffee Making Journal</a>
                 <a href="{base}/coffee/tasting" class="dropdown-item">Cafe Reviews</a>
-                <a href="{base}/coffee/making" class="dropdown-item">The Making Journal</a>
             </div>
         </div>
         <div class="dropdown">
@@ -129,9 +129,7 @@
         class="strawberry-img"
     />
     <div class="instruction-text">
-        <h1>Explore the recipes on the left</h1>
-        <h1>to discover some of my favorites!</h1>
-    </div>    
+        <h1>Explore the recipes on the left to discover some of my favorites!</h1>    </div>    
     <svg class="background-svg" width="100%" height="100%">
         <rect class="grey-rectangle-background"/>
     </svg>
@@ -327,7 +325,7 @@
     .instruction-text{
         position: fixed;
         z-index: -1;
-        width: auto;
+        width: 50vw;
         height: auto;
         top: 40%;
         left: 60%; /* Starts at 25% of the window width */
@@ -338,7 +336,7 @@
         color: white;
         padding: 10px; /* Adds padding for better readability */
         font-size: 1.2em;
-        line-height: 1.5em;
+        line-height: 3em;
         box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2);
     }
 
