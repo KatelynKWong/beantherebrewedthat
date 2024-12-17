@@ -151,11 +151,12 @@
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
-
+:global(*) {
+  font-family: 'Gudea', sans-serif;
+}
     main {
         padding: 20px;
         margin-left: 0;
-        font-family: 'Gudea', sans-serif;
     }
 .button {
     position: fixed; /* Fix the button in place */
