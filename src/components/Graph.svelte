@@ -185,15 +185,6 @@
 </svg>
 
 <style>
-
-  /* Import the font */
-  @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
-
-  /* Apply globally */
-  :global(*) {
-      font-family: 'Gudea', sans-serif;
-  }
-
 /* @import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
 
 :global(*) {

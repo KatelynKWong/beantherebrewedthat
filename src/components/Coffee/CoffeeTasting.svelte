@@ -396,6 +396,13 @@
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+
+main {
+    padding: 20px;
+    margin-left: 0;
+    font-family: 'Gudea', sans-serif;
+}
 .row {
     display: flex;
     flex-wrap: wrap;

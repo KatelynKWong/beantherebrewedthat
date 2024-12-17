@@ -274,7 +274,13 @@
 
 <style>
     
+    @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
 
+    main {
+        padding: 20px;
+        margin-left: 0;
+        font-family: 'Gudea', sans-serif;
+    }
     .header {
         position: fixed;
         top: 0;

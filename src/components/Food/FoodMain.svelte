@@ -55,6 +55,14 @@
 </main>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+
+main {
+    padding: 20px;
+    margin-left: 0;
+    font-family: 'Gudea', sans-serif;
+}
     .coffee_main {
         width: 100%; /* Set the width to 100% of its container */
         height: 100%; /* Let the height adjust proportionally to maintain aspect ratio */

@@ -1,6 +1,3 @@
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-</head>
 
 <script>
 
@@ -165,7 +162,6 @@
                             notes, the Pink Cloud beans are sweeter and fruitier, ideal for espresso lattes.'
         }
     ]
-
     function scrollToImage(event) {
         const targetId = event.target.dataset.target;
         const targetImage = document.getElementById(targetId);
@@ -188,12 +184,38 @@ let currentIndex = 0;   // Keeps track of the currently displayed image within t
 let detailsVisible = [];
 let activeDetailsIndex = null;
 
-
-// Toggle the gallery view based on the clicked image's index
+// Toggle the gallery based on the clicked image's index
 function toggleGallery(index) {
     activeIndex = activeIndex === index ? null : index;
-    console.log('Toggling gallery: ', activeIndex !== null ? 'Opening' : 'Closing');
+    console.log('Gallery toggled. Active index:', activeIndex);
 }
+
+// Prevent closing gallery if clicking inside gallery or image (by stopping propagation)
+const preventCloseInsideGallery = (event) => {
+    // Only prevent propagation if the click is inside the gallery or an image
+    if (event.target.closest('.gallery') || event.target.closest('.image')) {
+        console.log("Click inside gallery/image, preventing close.");
+        event.stopPropagation(); // Stop the event from bubbling up to document.body
+    }
+};
+
+// Add event listener for clicks to close gallery or prevent propagation inside
+onMount(() => {
+
+    // Add event listener to prevent clicks inside gallery/image from closing it
+    const galleryElements = document.querySelectorAll('.gallery, .image');
+    galleryElements.forEach((el) => {
+        el.addEventListener('click', preventCloseInsideGallery);
+    });
+
+    // Cleanup event listeners when the component is destroyed
+    return () => {
+        galleryElements.forEach((el) => {
+            el.removeEventListener('click', preventCloseInsideGallery);
+        });
+    };
+});
+
 
 function nextImage(gallery) {
     if (gallery && gallery.length > 0) {
@@ -207,21 +229,11 @@ function prevImage(gallery) {
     }
 }
 
-onMount(() => {
-    detailsVisible = images.map(() => false);
-});
-    // Bind the click event to the document
-    onMount(() => {
-        document.body.addEventListener('click', closeGallery);
-
-        return () => {
-            document.body.removeEventListener('click', closeGallery);
-        };
-    });
-
 function toggleDetails(index) {
     activeDetailsIndex = activeDetailsIndex === index ? null : index;
 }
+
+
 
 </script>
 
@@ -320,14 +332,14 @@ function toggleDetails(index) {
 </main>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
 
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start; /* or center, depending on desired alignment */
-        padding: 0% 0 0;
-        position: fixed;
-    }
+main {
+    padding: 20px;
+    margin-left: 0;
+    font-family: 'Gudea', sans-serif;
+}
+
 
     .image-container {
         position: fixed;
@@ -347,13 +359,7 @@ function toggleDetails(index) {
         padding: 20px; /* Adjust padding as needed */
         box-sizing: border-box;
         top: 150px; /* Aligned with left-container */
-        pointer-events: auto;
         overflow: hidden; 
-    }
-
-
-    .right-container * {
-        pointer-events: auto; /* Re-enables interaction for children elements */
     }
 
     .image-item {

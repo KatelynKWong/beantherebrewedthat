@@ -74,12 +74,14 @@
 </main>
 
 <style>
-html, body {
-  height: 100%;         /* Ensure body and html fill the viewport height */
-  margin: 0;            /* Remove default margins */
-  padding: 0;           /* Remove default padding */
-  overflow: hidden;     /* Disable scrolling */
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+
+    main {
+        padding: 20px;
+        margin-left: 0;
+        font-family: 'Gudea', sans-serif;
+    }
 
 .header {
   position: fixed;

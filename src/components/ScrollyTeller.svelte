@@ -149,6 +149,14 @@
 </main>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+
+    main {
+        padding: 20px;
+        margin-left: 0;
+        font-family: 'Gudea', sans-serif;
+    }
 .button {
     position: fixed; /* Fix the button in place */
     bottom: 20px; /* Set distance from the bottom */
