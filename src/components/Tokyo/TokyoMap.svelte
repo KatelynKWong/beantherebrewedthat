@@ -247,6 +247,17 @@
         </a>
     </div>
 
+    <div class="legend">
+        <h3>Locations</h3>
+        <ul>
+          <li><span class="color-box" style="background-color: darkred;"></span> Important</li>
+          <li><span class="color-box" style="background-color: pink;"></span> Favorites</li>
+          <li><span class="color-box" style="background-color: green;"></span> Frequented</li>
+          <li><span class="color-box" style="background-color: #362312;"></span> Traveling</li>
+          <li><span class="color-box" style="background-color: orange;"></span> Food</li>
+        </ul>
+      </div>
+
     {#if modalVisible}
     <div class="modal-backdrop" on:click={closeModal}></div>
         <div class="modal">
@@ -298,6 +309,43 @@
     main {
         margin: 0;
         padding: 0;
+    }
+
+    .legend {
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+        padding: 0px 0px 0px 35px;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        width: 200px;
+        position: absolute;
+        top: 140px;
+        left: 20px;
+        z-index: 1000;
+    }
+
+    .legend h3 {
+        text-align: left;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .legend ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .legend li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .legend li .color-box {
+        width: 15px;
+        height: 15px;
+        margin-right: 20px;
+        border-radius: 50%;
     }
     .home-link {
         color: inherit; /* Keeps the original text color */
