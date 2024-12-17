@@ -174,29 +174,27 @@
     z-index: 1000;
     color: white;
     text-align: center;
-    padding: 10px 5px;
-    animation: borderAnimation 1.5s infinite alternate; /* Border animation */
+    padding: 7px 10px;
+    animation: growAnimation 1.5s infinite ease-in-out; /* Border animation and growing animation */
     transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for text visibility */
     background-color: rgba(95, 112, 131, 0.7); /* Semi-transparent background */
-    border: 2px solid rgba(95, 112, 131, 0.7); /* Add a visible border */
-    border-radius: 20px; /* Rounded corners */
+    border-radius: 10px; /* Rounded corners */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow */
 }
 
 .about:hover {
   background-color: rgb(168, 185, 206); /* Semi-transparent background */
   color: rgb(26, 31, 72);
-  border: 2px solid rgb(168, 185, 206);
 }
-@keyframes borderAnimation {
+@keyframes growAnimation {
     0% {
-        border-width: 2px; /* Thin border */
+        transform: scale(1); /* Original size */
     }
     50% {
-        border-width: 7px; /* Thick border */
+        transform: scale(1.1); /* Slightly larger */
     }
     100% {
-        border-width: 2px; /* Thin border again */
+        transform: scale(1); /* Returns to original size */
     }
 }
 
