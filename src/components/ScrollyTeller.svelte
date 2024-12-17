@@ -63,7 +63,7 @@
 
 <main>
   <a href={'about'} class="button">
-    <img src="{AboutIcon}" alt="About Me Icon" class="image-button"/>
+    <img src={AboutIcon} alt="About Me Icon" class="image-button"/>
     <div class="about">
       <h7>About Me</h7>
     </div>
@@ -116,8 +116,6 @@
     </div>
   </a>
   <img src="{Polaroid}" alt="Polaroid Photo" class="polaroid" style={`opacity: ${$image1Opacity};`} />
-  <!-- <img src="{CherryTree}" alt="Cherry Tree" class="polaroid" style={`opacity: ${$image2Opacity};`} /> -->
-  <!-- <img src="{Croissant}" alt="Croissant" class="savory-stories" style={`opacity: ${$image2Opacity};`} /> -->
   <img src="{MelonPan}" alt="Melon Pan" class="savory-stories" style={`opacity: ${$image1Opacity};`} />
   <a href={index !== 3 ? null : 'coffee'}>
     <Scroller
