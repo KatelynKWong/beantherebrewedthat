@@ -179,8 +179,10 @@
         return new Date(dateString).toLocaleDateString(undefined, options);
     }
 
-    let activeIndex = null; // Keeps track of the active image index
+let activeIndex = null; // Keeps track of the active image index
 let currentIndex = 0;   // Keeps track of the currently displayed image within the gallery
+let detailsVisible = [];
+let activeDetailsIndex = null;
 
 
 // Toggle the gallery view based on the clicked image's index
@@ -201,7 +203,9 @@ function prevImage(gallery) {
     }
 }
 
-
+onMount(() => {
+    detailsVisible = images.map(() => false);
+});
     // Bind the click event to the document
     onMount(() => {
         document.body.addEventListener('click', closeGallery);
@@ -210,6 +214,10 @@ function prevImage(gallery) {
             document.body.removeEventListener('click', closeGallery);
         };
     });
+
+function toggleDetails(index) {
+    activeDetailsIndex = activeDetailsIndex === index ? null : index;
+}
 
 </script>
 
@@ -247,27 +255,31 @@ function prevImage(gallery) {
         </div>
 
         <div class="title2">
-            <p>Gallery Roll</p>
+            <p>Photo Carousel</p>
         </div>
     </div>
     <div class="image-container">
         {#each images as image, index (image.src)}
             <div class="image-item">
                 <div class="date-label">{formatDate(image.date)}</div>
-                <div class="entry-details">
+                
+                <!-- Conditional Visibility -->
+                <div class="entry-details" class:visible={activeDetailsIndex === index}>
                     <div class="text-container">
                         <p>{image.name}</p>
                         <p>{image.entry}</p>
                     </div>
                 </div>
+    
                 <img src={image.src} alt="Coffee Art" class="summary_images" />
-                
+    
                 <!-- Gallery Label with Combined Functionality -->
                 <div
                     class="label bottom-label"
                     on:click={(event) => {
                         scrollToImage(event); 
                         toggleGallery(index); 
+                        toggleDetails(index);
                     }}
                     data-target={image.src}
                 >
@@ -276,6 +288,7 @@ function prevImage(gallery) {
             </div>
         {/each}
     </div>
+    
     
     <!-- Image Display Container (Only visible for activeIndex) -->
     <div class="right-container">
@@ -427,6 +440,11 @@ function prevImage(gallery) {
         transition: opacity 0.3s ease-in-out;
     }
 
+    .entry-details.visible {
+        opacity: 1;
+    }
+
+
     .image-item:hover .entry-details {
         opacity: 1; /* Show the details when the item is hovered */
     }
@@ -505,6 +523,10 @@ function prevImage(gallery) {
         bottom: 0.5em;
         right: 0.5em;
     }
+
+    .bottom-label:click + .entry-details {
+        opacity: 1; /* Show the details when the item is hovered */
+    }    
 
     @keyframes wiggle {
         0%, 100% {
