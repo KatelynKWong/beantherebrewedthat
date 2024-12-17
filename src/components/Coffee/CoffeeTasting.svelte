@@ -483,18 +483,9 @@ main {
     background-color: rgba(76, 49, 24, 0.4);
     padding: 0.5rem 1rem; /* Adds padding for a wider background box */
     z-index: 999;
-    animation: wiggle 0.5s ease-in-out infinite;
     text-align: center;
   }
 
-  /* @keyframes wiggle {
-    0%, 100% {
-      transform: translateX(-50%) translateY(0);
-    }
-    50% {
-      transform: translateX(-50%) translateY(-7px);
-    }
-  } */
 
   .coffee_main {
     width: 100%; /* Set the width to 100% of its container */

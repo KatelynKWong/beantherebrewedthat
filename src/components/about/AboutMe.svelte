@@ -46,7 +46,7 @@
     
             In her free time, Katelyn enjoys experimenting with making espressos from coffee beans. Ever since she was gifted an espresso maker from a close friend, she has devoted much of her time to developing the perfect espresso preparation methods using her machine. Her goal is to familiarize herself with the art of making coffee to eventually open a hybrid coffee shop and internet cafe that focuses on traditional coffee while offering computer services to customers.<br><br>
     
-            In addition to making coffee, Katelyn enjoys playing music with friends and creating watercolor art pieces. If you are interested in checking out more of her art, coffee creations, and study abroad experiences, please visit <a href="https://www.instagram.com/twicksw" target="_blank">@twicksw</a> and <a href="https://www.instagram.com/crusteacats" target="_blank">@crusteacats</a> on Instagram. Thank you!
+            In addition to making coffee, Katelyn enjoys playing music with friends and creating watercolor art pieces. If you are interested in checking out more of her art, coffee creations, and study abroad experiences, please visit <a href="https://www.instagram.com/kaiyun.wong" target="_blank">@kaiyun.wong</a> on Instagram and <a href="https://www.youtube.com/@kaiyuncorner" target="_blank">kaiyuncorner</a> on YouTube. Thank you!
         </p>
     </div>
     <a href="{base}/">
