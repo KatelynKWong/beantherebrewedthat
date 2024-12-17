@@ -583,10 +583,12 @@ main {
     padding: 6px; /* Add some padding for better spacing */
     border: 1px solid #ccc; /* Add a border for better visibility */
     border-radius: 4px; /* Rounded corners */
+    transition: opacity 0.3s ease-in-out;
   }
   .drop-down:hover{
-    background-color: #49351d;
-  }
+    color: #2e2112;
+    background-color: rgb(154, 121, 82);
+    }
   .home-link {
         color: inherit; /* Keeps the original text color */
     }

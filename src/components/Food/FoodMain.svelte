@@ -101,7 +101,8 @@ main {
     }
 
     .button:hover {
-        background-color: rgba(178, 140, 140, 1); /* Increases opacity on hover */
+        background-color: rgba(190, 152, 152, 0.8); /* Increases opacity on hover */
+        color:  #3f201f; 
     }
 
     @keyframes wiggle {

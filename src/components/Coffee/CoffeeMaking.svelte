@@ -533,6 +533,7 @@ main {
     
     .image-item:hover .label {
         animation: wiggle .8s infinite ease-in-out; /* Add wiggle animation only on hover */
+        background-color: rgba(171, 171, 171, 0.7); /* Fully opaque on hover */
     }
 
     .bottom-label {
@@ -557,7 +558,8 @@ main {
 
     /* Add hover effect for bottom-label */
     .label.bottom-label:hover {
-        background-color: rgba(116, 116, 116, 1); /* Fully opaque on hover */
+        background-color: rgb(200, 196, 196); /* Fully opaque on hover */
+        color: rgb(55, 45, 43)
     }
 
     .image-wrapper {
@@ -612,7 +614,8 @@ main {
 }
 
 .arrow:hover {
-    background-color: rgba(74, 49, 39, .8);
+    background-color: rgba(197, 169, 159, 0.5);
+    color: rgb(43, 34, 33);
 }
     .photo-top-label {
         position: fixed;
@@ -626,21 +629,6 @@ main {
         font-size: 1.8em;
         border-radius: 4px;
         border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
-    }
-
-    .photo-bottom-label {
-        position: absolute;
-        bottom: 10px; /* Distance from the bottom of the image */
-        left: 10px;  /* Distance from the right of the image */
-        margin: 0;
-        padding: 0.2em 0.5em;
-        background-color: rgba(116, 116, 116, 0.8);
-        color: #fff;
-        font-size: 0.9em;
-        border-radius: 4px;
-        border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
-        transition: background-color 0.3s ease; /* Add smooth transition */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Adds a subtle drop shadow */
     }
 
     main {
