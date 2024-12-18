@@ -420,6 +420,7 @@ progress {
     text-align: center;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
     border: none;
+    cursor: pointer;
   }
 
   /* Only applies the wiggle animation when the class "wiggle" is added */
@@ -446,6 +447,7 @@ progress {
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     border: none;
+    cursor: pointer;
   }
 
   .wiggle-bot-arrow:hover {

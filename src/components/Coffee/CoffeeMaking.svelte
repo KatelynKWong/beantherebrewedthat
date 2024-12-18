@@ -536,6 +536,7 @@
     .bottom-label {
         bottom: 0.5em;
         right: 0.5em;
+        cursor: pointer;
     }
 
     @keyframes wiggle {

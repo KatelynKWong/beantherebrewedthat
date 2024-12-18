@@ -248,6 +248,7 @@
         transition: background-color 0.3s ease; /* Optional for smooth transition */
         box-shadow: 0px 0px 4px rgba(61, 2, 2, 0.3);
         line-height: 1.7em;
+        cursor: pointer;
     }
 
     #recipe-list li:hover {
