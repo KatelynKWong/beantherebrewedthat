@@ -123,11 +123,13 @@
             </div>
         </div>
     </div>
+    
     <img 
         src="{strawberryBackground}" 
         alt="Strawberry Background"
         class="strawberry-img"
     />
+    
     <div class="instruction-text">
         <h1>Explore the recipes on the left to discover some of my favorites!</h1>    </div>    
     <svg class="background-svg" width="100%" height="100%">
@@ -142,16 +144,18 @@
                 <h7>Click 
                     <a href={selectedRecipe ? selectedRecipe.link : '#'} target="_blank">here</a> 
                     if pop-up doesn't load...
-                </h7>                <!-- Embed the page in an iframe -->
-                <iframe src={selectedRecipe.link} class="popup-iframe" title="{selectedRecipe.name} Recipe"></iframe>
-                {/if}
+                </h7>              
+                <iframe src={selectedRecipe.link} class="popup-iframe" title="{selectedRecipe.name} Recipe"></iframe>  <!-- Embed the page in an iframe -->
+            {/if}
         </div>
     </div>
+
     <div class="header">
         <a href="{base}/" class="link">
             <h1 style="color: white">Bean There, Brewed That</h1>
         </a>
     </div>
+
     <div class="search-container">
         <input 
             type="text" 
@@ -177,12 +181,9 @@
             {/each}
         </ul>
     </div>
-    
-    
 </main>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
 
     main {
@@ -233,7 +234,7 @@
 
     #recipe-list {
         list-style: none;
-        width: 20vw; /* Limits the width to 1/3 of the page */
+        width: 20vw;
         padding: 0;
         margin: 0;
     }
@@ -250,15 +251,15 @@
     }
 
     #recipe-list li:hover {
-        background-color: rgba(61, 2, 2, 0.3); /* Change to your desired hover background color */
+        background-color: rgba(61, 2, 2, 0.3); 
     }
     .popup {
         position: fixed;
         top: 15%;
         right: 3%;
-        width: 66.66%; /* 2/3rds of the window width */
-        height: 85%; /* Full height of the window */
-        background-color: rgba(255, 255, 255); /* Slightly transparent background */
+        width: 66.66%; 
+        height: 85%; 
+        background-color: rgba(255, 255, 255); 
         z-index: 999;
         display: none;
         padding: 20px;
@@ -300,7 +301,7 @@
         border: none;
     }
     .background-svg {
-        position: fixed; /* Keeps it fixed in place on the background */
+        position: fixed;
         top: 0;
         left: 0;
         z-index: -2; /* Puts the SVG behind everything else */
@@ -312,9 +313,9 @@
         position: fixed;  /* Fixed positioning to keep it in place when scrolling */
         fill: rgb(155, 8, 8);  /* Apply fill color if it's an SVG */
         opacity: 0.5;
-        width: 25vw;  /* 25% of the viewport width */
-        height: 100vh;  /* Full screen height */
-        left: 0;  /* Positions the rectangle from the left side of the viewport */
+        width: 25vw; 
+        height: 100vh; 
+        left: 0;  
     }
     .strawberry-img {
         position: fixed;
@@ -323,21 +324,22 @@
         width: auto;
         height: 100%;
         top: 10%;
-        left: 26%; /* Starts at 25% of the window width */
+        left: 26%; 
     }
+
     .instruction-text{
         position: fixed;
         z-index: -1;
         width: 50vw;
         height: auto;
         top: 40%;
-        left: 60%; /* Starts at 25% of the window width */
+        left: 60%; 
         transform: translateX(-50%);        
         background: rgba(117, 81, 81, 0.6);
         border-radius: 4%;
-        text-align: center; /* Centers the text inside the box */
+        text-align: center; 
         color: white;
-        padding: 10px; /* Adds padding for better readability */
+        padding: 10px; 
         font-size: 1.2em;
         line-height: 3em;
         box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2);
@@ -346,83 +348,81 @@
     .nav-bar {
         display: flex;
         justify-content: center; /* Center items horizontally */
-        align-items: center;    /* Center items vertically */
-        background-color: #1c0b0b; /* Dark background for contrast */
-        color: white;           /* White text for readability */
-        height: 30px;           /* Fixed height */
+        align-items: center;   
+        background-color: #1c0b0b;
+        color: white;           
+        height: 30px;          
         left: 0%;
         width: 100vw;
-        position: fixed;       /* Stay at the top on scroll */
-        top: 80px;              /* Stick to the top */
-        z-index: 1000;          /* Stay above other content */
+        position: fixed;       
+        top: 80px;             
+        z-index: 1000;         
         transition: opacity 0.3s ease-in-out;
     }
 
 
-/* Navigation Links */
-.nav-link {
-    margin: 0 10vw;         /* Add spacing between items */
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;  /* Remove underline by default */
-    color: white;           /* White text */
-}
-
-/* Adjust font size and spacing for smaller screens */
-@media (max-width: 768px) {
+    /* Navigation Links */
     .nav-link {
-        font-size: 0.8rem; /* Reduce font size for smaller screens */
-        margin: 0 3vw;    /* Reduce margin to prevent overlap */
+        margin: 0 10vw;         /* Add spacing between items */
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+        color: white;        
     }
-}
 
-/* Further adjustments for very narrow screens */
-@media (max-width: 480px) {
-    .nav-link {
-        font-size: 0.7rem; /* Further reduce font size */
-        margin: 0 2vw;    /* Narrower spacing */
+    /* Adjust font size and spacing for smaller screens */
+    @media (max-width: 768px) {
+        .nav-link {
+            font-size: 0.8rem;
+            margin: 0 3vw;    /* Reduce margin to prevent overlap */
+        }
     }
-}
+    @media (max-width: 480px) {
+        .nav-link {
+            font-size: 0.7rem;
+            margin: 0 2vw;  
+        }
+    }
 
-.nav-link:hover {
-    color: #ff8000;         /* Highlight color on hover */
-    text-decoration: underline; /* Underline only on hover */
-}
+    .nav-link:hover {
+        color: #ff8000;         
+        text-decoration: underline;
+    }
 
-/* Dropdown Menu */
-.dropdown {
-    position: relative; /* Parent element for dropdown positioning */
-}
+    /* Dropdown Menu */
+    .dropdown {
+        position: relative; /* Parent element for dropdown positioning */
+    }
 
-.dropdown-menu {
-    display: none;        /* Initially hide the dropdown */
-    position: absolute;   /* Position relative to the parent */
-    background-color: #3f2a25; /* Slightly darker background */
-    padding: 10px 0;
-    border-radius: 5px;
-    top: 100%;            /* Place directly below the parent */
-    left: 10vw;
-    min-width: 150px;     /* Set a minimum width */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    z-index: 1000;
-}
+    .dropdown-menu {
+        display: none;        /* Initially hide the dropdown */
+        position: absolute;   /* Position relative to the parent */
+        background-color: #3f2a25;
+        padding: 10px 0;
+        border-radius: 5px;
+        top: 100%;            /* Place directly below the parent */
+        left: 10vw;
+        min-width: 150px;    
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+        z-index: 1000;
+    }
 
-.dropdown-menu a {
-    display: block;       /* Stack items vertically */
-    padding: 5px 15px;
-    color: white;         /* White text for items */
-    text-decoration: none; /* Remove underline */
-    font-size: 0.9rem;
-    z-index: 1000;
-}
+    .dropdown-menu a {
+        display: block;       /* Stack items vertically */
+        padding: 5px 15px;
+        color: white;         
+        text-decoration: none; 
+        font-size: 0.9rem;
+        z-index: 1000;
+    }
 
-.dropdown-menu a:hover {
-    background-color: rgb(205, 127, 118); /* Highlight background on hover */
-    color: #3f2a25;               /* Text color change for visibility */
-}
+    .dropdown-menu a:hover {
+        background-color: rgb(205, 127, 118);
+        color: #3f2a25;               
+    }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-    display: block; /* Show the dropdown menu */
-}
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-menu {
+        display: block; /* Show the dropdown menu */
+    }
 </style>
