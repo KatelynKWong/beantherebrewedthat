@@ -63,15 +63,15 @@
   </a>
 
   {#if showTopArrow}
-    <div class="wiggle-top-arrow" on:click={scrollToNext}>
+    <button class="wiggle-top-arrow" on:click={scrollToNext} class:wiggle={index === 1}>
       ↓
-    </div>
+    </button>
   {/if}
 
   {#if showBotArrow}
-    <div class="wiggle-bot-arrow" on:click={scrollUp}>
+    <button class="wiggle-bot-arrow" on:click={scrollUp}>
       ↑
-    </div>
+    </button>
   {/if}
 
   <a href={index !== 3 ? null : 'coffee'}>
@@ -108,7 +108,7 @@
       <h4 style="font-weight: 300;">Food discoveries, favorite recipes, and more.</h4>
     </div>
   </a>
-  <img src="{Polaroid}" alt="Polaroid Photo" class="polaroid" style={`opacity: ${$image1Opacity};`} />
+  <img src="{Polaroid}" alt="Polaroids of the author and her friend" class="polaroid" style={`opacity: ${$image1Opacity};`} />
   <img src="{MelonPan}" alt="Melon Pan" class="savory-stories" style={`opacity: ${$image1Opacity};`} />
   <a href={index !== 3 ? null : 'coffee'}>
   
@@ -169,7 +169,7 @@
       color: white;
       text-align: center;
       padding: 7px 10px;
-      animation: growAnimation 1.5s infinite ease-in-out; /* Border animation and growing animation */
+      animation: growAnimation 1s infinite ease-in-out; /* Border animation and growing animation */
       transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for text visibility */
       background-color: rgba(95, 112, 131, 0.7); 
       border-radius: 10px;
@@ -417,9 +417,14 @@ progress {
     padding: 0.5rem 1rem; /* Adds padding for a wider background box */
     border-radius: 8px;
     z-index: 1000;
-    animation: wiggle 0.5s ease-in-out infinite;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: none;
+  }
+
+  /* Only applies the wiggle animation when the class "wiggle" is added */
+  .wiggle-top-arrow.wiggle {
+    animation: wiggle 0.5s ease-in-out infinite;
   }
 
   .wiggle-top-arrow:hover {
@@ -428,7 +433,7 @@ progress {
 
   .wiggle-bot-arrow {
     position: fixed;
-    top: 11%;
+    top: 15%;
     left: 33%;
     transform: translateX(-50%);
     font-size: 2rem;
@@ -438,9 +443,9 @@ progress {
     padding: 0.5rem 1rem; /* Adds padding for a wider background box */
     border-radius: 8px; 
     z-index: 1000;
-    animation: wiggle 0.5s ease-in-out infinite;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: none;
   }
 
   .wiggle-bot-arrow:hover {
