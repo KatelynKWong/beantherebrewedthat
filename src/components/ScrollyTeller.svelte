@@ -64,13 +64,13 @@
 
   {#if showTopArrow}
     <button class="wiggle-top-arrow" on:click={scrollToNext} class:wiggle={index === 1}>
-      ↓
+      &#8595;
     </button>
   {/if}
 
   {#if showBotArrow}
     <button class="wiggle-bot-arrow" on:click={scrollUp}>
-      ↑
+      &#8593;
     </button>
   {/if}
 
@@ -418,7 +418,7 @@ progress {
     border-radius: 8px;
     z-index: 1000;
     text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
     border: none;
   }
 
