@@ -433,7 +433,7 @@ progress {
 
   .wiggle-bot-arrow {
     position: fixed;
-    top: calc(100px + 5%);
+    top: calc(85px + 5%);
     left: 33%;
     transform: translateX(-50%);
     font-size: 2rem;
