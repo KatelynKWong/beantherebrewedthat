@@ -1,8 +1,5 @@
-
 <script>
-
-    import { onMount, afterUpdate } from 'svelte';
-    import * as d3 from 'd3'; // Import D3 library
+    import { onMount } from 'svelte';
     
     import { base } from '$app/paths';
     import SpyhouseLatte from './assets/Spyhouselatte.jpg';
@@ -162,6 +159,11 @@
                             notes, the Pink Cloud beans are sweeter and fruitier, ideal for espresso lattes.'
         }
     ]
+
+    let activeIndex = null; // Keeps track of the active image index
+    let currentIndex = 0;   // Keeps track of the currently displayed image within the gallery
+    let activeDetailsIndex = null;
+
     function scrollToImage(event) {
         const targetId = event.target.dataset.target;
         const targetImage = document.getElementById(targetId);
@@ -173,65 +175,58 @@
         }
     }
 
-
     function formatDate(dateString) {
         const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
         return new Date(dateString).toLocaleDateString(undefined, options);
     }
 
-let activeIndex = null; // Keeps track of the active image index
-let currentIndex = 0;   // Keeps track of the currently displayed image within the gallery
-let detailsVisible = [];
-let activeDetailsIndex = null;
-
-// Toggle the gallery based on the clicked image's index
-function toggleGallery(index) {
-    activeIndex = activeIndex === index ? null : index;
-    console.log('Gallery toggled. Active index:', activeIndex);
-}
-
-// Prevent closing gallery if clicking inside gallery or image (by stopping propagation)
-const preventCloseInsideGallery = (event) => {
-    // Only prevent propagation if the click is inside the gallery or an image
-    if (event.target.closest('.gallery') || event.target.closest('.image')) {
-        console.log("Click inside gallery/image, preventing close.");
-        event.stopPropagation(); // Stop the event from bubbling up to document.body
+    // Toggle the gallery based on the clicked image's index
+    function toggleGallery(index) {
+        activeIndex = activeIndex === index ? null : index;
+        console.log('Gallery toggled. Active index:', activeIndex);
     }
-};
 
-// Add event listener for clicks to close gallery or prevent propagation inside
-onMount(() => {
+    // Prevent closing gallery if clicking inside gallery or image (by stopping propagation)
+    const preventCloseInsideGallery = (event) => {
+        // Only prevent propagation if the click is inside the gallery or an image
+        if (event.target.closest('.gallery') || event.target.closest('.image')) {
+            console.log("Click inside gallery/image, preventing close.");
+            event.stopPropagation(); // Stop the event from bubbling up to document.body
+        }
+    };
 
-    // Add event listener to prevent clicks inside gallery/image from closing it
-    const galleryElements = document.querySelectorAll('.gallery, .image');
-    galleryElements.forEach((el) => {
-        el.addEventListener('click', preventCloseInsideGallery);
+    // Add event listener for clicks to close gallery or prevent propagation inside
+    onMount(() => {
+        // Add event listener to prevent clicks inside gallery/image from closing it
+        const galleryElements = document.querySelectorAll('.gallery, .image');
+        galleryElements.forEach((el) => {
+            el.addEventListener('click', preventCloseInsideGallery);
+        });
+
+        // Cleanup event listeners when the component is destroyed
+        return () => {
+            galleryElements.forEach((el) => {
+                el.removeEventListener('click', preventCloseInsideGallery);
+            });
+        };
     });
 
-    // Cleanup event listeners when the component is destroyed
-    return () => {
-        galleryElements.forEach((el) => {
-            el.removeEventListener('click', preventCloseInsideGallery);
-        });
-    };
-});
 
-
-function nextImage(gallery) {
-    if (gallery && gallery.length > 0) {
-        currentIndex = (currentIndex + 1) % gallery.length;
+    function nextImage(gallery) {
+        if (gallery && gallery.length > 0) {
+            currentIndex = (currentIndex + 1) % gallery.length;
+        }
     }
-}
 
-function prevImage(gallery) {
-    if (gallery && gallery.length > 0) {
-        currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+    function prevImage(gallery) {
+        if (gallery && gallery.length > 0) {
+            currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+        }
     }
-}
 
-function toggleDetails(index) {
-    activeDetailsIndex = activeDetailsIndex === index ? null : index;
-}
+    function toggleDetails(index) {
+        activeDetailsIndex = activeDetailsIndex === index ? null : index;
+    }
 
 </script>
 
@@ -272,12 +267,12 @@ function toggleDetails(index) {
             <p>Photo Carousel</p>
         </div>
     </div>
+
     <div class="image-container">
         {#each images as image, index (image.src)}
             <div class="image-item">
                 <div class="date-label">{formatDate(image.date)}</div>
                 
-                <!-- Conditional Visibility -->
                 <div class="entry-details" class:visible={activeDetailsIndex === index}>
                     <div class="text-container">
                         <p>{image.name}</p>
@@ -286,9 +281,9 @@ function toggleDetails(index) {
                 </div>
     
                 <img src={image.src} alt="Coffee Art" class="summary_images" />
-    
-                <!-- Gallery Label with Combined Functionality -->
-                <div
+
+                <!-- Button to open up gallery -->
+                <button
                     class="label bottom-label"
                     on:click={(event) => {
                         scrollToImage(event); 
@@ -298,29 +293,31 @@ function toggleDetails(index) {
                     data-target={image.src}
                 >
                     Gallery
-                </div>
+                </button>
             </div>
         {/each}
     </div>
     
-    
-    <!-- Image Display Container (Only visible for activeIndex) -->
+    <!-- Gallery Slideshow Display Container -->
     <div class="right-container">
         <div class="text-overlay">
             <h2>Welcome</h2>
             <p style="color: white; font-size: .8em;">to my journal documenting my coffee making experience!</p>
             <p style="color: white; font-size: .8em;">Hover over the images on the left to view entries.</p>
         </div>
+
         <img src="{SpyhouseLatte}" alt="Coffee Art" class="title_image" />
+
+        <!-- Gallery Container Only Visible When Active Index Matches -->
         {#each images as image, index (image.src)}
             <div class="image-wrapper" class:active={activeIndex === index}>
                 
-                <!-- Gallery Container Only Visible When Active Index Matches -->
                 {#if activeIndex === index}
-                <div class="photo-top-label">{image.name}</div>
+                    <div class="photo-top-label">{image.name}</div>
+                    
                     <div class="slideshow-container">
                         <button class="arrow left" on:click={() => prevImage(image.gallery)}>&#10094;</button>
-                        <img src={image.gallery[currentIndex]} alt="Gallery Image" class="slideshow-image" />
+                        <img src={image.gallery[currentIndex]} alt="Current gallery element" class="slideshow-image" />
                         <button class="arrow right" on:click={() => nextImage(image.gallery)}>&#10095;</button>
                     </div>
                 {/if}
@@ -330,20 +327,20 @@ function toggleDetails(index) {
 </main>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
 
-main {
-    padding: 20px;
-    margin-left: 0;
-    font-family: 'Gudea', sans-serif;
-    background-color: #e3dcd6;
-    min-height: 100vh;  
-}
+    main {
+        padding: 20px;
+        margin-left: 0;
+        font-family: 'Gudea', sans-serif;
+        background-color: #e3dcd6;
+        min-height: 100vh;  
+    }
 
     .image-container {
         position: fixed;
         left: 10px;
-        width: calc(35vw); /* Keeps a consistent width */
+        width: calc(35vw);
         height: 85vh;
         overflow-y: scroll;
         top: 150px;
@@ -351,27 +348,27 @@ main {
 
     .right-container {
         position: fixed;
-        width: calc(65vw); /* Ensures no overlap */
+        width: calc(65vw); 
         height: 82vh;
         left: calc(35vw + 5px); /* Matches left-container's width */
         overflow-y: auto;
-        padding: 20px; /* Adjust padding as needed */
+        padding: 20px; 
         box-sizing: border-box;
-        top: 150px; /* Aligned with left-container */
+        top: 150px;
         overflow: hidden; 
     }
 
     .image-item {
         position: relative;
-        margin-bottom: 20px; /* Space between images */
+        margin-bottom: 20px;
         box-sizing: border-box;
-        display: block; /* Each item takes full width, with only one per row */
-        margin: 10px auto; /* Center each image item */
+        display: block; 
+        margin: 10px auto;
         border-radius: 8px;
     }
 
     .summary_images {
-        width: 100%; /* Make image responsive, occupying 100% of the container's width */
+        width: 100%; 
         height: auto;
     }
 
@@ -399,6 +396,7 @@ main {
         background: #e4cab8; 
         text-align: center;
     }
+
     .title2 {
         font-size: 2;
         font-weight: bold;
@@ -454,14 +452,13 @@ main {
         opacity: 1;
     }
 
-
     .image-item:hover .entry-details {
         opacity: 1; /* Show the details when the item is hovered */
     }
 
     .entry-details .text-container {
-        width: 90%;  /* Text only takes up 90% of the width */
-        height: 90%;  /* Text only takes up 90% of the height */
+        width: 90%;  
+        height: 90%; 
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -472,8 +469,8 @@ main {
     }
 
     .title_image {
-        position: relative; /* Ensure it has a positioned context for z-index */
-        z-index: 999; /* Ensure the title image is below the overlay */
+        position: relative;
+        z-index: 999; 
         top: -15vw;
         width: 65vw;
         height: 90vh;
@@ -482,7 +479,7 @@ main {
     }
 
     .text-overlay {
-        position: relative; /* Keeps it in the normal flow */
+        position: relative; 
         top: 15px;
         left: 5%;
         background-color: rgba(0, 0, 0, 0.4);
@@ -490,7 +487,7 @@ main {
         text-align: left;
         font-size: 2vw;
         font-weight: 50;
-        z-index: 1000; /* Higher z-index to be above the title image */
+        z-index: 1000; 
         width: auto; /* Make the background fit the text size */
         display: inline-block;
     }
@@ -528,12 +525,12 @@ main {
         border-radius: 4px;
         border: 5px solid rgba(255, 255, 255, 0); 
         transition: background-color 0.2s ease; 
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); 
     }
     
     .image-item:hover .label {
         animation: wiggle .8s infinite ease-in-out; /* Add wiggle animation only on hover */
-        background-color: rgba(171, 171, 171, 0.7); /* Fully opaque on hover */
+        background-color: rgba(171, 171, 171, 0.7); 
     }
 
     .bottom-label {
@@ -558,7 +555,7 @@ main {
 
     /* Add hover effect for bottom-label */
     .label.bottom-label:hover {
-        background-color: rgb(200, 196, 196); /* Fully opaque on hover */
+        background-color: rgb(200, 196, 196);
         color: rgb(55, 45, 43)
     }
 
@@ -569,25 +566,25 @@ main {
     }
 
     .slideshow-container {
-    position: fixed;
-    max-width: 65vw;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 1001;
-    top: 160px;
-    left: calc(35vw + 20px);
-    border-radius: 10px;
-}
+        position: fixed;
+        max-width: 65vw;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        z-index: 1001;
+        top: 160px;
+        left: calc(35vw + 20px);
+        border-radius: 10px;
+    }
 
 .slideshow-image {
     position: relative;
     object-fit: cover;
     transition: opacity 0.5s ease-in-out;
     width: 75vw;
-    height: 100%; /* Set height to 50% of the viewport height */
+    height: 100%; 
 }
 
 .arrow {
@@ -602,15 +599,15 @@ main {
     font-size: 2rem;
     z-index: 1000;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Adds a subtle drop shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .arrow.left {
-    left: 0px; /* Adjust for better visibility */
+    left: 0px; 
 }
 
 .arrow.right {
-    right: 20px; /* Adjust for better visibility */
+    right: 20px; 
 }
 
 .arrow:hover {
@@ -619,8 +616,8 @@ main {
 }
     .photo-top-label {
         position: fixed;
-        top: 180px; /* Distance from the top of the image */
-        left: 40vw; /* Distance from the left of the image */
+        top: 180px; 
+        left: 40vw; 
         z-index: 1002;
         margin: 0;
         padding: 0.2em 0.5em;
@@ -628,7 +625,6 @@ main {
         color: #fff;
         font-size: 1.8em;
         border-radius: 4px;
-        border: 5px solid rgba(255, 255, 255, 0); /* Light border with transparency */
     }
 
     main {
@@ -645,47 +641,44 @@ main {
     .nav-bar {
         display: flex;
         justify-content: center; /* Center items horizontally */
-        align-items: center;    /* Center items vertically */
-        background-color: #583f38; /* Dark background for contrast */
-        color: white;           /* White text for readability */
-        height: 30px;           /* Fixed height */
+        align-items: center;   
+        background-color: #583f38;
+        color: white;           
+        height: 30px;           
         left: 0%;
         width: 100vw;
-        position: fixed;       /* Stay at the top on scroll */
-        top: 80px;              /* Stick to the top */
-        z-index: 1000;          /* Stay above other content */
+        position: fixed;       
+        top: 80px;             
+        z-index: 1000;         
         transition: opacity 0.3s ease-in-out;
     }
-
 
     /* Navigation Links */
     .nav-link {
         margin: 0 10vw;         /* Add spacing between items */
         font-size: 1rem;
         cursor: pointer;
-        text-decoration: none;  /* Remove underline by default */
-        color: white;           /* White text */
+        text-decoration: none;
+        color: white;        
     }
 
     /* Adjust font size and spacing for smaller screens */
     @media (max-width: 768px) {
         .nav-link {
-            font-size: 0.8rem; /* Reduce font size for smaller screens */
+            font-size: 0.8rem;
             margin: 0 3vw;    /* Reduce margin to prevent overlap */
         }
     }
-
-    /* Further adjustments for very narrow screens */
     @media (max-width: 480px) {
         .nav-link {
-            font-size: 0.7rem; /* Further reduce font size */
+            font-size: 0.7rem; 
             margin: 0 2vw;    /* Narrower spacing */
         }
     }
 
     .nav-link:hover {
-        color: #ff8000;         /* Highlight color on hover */
-        text-decoration: underline; /* Underline only on hover */
+        color: #ff8000;        
+        text-decoration: underline;
     }
 
     /* Dropdown Menu */
@@ -696,28 +689,28 @@ main {
     .dropdown-menu {
         display: none;        /* Initially hide the dropdown */
         position: absolute;   /* Position relative to the parent */
-        background-color: #3f2a25; /* Slightly darker background */
+        background-color: #3f2a25; 
         padding: 10px 0;
         border-radius: 5px;
-        top: 100%;            /* Place directly below the parent */
+        top: 100%;            
         left: 10vw;
-        min-width: 150px;     /* Set a minimum width */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        min-width: 150px;     
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 1000;
     }
 
     .dropdown-menu a {
         display: block;       /* Stack items vertically */
         padding: 5px 15px;
-        color: white;         /* White text for items */
-        text-decoration: none; /* Remove underline */
+        color: white;       
+        text-decoration: none;
         font-size: 0.9rem;
         z-index: 1000;
     }
 
     .dropdown-menu a:hover {
-        background-color: rgb(205, 166, 118); /* Highlight background on hover */
-        color: #3f2a25;               /* Text color change for visibility */
+        background-color: rgb(205, 166, 118); 
+        color: #3f2a25;          
     }
 
     /* Show dropdown on hover */
