@@ -7,15 +7,29 @@
 		<title>Kaiyun's Corner</title>
 		%sveltekit.head%
 		<link href="https://fonts.googleapis.com/css2?family=Gudea&display=swap" rel="stylesheet">
-		  
+		
+		<script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Function to get the current date in the desired format
+                function getCurrentDate() {
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    const today = new Date();
+                    return today.toLocaleDateString('en-US', options);
+                }
+
+                // Set the content of the 'currentDate' span
+                document.getElementById('currentDate').textContent = getCurrentDate();
+            });
+		</script>
 	</head>
+
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
-	
 	</body>
-	<footer>
-        <p class="tagline">
-            Last updated: Friday, <time datetime="2024-12-06">Dec 6th, 2024</time> &copy; Katelyn Wong
+
+	<footer style="position: relative;">
+        <p class="tagline" style="position: absolute; left: 5%; bottom: 0; color: gray;">
+            Last updated: <span id="currentDate"></span> &copy; Katelyn Wong
         </p>
     </footer>
 </html>
