@@ -65,7 +65,7 @@
       in:fly={{ y: -300, duration: 1000 }}
       out:fly={{ y: -300, duration: 1000 }}
     >
-      <tspan x="28%" dy="1.8em">Welcome to my blog, where I share my journey as a</tspan>
+      <tspan x="28%" dy="1.3em">Welcome to my blog, where I share my journey as a</tspan>
       <tspan x="25%" dy="1.8em">coffee enthusiast, foodie, and study abroad student in</tspan>
       <tspan x="25%" dy="1.8em">Japan. This site documents my coffee-making adventures </tspan>
       <tspan x="25%" dy="1.8em">as I work toward my dream of opening my own cafe. You</tspan>
