@@ -10,8 +10,8 @@
         <div class="dropdown">
             <a href="{base}/coffee" class="nav-link">Coffee Chronicles</a>
             <div class="dropdown-menu">
+                <a href="{base}/coffee/making" class="dropdown-item">Coffee Making Journal</a>
                 <a href="{base}/coffee/tasting" class="dropdown-item">Cafe Reviews</a>
-                <a href="{base}/coffee/making" class="dropdown-item">The Making Journal</a>
             </div>
         </div>
         <div class="dropdown">
@@ -57,6 +57,14 @@
 </main>
 
 <style>
+    main {
+        padding: 20px;
+        margin-left: 0;
+        font-family: 'Gudea', sans-serif;
+        background-color: #e3dcd6;
+        min-height: 100vh;  
+    }
+
     .background_img {
         width: 100%; /* Set the width to 100% of its container */
         height: 100%; /* Let the height adjust proportionally to maintain aspect ratio */
@@ -106,7 +114,7 @@
         width: 75vw; /* Adjust width as needed */
         padding: 10px;
         z-index: 999;
-        background-color: rgba(66, 87, 79, 0.8);
+        background-color: rgba(66, 87, 79, 0.9);
         transform: translateX(-50%);
         
         /* Ensure no overlap */

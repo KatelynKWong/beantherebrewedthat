@@ -223,6 +223,17 @@
     function toggleLegend() {
         isMinimized = !isMinimized;
     }
+
+    let animationActive = true;
+
+  function stopAnimation() {
+    animationActive = false;
+  }
+
+  function handleClick() {
+    toggleLegend();
+    stopAnimation();
+  }
 </script>
 
 <main>
@@ -255,8 +266,8 @@
 
     <div class="legend">
         <h3>Study Abroad Locations
-          <button class="toggle-button" on:click={toggleLegend}>
-            {isMinimized ? 'Exp' : 'Min'}
+            <button class="toggle-button {animationActive ? 'animate' : ''}" on:click={handleClick}>
+                {isMinimized ? 'Exp' : 'Min'}
           </button>
         </h3>
         <ul class={isMinimized ? 'hidden' : ''}>
@@ -365,34 +376,37 @@
     /* Button to minimize/expand the legend */
     .toggle-button {
         background: #7cb7cd;
-        color: white; /* Initial text color */
-        opacity: .8;
+        color: white; 
+        opacity: 0.8;
         position: absolute;
         border: none;
         top: 4px;
         right: 4px;
         height: 20px;
-        width: 30px; /* Fixed width for better control */
+        width: 30px;
         border-radius: 4px;
         font-size: 10px;
         cursor: pointer;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-        animation: growAnimation 1.5s infinite ease-in-out; /* Border animation and growing animation */
-        }
+    }
 
-        .toggle-button:hover {
+    .toggle-button.animate {
+        animation: growAnimation 1.5s infinite ease-in-out;
+    }
+
+    .toggle-button:hover {
         background: #54757e;
-        }
+    }
 
     @keyframes growAnimation {
         0% {
-            transform: scale(1); /* Original size */
+        transform: scale(1); 
         }
         50% {
-            transform: scale(1.2); /* Slightly larger */
+        transform: scale(1.2); 
         }
         100% {
-            transform: scale(1); /* Returns to original size */
+        transform: scale(1); 
         }
     }
 
@@ -462,16 +476,16 @@
     }
 
     button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: white;
-    background-color: #7cb7cd;
-    cursor: pointer;
-    border-radius: 5px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: white;
+        background-color: #7cb7cd;
+        cursor: pointer;
+        border-radius: 5px;
 
 }
 
