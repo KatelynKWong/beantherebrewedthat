@@ -267,6 +267,7 @@
           <li><span class="color-box" style="background-color: green;"></span> Frequented</li>
           <li><span class="color-box" style="background-color: #362312;"></span> Traveling</li>
           <li><span class="color-box" style="background-color: orange;"></span> Food</li>
+          <li><span class="color-box" style="background-color: blue;"></span> Other</li>
         </ul>
       </div>
       

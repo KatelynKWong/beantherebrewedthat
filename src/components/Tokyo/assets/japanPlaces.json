@@ -738,5 +738,405 @@
     "description": "Some friends came and visited me from home. We spent a whole day at Disneyland",
     "Type": "location",
     "Province": "Kanagawa"
+  },
+  {
+    "Place": "Shibamata Shonen Baseball Field A",
+    "Coord": [35.754686732383576, 139.88396272221863],
+    "size": "5",
+    "color": "#362312",
+    "list": "travels",
+    "description": "There was a major fireworks festival here that my study abroad program friends and I were able to watch. Thousands of people sat on the grassy field next to the baseball field and we watched an amazing fireworks show with very novel looking firework designs.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Hida Takayama Gyoza Sohonzan",
+    "Coord": [36.14286081343007, 137.2498400873862],
+    "size": "5",
+    "color": "pink",
+    "list": "favorites",
+    "description": "On the way to Kanazawa, we made a stop in this small town of Takayama and tried the onsen nearby. There happened to be a famous gyoza restaurant nearby so we went to try it and it was without a doubt the best gyoza I have ever had. The owners also let us decorate the wall with art from our respective countries and it was really fun to chat with them.",
+    "Type": "location",
+    "Province": "Gifu"
+  },
+  {
+    "Place": "Wado Archaeological Site",
+    "Coord": [36.04708008720117, 139.1077759389855],
+    "size": "5",
+    "color": "#362312",
+    "list": "travels",
+    "description": "We went a bit deeper after seeing the Hijiri shrine to look for the real statue of the coin in the forest and found it after a short, but pleasant hike.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "％SPECIAL COFFEE",
+    "Coord": [35.918737256160654, 139.48282004635865],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "My roomie from SD and I were really craving some dessert for breakfast so we stopped at this hipster style coffee shop with lots of fancy and modern looking drinks. It was delicious and the owner was very kind, chatting with us as we tried her drinks and food.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "Cha Soba Kotobukian Kuranomachi Store",
+    "Coord": [35.92244532859565, 139.48268823369122],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "My roomie and I wanted to try green tea soba noodles and we heard that they were really good at Kawagoe. So we went here right before the lunch rush and had some really delicious cold dipping grean tea soba. We also tried some Japanese plum beer which was a very interesting flavor.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "Wood Works Kawagoe",
+    "Coord": [35.92314644464058, 139.4837143436864],
+    "size": "5",
+    "color": "#362312",
+    "list": "travels",
+    "description": "We saw this build your own chopsticks store on the street, and since my roomie and I wanted to do some cool activities here in Kawagoe besides eating food, we decided to make it. It was very cheap (around $20 USD for the type of wood we chose) and the workers were very kind.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "Kanon",
+    "Coord": [35.923476670388546, 139.48333893865168],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A store that seemed popular amongst locals and tourists for sweets local to Kawagoe and Japan.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "Rokkatei",
+    "Coord": [35.92717178230143, 139.48310851484402],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "My roomie and I were craving shaved ice so we went to this dessert place. It probably had the best shaved ice I had ever tried at the time. It was milk based so even though it was a hot day and it melted fast, it turned into flavored milk rather than flavored water.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "Kawagoe Hikawa Shrine",
+    "Coord": [35.92735298683056, 139.48853792680458],
+    "size": "5",
+    "color": "#362312",
+    "list": "travels",
+    "description": "A shrine that seemed like a popular tourist location at Kawagoe. There were a lot of shrine activities to participate there and also very aesthetic wind chimes and pin wheels that made for great photo backgrounds.",
+    "Type": "location",
+    "Province": "Saitama"
+  },
+  {
+    "Place": "Sakurano",
+    "Coord": [35.70037127228305, 139.41237808549695],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "My friend and I were looking for a coffee shop in Tachikawa to go to for our next shop in our cafe hopping experiences. We found this very cute cafe, and although Google said that it was a coffee shop, we ended up trying their matcha instead, which seemed to be their specialized drink rather than coffee.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Mazesoba Kagura",
+    "Coord": [35.69533923863932, 139.41871846693778],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "I was looking for a restaurant to try one day during lunch. I wanted something I hadn't tried before, which was difficult since I had been living in Japan for 4 months at this point. But then I saw this dry soba restaurant in Tachikawa so I trained there. It was very delicious, a small local noodle shop. I will say it was a bit salty though but once I mixed in the soba water with the remaining sauce, the resulting soup was amazing and very flavorful.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Showa Kinen National Park",
+    "Coord": [35.71174535334919, 139.3936310986489],
+    "size": "5",
+    "color": "#362312",
+    "list": "travels",
+    "description": "This was the main attraction for my date with my friend. The park is very beautiful, with many flowers blooming there in the spring. There are also many food stalls, vendors, and shops.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Kunitachi Onsen Yura-no-Sato",
+    "Coord": [35.67558272702977, 139.42617168673613],
+    "size": "5",
+    "color": "pink",
+    "list": "favorites",
+    "description": "I found this onsen after my host family recommended it to me. It's a 20 minute bike ride from my school in Kunitachi so I would go everyday that I was free or feeling particularly tired/sore from rock climbing. This onsen is very special because it has views of Mount Fuji, a wide variety of pools including a shallow one that you can lie on your back in and sleep. This onsen is also part of the Yura no Sato onsen chain.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Shinano",
+    "Coord": [35.68525990191913, 139.43555812241567],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "On the way to Yura-no-Sato onsen one day, I suddenly felt a craving for cold dipping soba. So I passed by this small soba shop next to the road and decided to give it a try. It was amazing, their slimy okra dipping soba was among the best soba I have tried in Japan.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Chakawasemi Tea House",
+    "Coord": [35.766377738311256, 139.45699292009843],
+    "size": "5",
+    "color": "pink",
+    "list": "favorites",
+    "description": "I was free for a day with no plans so I decided to visit a Japanese traditional dessert house on my own. I saw this tea house near the train line that passes near our dorms so I decided to give it a visit. While the commute was an hour long, it was very worth it because I was able to talk with the owners as I tried their specialty desserts. Afterwards I also took a walk at the park; it was a very relaxing and chill day.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "THE MIDFLOW coffee roast",
+    "Coord": [35.695540317932284, 139.4409958224315],
+    "size": "5",
+    "color": "pink",
+    "list": "favorites",
+    "description": "One day, I was craving a nice cup of quality coffee. I saw this shop right next to our school campus so I paid it a visit. The coffee was top tier, one of my favorite cafes in Japan. I went twice total, once to try their lattes, and once with a friend to try their drip coffee.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Cafe Sucre",
+    "Coord": [35.6982342615718, 139.44181376066206],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A small cafe a bit of a walk from the Kunitachi station. The drinks and desserts they serve are more traditional. For example, they don't serve espresso based drinks, only drip based drinks.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Vietnamese PHONANA",
+    "Coord": [35.697902136452456, 139.44490374953313],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A viet restaurant that my foodie friend recommended to me. We tried it and it was alright, definitely not the best I've had, but it reminded me a lot of my favorite food at home: Bun Rieu",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Kunitachi Orthopedic Surgical Clinic",
+    "Coord": [35.69670431518683, 139.4462670892108],
+    "size": "5",
+    "color": "blue",
+    "list": "other",
+    "description": "I sprained my ankle when I went rock climbing once so I had to get it checked up a couple times at this clinic. Unfortunately, none of the people there speak English so it was very difficult to get treatment from them.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "GOOD CHEESE GOOD PIZZA 国立",
+    "Coord": [35.69630697008146, 139.44647981508163],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A very expensive pizza place near our school. The food was okay.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Saigon Sakura",
+    "Coord": [35.69644517729919, 139.44709672010703],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "I was again craving viet food so I found this place next to our school. The flavors were not at all like Vietnamese pho flavor; it was a sad attempt to mimic a bowl of pho.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Asian Restaurant & Bar Sahara",
+    "Coord": [35.69801726754219, 139.447351991152],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A delicious Indian restaurant recommended to me by my host family. I went once with them and once with my Kushmari friend, who said that she loved the food.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "柿屋ベーグル",
+    "Coord": [35.69675614266328, 139.44879852707365],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A popular local bagel shop that my host family recommended. I passed by it once and decided to give it a try. It was very delicious and a nice reminder of an American breakfast back in the US.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "珈琲屋",
+    "Coord": [35.69732624268141, 139.44803271393866],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A coffee shop I once went to with a friend. It was very sketchy and smoky inside, but the owner was very kind and friendly.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Casa di Camino",
+    "Coord": [35.69720531271512, 139.4496068853828],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A specialty Italian restaurant near school that I went to with my foodie friend who recommended it. The food was quite delicious, there was no attempt at doing a fusion, which I appreciated.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Hatonoyu",
+    "Coord": [35.69491268987239, 139.45209633683822],
+    "size": "5",
+    "color": "blue",
+    "list": "other",
+    "description": "An onsen that opens quite late and very close to school. There is not much variety in the pools, but the owner was very kind and helpful.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "ord",
+    "Coord": [35.701518494572525, 139.450721067194],
+    "size": "5",
+    "color": "pink",
+    "list": "favorites",
+    "description": "A small coffee shop next to the corner of a street that I would always pass by when I biked to school. The coffee was delicious, so I ended up visiting several times.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "nagomi bakery",
+    "Coord": [35.70964582516803, 139.46313081923861],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A bakery that I passed by everyday on the way to school so I eventually stopped by one day to try their melon pan. Very standard, but satisfyingly delicious.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Keyaki Park",
+    "Coord": [35.71052975986762, 139.474405763789],
+    "size": "5",
+    "color": "blue",
+    "list": "other",
+    "description": "One of the many parks in Kokubunji near our dorms. There was a lot of pretty flower bushes here and sports fields.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Off House Kodaira Josui",
+    "Coord": [35.7172852227237, 139.46818510472673],
+    "size": "5",
+    "color": "green",
+    "list": "frequents",
+    "description": "A thrift store near my dorms that I would frequent to look at musical instruments, clothing, and pokemon merch. It was also here that I bought my expensive, but very good quality bike.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "麦工房ポム·ド·パン",
+    "Coord": [35.72308715903601, 139.4603034735322],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A bakery that I saw on the map with good reviews. So I visited it once along with some other stores nearby. It had very good cheese bread.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Kiki record",
+    "Coord": [35.7224334218419, 139.46067733598068],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A cafe with a rustic, music store vibe. The sandwiches were amazing, the coffee not so much.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Kodaira City Central Park",
+    "Coord": [35.723273940106196, 139.4625754068729],
+    "size": "5",
+    "color": "green",
+    "list": "frequents",
+    "description": "My friends and I would come here every week to play badminton. A very open gym with lots of activities and sports you can participate in for a cheap price.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Udon Noodle Takeshi",
+    "Coord": [35.72060434806282, 139.47616700558632],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "An udon noodle restaurant right outside of our dorms that I never noticed until my last day in Japan. It was very delicious and I was lucky to be able to eat it with my friend and her family.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "手打ちうどん むぎきり",
+    "Coord": [35.72119978319597, 139.4776522493685],
+    "size": "5",
+    "color": "pink",
+    "list": "favorites",
+    "description": "An udon restaurant near our dorms with amazing, hand made noodles that had the best texture I had ever tried.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Sukiya Kodaira Josui Honmachi",
+    "Coord": [35.716878947349805, 139.47710034341034],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A fast food gyudon restaurant that I visited with a couple friends after volleyball IMs. It was delicious for a very cheap price.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "麺処 たくみ",
+    "Coord": [35.719759530614944, 139.48025409174264],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A local ramen store with Chinese fusion influences. Very delicious after our trip to Yamanashi.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Torikizoku Hitotsubashi-Gakuen shop",
+    "Coord": [35.721391814906525, 139.47966276393055],
+    "size": "5",
+    "color": "green",
+    "list": "frequents",
+    "description": "A yakitori restaurant chain that was very convenient since it was next to the local train station. So my friends and I would go quite often.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Chon dam(チョンダム)",
+    "Coord": [35.72225362363446, 139.479834370691],
+    "size": "5",
+    "color": "pink",
+    "list": "favorites",
+    "description": "A korean restaurant that served amazing bossam and kimchi fried rice.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Off House Kodaira Josui",
+    "Coord": [35.7172852227237, 139.46818510472673],
+    "size": "5",
+    "color": "green",
+    "list": "frequents",
+    "description": "A thrift store near my dorms that I would frequent to look at musical instruments, clothing, and pokemon merch. It was also here that I bought my expensive, but very good quality bike.",
+    "Type": "location",
+    "Province": "Tokyo"
   }
 ]
