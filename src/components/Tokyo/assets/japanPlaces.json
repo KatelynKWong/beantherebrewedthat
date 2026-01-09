@@ -1130,13 +1130,24 @@
     "Province": "Tokyo"
   },
   {
-    "Place": "Off House Kodaira Josui",
-    "Coord": [35.7172852227237, 139.46818510472673],
+    "Place": "Ramen Jiro Hitotsubashi Gakuen",
+    "Coord": [35.7223360606795, 139.47918704417327],
     "size": "5",
-    "color": "green",
-    "list": "frequents",
-    "description": "A thrift store near my dorms that I would frequent to look at musical instruments, clothing, and pokemon merch. It was also here that I bought my expensive, but very good quality bike.",
+    "color": "orange",
+    "list": "food",
+    "description": "A local ramen shop that is very popular with the men. They serve MASSIVE ramen bowls, approximately triple the normal serving. I went with my foodie friend and while it was delicious, he had to finish most of my food for me.",
+    "Type": "location",
+    "Province": "Tokyo"
+  },
+  {
+    "Place": "Ramen Jiro Hitotsubashi Gakuen",
+    "Coord": [35.7223360606795, 139.47918704417327],
+    "size": "5",
+    "color": "orange",
+    "list": "food",
+    "description": "A local ramen shop that is very popular with the men. They serve MASSIVE ramen bowls, approximately triple the normal serving. I went with my foodie friend and while it was delicious, he had to finish most of my food for me.",
     "Type": "location",
     "Province": "Tokyo"
   }
+  
 ]
