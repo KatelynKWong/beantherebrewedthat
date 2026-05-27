@@ -54,12 +54,12 @@
   </script>
 
   <svelte:head>
-  <title>The Dollar Dreadful Family Library</title>
-  <meta
-    name="description"
-    content="A vintage newspaper-inspired coffee blog layout with a three-column editorial structure."
-  />
-</svelte:head>
+    <title>Caffeine Chronicles</title>
+    <meta
+        name="description"
+        content="A vintage newspaper-inspired coffee blog layout with a three-column editorial structure."
+    />
+   </svelte:head>
 
 <main class="brochure-shell">
   <!-- MASTHEAD SECTION -->
@@ -72,13 +72,13 @@
       </div>
 
       <div class="masthead__center">
-        <p class="masthead__eyebrow">Bean There, Brewed That's </p>
+        <p class="masthead__eyebrow">Bean There, Brewed That</p>
         <h1 id="masthead-title" class="masthead__title">Coffee Chronicles</h1>
         <p class="masthead__establish">Est. 2026</p>
       </div>
 
       <div class="masthead__badge" aria-hidden="true">
-        Family Library
+        The Making
       </div>
 
       <div class="masthead__figure masthead__figure--right" aria-hidden="true">
@@ -131,25 +131,25 @@
       </div>
 
       <div class="story-grid">
-        <article class="story-card story-card--warm">
+        <article class="story-card story-card--cool">
           <p class="story-card__label">Featured Reader</p>
           <h3>Dr. Octavius Watt & His Pneumatic Bride</h3>
           <p>A clockwork romance, a laboratory oath, and an improbable dinner service that never quite stays still.</p>
         </article>
 
-        <article class="story-card story-card--cool">
+        <article class="story-card story-card--warm">
           <p class="story-card__label">Appalachian Sensation</p>
           <h3>Jonah Carter & The Midnight Bear</h3>
           <p>A mountain tale about campfire etiquette, runaway honey, and the consequences of leaving a tin pail unattended.</p>
         </article>
 
-        <article class="story-card story-card--cool">
+        <article class="story-card story-card--warm">
           <p class="story-card__label">Selected Serial</p>
           <h3>Archibald Grey & The Velvet Compendium</h3>
           <p>A study in manners, misdirection, and the sort of library catalog that keeps its own dark, ink-stained secrets.</p>
         </article>
 
-        <article class="story-card story-card--warm">
+        <article class="story-card story-card--cool">
           <p class="story-card__label">Monthly Dispatch</p>
           <h3>The Dressmaker's Cryptic Journal</h3>
           <p>Needlework, clue work, and a city of narrow alleys where every trailing hem tells the truth before the witness does.</p>
@@ -206,7 +206,7 @@
     margin: 0;
     background:
       radial-gradient(circle at top, rgba(255, 255, 255, 0.45), transparent 35%),
-      linear-gradient(180deg, #efe5c7 0%, #e7dab5 100%);
+      linear-gradient(180deg, #efe5c7 0%, #e5dabe 100%);
     color: #2b2417;
   }
 
@@ -232,13 +232,13 @@
       radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.08), transparent 18%),
       radial-gradient(circle at 80% 10%, rgba(0, 0, 0, 0.06), transparent 14%),
       radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.05), transparent 16%),
-      linear-gradient(90deg, transparent 0 49.5%, rgba(70, 48, 16, 0.08) 49.5% 50.5%, transparent 50.5% 100%);
+      linear-gradient(90deg, transparent 0 49.5%, rgba(87, 64, 29, 0.08) 49.5% 50.5%, transparent 50.5% 100%);
     mix-blend-mode: multiply;
   }
 
   .masthead {
     border: 1px solid rgba(64, 46, 20, 0.7);
-    background: rgba(251, 240, 219, 0.7);
+    background: rgb(227, 230, 236, 0.3);
     box-shadow: inset 0 0 0 4px rgba(64, 46, 20, 0.08);
   }
 
@@ -298,7 +298,7 @@
     line-height: 1.05;
     text-align: center;
     transform: rotate(-8deg);
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.28), rgba(201, 177, 120, 0.25));
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(201, 177, 120, 0.5));
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
@@ -408,13 +408,13 @@
 
   .sidebar__frame--left {
     background:
-      linear-gradient(180deg, rgba(227, 215, 187, 0.93), rgba(211, 198, 167, 0.84)),
+      linear-gradient(180deg, rgba(211, 200, 183, 0.4), rgba(199, 190, 169, 0.3)),
       rgba(248, 240, 221, 0.72);
   }
 
   .sidebar__frame--right {
     background:
-      linear-gradient(180deg, rgba(227, 215, 187, 0.93), rgba(211, 198, 167, 0.84)),
+      linear-gradient(180deg, rgba(211, 200, 183, 0.4), rgba(199, 190, 169, 0.3)),
       rgba(248, 240, 221, 0.72);  
         /* linear-gradient(180deg, rgba(245, 235, 214, 0.93), rgba(228, 210, 168, 0.84)),
       rgba(248, 240, 221, 0.72); */
@@ -423,7 +423,7 @@
   .center {
     padding: clamp(0.9rem, 2vw, 1.25rem);
     border: 1px solid rgba(64, 46, 20, 0.7);
-    background: rgba(248, 241, 221, 0.72);
+    background: rgb(227, 230, 236, 0.55);
     box-shadow: inset 0 0 0 3px rgba(64, 46, 20, 0.06);
   }
 
@@ -500,12 +500,12 @@
     line-height: 1.5;
   }
 
-  .story-card--warm {
-    background: linear-gradient(180deg, rgba(246, 238, 214, 0.98), rgba(226, 204, 148, 0.9));
+  .story-card--cool {
+    background: linear-gradient(180deg, rgba(201, 215, 239, 0.4), rgba(171, 188, 218, 0.4));
   }
 
-  .story-card--cool {
-    background: linear-gradient(180deg, rgba(242, 235, 216, 0.98), rgba(230, 214, 177, 0.9));
+  .story-card--warm {
+    background: linear-gradient(180deg, rgb(196, 204, 218, 0.4), rgba(159, 168, 183, 0.4));
   }
 
   .story-card__label {
