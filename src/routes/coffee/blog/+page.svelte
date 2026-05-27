@@ -160,7 +160,7 @@
     <!-- CENTER COLUMN: The Core Feature Grid (4 Curated Stories) -->
     <section class="center">
       <div class="center__header">
-        <p class="center__kicker">Our Blog's</p>
+        <!-- <p class="center__kicker">Our Blog's</p> -->
         <h2 class="center__title">Signature Recipes and Latte Art</h2>
         <p class="center__lede">
           Milky mediums, fluid flourishes, and curious concoctions.
