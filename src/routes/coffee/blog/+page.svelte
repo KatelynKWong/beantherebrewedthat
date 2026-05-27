@@ -1,4 +1,7 @@
   <script>
+
+    import { base } from '$app/paths';
+    
     const featuredStories = [
       {
         label: 'Featured Reader',
@@ -64,7 +67,7 @@
 <main class="brochure-shell">
   <!-- MASTHEAD SECTION -->
   <section class="masthead" aria-labelledby="masthead-title">
-    <div class="masthead__line masthead__line--top"></div>
+    <!-- <div class="masthead__line masthead__line--top"></div> -->
 
     <div class="masthead__banner">
       <div class="masthead__figure masthead__figure--left" aria-hidden="true">
@@ -72,7 +75,7 @@
       </div>
 
       <div class="masthead__center">
-        <p class="masthead__eyebrow">Bean There, Brewed That</p>
+        <a href="{base}/" class="masthead__eyebrow nav-link">Bean There, Brewed That</a>
         <h1 id="masthead-title" class="masthead__title">Coffee Chronicles</h1>
         <p class="masthead__establish">Est. 2026</p>
       </div>
@@ -85,13 +88,18 @@
         <span></span>
       </div>
     </div>
+    </section>
 
+    <!-- <div class="masthead__line masthead__line--bottom"></div> -->
+
+<section class="subhead">
     <div class="masthead__strip">
-      <span>Our Booklets</span>
-      <span>For the Distinguished Reader</span>
-      <span>Cat. 1882</span>
+        <span><a href="{base}/coffee" class="nav-link">Coffee Chronicles</a></span>
+        <span><a href="{base}/tokyo" class="nav-link">Tokyo Tales</a></span>
+        <span><a href="{base}/food" class="nav-link">Savory Stories</a></span>
     </div>
   </section>
+  <div class="masthead__line masthead__line--bottom"></div>
 
   <!-- MAIN THREE-COLUMN EDITORIAL INDEX -->
   <section class="ledger" aria-label="Editorial index">
@@ -99,6 +107,14 @@
     <!-- LEFT SIDEBAR: Context & Philosophy -->
     <aside class="sidebar sidebar--left">
       <div class="sidebar__frame sidebar__frame--left">
+
+        <div class="sidebar__header">
+           <h2>BREWING JOURNAL</h2>
+            <p>
+            Pressure profiles, pour physics, and estimative extractions
+            </p>
+        </div>
+
         <article class="panel panel--stacked">
           <h2>Brewing Journal</h2>
           <p>The Dollar Dreadful Family Library began as a traveling catalog of oddities, penny dreadfulness, and respectable scandal. Its paper was cheap, its cover stories were not, and its readers were never quite the same afterward.</p>
@@ -126,7 +142,7 @@
         <p class="center__kicker">Our Blog's</p>
         <h2 class="center__title">Signature Drinks and Latte Art</h2>
         <p class="center__lede">
-          A paper-ledger presentation of heroes, quirks, and chapter-length calamities rendered in a rigid, fixed newspaper grid.
+          Milky mediums, fluid flourishes, and curious concoctions.
         </p>
       </div>
 
@@ -167,6 +183,14 @@
     <!-- RIGHT SIDEBAR: Actions, Spotlights & Catalog Items -->
     <aside class="sidebar sidebar--right">
       <div class="sidebar__frame sidebar__frame--right">
+
+        <div class="sidebar__header">
+           <h2>PRODUCT REVIEWS</h2>
+            <p>
+            Mechanical machinery, water wizardry, and bean botany.
+            </p>
+        </div>
+
         <article class="purchase-box">
           <p class="purchase-box__eyebrow">Reviews</p>
           <h2>Buy one! Buy one!</h2>
@@ -207,7 +231,7 @@
     background:
       radial-gradient(circle at top, rgba(255, 255, 255, 0.45), transparent 35%),
       linear-gradient(180deg, #efe5c7 0%, #e5dabe 100%);
-    color: #2b2417;
+    color: rgb(80, 72, 64);
   }
 
   :global(*) {
@@ -237,7 +261,7 @@
   }
 
   .masthead {
-    border: 1px solid rgba(64, 46, 20, 0.7);
+    border: 1px solid rgba(54, 40, 24, 0.7);
     background: rgb(227, 230, 236, 0.3);
     box-shadow: inset 0 0 0 4px rgba(64, 46, 20, 0.08);
   }
@@ -245,6 +269,13 @@
   .masthead__line {
     height: 1px;
     background: rgba(63, 48, 23, 0.7);
+  }
+
+  .masthead__line--bottom {
+    margin-top: 4px;
+    margin-bottom: 3px;
+    height: 0.5px;
+    background: rgba(79, 47, 3, 0.7);
   }
 
   .masthead__banner {
@@ -290,7 +321,7 @@
     place-items: center;
     width: clamp(4.5rem, 8vw, 6rem);
     aspect-ratio: 1;
-    border: 2px solid rgba(58, 39, 15, 0.9);
+    border: 2px solid rgba(54, 40, 24, 0.9);
     border-radius: 999px;
     padding: 0.5rem;
     font-family: 'IM Fell English SC', Georgia, serif;
@@ -308,7 +339,7 @@
     width: clamp(4rem, 6vw, 5.75rem);
     aspect-ratio: 0.72;
     margin: 0 auto;
-    border: 1px solid rgba(72, 52, 22, 0.8);
+    border: 1px solid rgba(54, 40, 24, 0.8);
     border-radius: 0.35rem;
     background:
       radial-gradient(circle at 50% 24%, rgba(44, 31, 13, 0.8) 0 11%, transparent 12%),
@@ -362,7 +393,7 @@
     gap: 0.5rem;
     align-items: center;
     padding: 0.5rem 1rem 0.65rem;
-    border-top: 1px solid rgba(63, 48, 23, 0.7);
+    /* border-top: 1px solid rgba(63, 48, 23, 0.7); */
     font-family: 'IM Fell English SC', Georgia, serif;
     font-size: clamp(0.68rem, 1.2vw, 0.85rem);
     letter-spacing: 0.18em;
@@ -377,11 +408,22 @@
     text-align: right;
   }
 
+  .subhead {
+    border-top: 2px solid rgba(54, 40, 24, 0.7);
+    border-bottom: 2px solid rgba(54, 40, 24, 0.7);
+    border-left: 1px solid rgba(54, 40, 24, 0.7);
+    border-right: 1px solid rgba(54, 40, 24, 0.7);
+    margin-top: 4px;
+    padding-top: 3px;
+    background: rgb(227, 230, 236, 0.3);
+    box-shadow: inset 0 0 0 4px rgba(64, 46, 20, 0.08);
+  }
+
   .ledger {
     display: grid;
     grid-template-columns: minmax(14rem, 1.05fr) minmax(0, 2fr) minmax(14rem, 1.05fr);
     gap: clamp(0.75rem, 1.5vw, 1.2rem);
-    margin-top: clamp(0.75rem, 1.5vw, 1.2rem);
+    margin-top: clamp(0.5rem, 1.2vw, 1rem);
   }
 
   .sidebar,
@@ -393,11 +435,22 @@
     align-content: start;
   }
 
+  .sidebar__header {
+    text-align: center;
+    border-bottom: 1px solid rgba(54, 40, 24, 0.65);
+    padding-bottom: 0.1rem;
+    /* margin-bottom: 0.25rem; */
+  }
+
+  .sidebar__header h2{
+    margin: 0.6rem 0 0.04rem 0;
+  }
+
   .sidebar__frame {
     display: grid;
     gap: clamp(0.75rem, 1.5vw, 1rem);
     padding: clamp(0.9rem, 2vw, 1.15rem);
-    border: 1px solid rgba(64, 46, 20, 0.72);
+    border: 1px solid rgba(54, 40, 24, 0.72);
     background:
       linear-gradient(180deg, rgba(249, 240, 222, 0.9), rgba(233, 217, 180, 0.82)),
       rgba(248, 240, 221, 0.72);
@@ -422,14 +475,14 @@
 
   .center {
     padding: clamp(0.9rem, 2vw, 1.25rem);
-    border: 1px solid rgba(64, 46, 20, 0.7);
+    border: 1px solid rgba(54, 40, 24, 0.7);
     background: rgb(227, 230, 236, 0.55);
     box-shadow: inset 0 0 0 3px rgba(64, 46, 20, 0.06);
   }
 
   .center__header {
     text-align: center;
-    border-bottom: 1px solid rgba(63, 48, 23, 0.65);
+    border-bottom: 1px solid rgba(54, 40, 24, 0.65);
     padding-bottom: 0.9rem;
     margin-bottom: 1rem;
   }
@@ -442,7 +495,7 @@
     font-family: 'IM Fell English SC', Georgia, serif;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(48, 33, 11, 0.9);
+    color: rgba(54, 40, 24, 0.9);
   }
 
   .center__kicker {
@@ -472,7 +525,7 @@
   .story-card {
     position: relative;
     padding: 1rem;
-    border: 1px solid rgba(64, 46, 20, 0.6);
+    border: 1px solid rgba(54, 40, 24, 0.6);
     background: linear-gradient(180deg, rgba(253, 247, 231, 0.95), rgba(237, 223, 185, 0.85));
     box-shadow: inset 0 0 0 2px rgba(64, 46, 20, 0.05);
     min-height: 13rem;
@@ -482,7 +535,7 @@
     content: '';
     position: absolute;
     inset: 0.5rem;
-    border: 1px solid rgba(64, 46, 20, 0.18);
+    border: 1px solid rgba(54, 40, 24, 0.18);
     pointer-events: none;
   }
 
@@ -526,7 +579,7 @@
 
   .panel,
   .purchase-box {
-    border: 1px solid rgba(64, 46, 20, 0.7);
+    border: 1px solid rgba(54, 40, 24, 0.7);
     background: rgba(247, 239, 218, 0.78);
     box-shadow: inset 0 0 0 3px rgba(64, 46, 20, 0.05);
   }
@@ -537,7 +590,7 @@
 
   .panel h2,
   .purchase-box h2 {
-    margin: 0.35rem 0 0.55rem;
+    margin: 0.5rem 0 0.25rem;
     font-family: 'IM Fell English SC', Georgia, serif;
     font-size: clamp(1.25rem, 2.2vw, 1.65rem);
     line-height: 1.05;
@@ -565,7 +618,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 1.05;
-    border: 1px solid rgba(64, 46, 20, 0.7);
+    border: 1px solid rgba(54, 40, 24, 0.7);
     background:
       radial-gradient(circle at 50% 28%, rgba(54, 38, 16, 0.95) 0 9%, transparent 10%),
       radial-gradient(circle at 42% 28%, rgba(0, 0, 0, 0.18) 0 5%, transparent 6%),
@@ -617,7 +670,7 @@
     gap: 0.4rem;
     margin-top: 0.2rem;
     padding: 0.8rem;
-    border: 1px solid rgba(64, 46, 20, 0.55);
+    border: 1px solid rgba(54, 40, 24, 0.55);
     background: linear-gradient(180deg, rgba(241, 227, 186, 0.96), rgba(225, 201, 139, 0.9));
     text-align: center;
   }
@@ -635,7 +688,7 @@
     width: min(100%, 12rem);
     aspect-ratio: 0.85;
     margin: 0 auto;
-    border: 1px solid rgba(64, 46, 20, 0.75);
+    border: 1px solid rgba(54, 40, 24, 0.75);
     background:
       radial-gradient(circle at 50% 23%, rgba(45, 31, 13, 0.86) 0 10%, transparent 11%),
       radial-gradient(circle at 50% 39%, rgba(40, 28, 12, 0.88) 0 10%, transparent 11%),
@@ -670,6 +723,20 @@
 
   .panel--goodies li + li {
     margin-top: 0.25rem;
+  }
+
+  /* Navigation Links */
+  .nav-link {
+      cursor: pointer;
+      text-decoration: none; 
+      color: rgb(80, 72, 64);
+      transition: color 100ms ease;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #ff8000;
+    outline: none;
   }
 
   /* MEDIA QUERIES FOR RESPONSIVENESS */
