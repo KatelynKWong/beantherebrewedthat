@@ -119,36 +119,42 @@
             </p>
         </div>
 
-        <article class="panel panel--stacked">
+        <article class="panel panel--stacked panel--dated">
           <h2>Trader Joes Rwanda Bean Hack</h2>
+          <time class="panel__date">5/27/2026</time>
           <p>A guide to reversing the cruel degredation of time for the Trader Joe's Rwanda Small Lot. Here are some secret parameters required to elevate a slightly elder roast towards the fresh, artisanal beans of fancy boutique cafes.</p>
         </article>
 
-        <article class="panel panel--stacked">
+        <article class="panel panel--stacked panel--dated">
           <h2>Quick & Easy Mocha</h2>
+          <time class="panel__date">5/20/2026</time>
           <p>No syrup, chocolate milk mocha (5/5). </p>
         </article>
 
-        <article class="panel panel--stacked">
+        <article class="panel panel--stacked panel--dated">
           <h2>The Robot testing</h2>
+          <time class="panel__date">5/10/2026</time>
           <p>Current tests on the Cafelat Robot so far.</p>
         </article>
 
-        <article class="panel panel--stacked">
+        <article class="panel panel--stacked panel--dated">
           <h2>New favorite: Amul 6% Milk</h2>
+          <time class="panel__date">5/01/2026</time>
           <p>Amul 6% fat milk from Costco might be the best tastewise and for ease of steaming!</p>
         </article>
 
-        <article class="panel panel--stacked">
+        <article class="panel panel--stacked panel--dated">
           <h2>Dialing the Bambino </h2>
+          <time class="panel__date">4/21/2026</time>
           <p>Last stretch of the Bambino for a home cafe and some notes on it before reselling.</p>
         </article>
         
-        <article class="panel panel--image">
+        <article class="panel panel--image panel--dated">
           <div class="panel__image" aria-hidden="true">
             <span></span>
           </div>
           <p class="panel__caption">
+            <time class="panel__date">2/15/2026</time>
             Dialing the Hario Switch with Steady State's Sipi Falls beans.
           </p>
         </article>
@@ -831,6 +837,24 @@
 
   .panel--goodies li + li {
     margin-top: 0.25rem;
+  }
+
+  .panel--dated {
+    position: relative;
+    /* Adds extra padding at the bottom so the text never overlaps the date */
+    padding-bottom: 2rem !important; 
+    }
+
+  .panel__date {
+    position: absolute;
+    bottom: 0.65rem;
+    right: 0.95rem;
+    
+    /* Vintage print typography styling */
+    font-family: 'IM Fell English SC', Georgia, serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   /* Navigation Links */
