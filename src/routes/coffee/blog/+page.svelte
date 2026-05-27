@@ -908,6 +908,14 @@
     .sidebar__frame--right .purchase-box {
       grid-column: 1 / -1;
     }
+    
+    .sidebar__header {
+        grid-column: 1 / -1;
+    }
+
+    .panel--featured {
+        grid-column: 1 / -1;
+    }
   }
 
   @media (max-width: 700px) {
