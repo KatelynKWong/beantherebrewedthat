@@ -537,7 +537,7 @@
     display: grid;
     grid-template-columns: minmax(14rem, 1.05fr) minmax(0, 2fr) minmax(14rem, 1.05fr);
     gap: clamp(0.75rem, 1.5vw, 1.2rem);
-    margin-top: clamp(0.5rem, 1.2vw, 1rem);
+    margin-top: clamp(0.3rem, 0.65vw, 0.55rem);
   }
 
   .sidebar,
