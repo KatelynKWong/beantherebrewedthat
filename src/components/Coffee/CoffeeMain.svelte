@@ -38,7 +38,7 @@
   </div>
 
   <div class="container">
-    <a href={'coffee/making'} class="link">
+    <a href={'coffee/blog'} class="link">
       <div class="image-container">
         <img 
           src="{PortaFilter}" 
